@@ -18,7 +18,7 @@
 
 ### 文档
 
-- [Quist-UI 组件库文档](https://jdsecretfe.github.io/quist-ui/)
+- [Quist-UI 组件库文档](https://jdsecretfe.github.io/quist-ui)
 - [Quist-UI 源码地址](https://github.com/JDsecretFE/quist-ui)
 
 ### 组件列表
