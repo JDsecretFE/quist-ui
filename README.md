@@ -24,19 +24,19 @@
 ### 组件列表
 
 - 表单组件
-    - [按钮 button](https://jdsecretfe.github.io/quist-ui/)
-    - [多选框 checkbox](https://jdsecretfe.github.io/quist-ui/)
-    - [单选框 radio](https://jdsecretfe.github.io/quist-ui/)
-    - [开关 switch](https://jdsecretfe.github.io/quist-ui/)
-    - [输入框 input](https://jdsecretfe.github.io/quist-ui/)
+    - [按钮 button](https://jdsecretfe.github.io/quist-ui/#/components/quist-button/)
+    - [多选框 checkbox](https://jdsecretfe.github.io/quist-ui/#/components/quist-checkbox/)
+    - [单选框 radio](https://jdsecretfe.github.io/quist-ui/#/components/quist-radio/)
+    - [开关 switch](https://jdsecretfe.github.io/quist-ui/#/components/quist-switch/)
+    - [输入框 input](https://jdsecretfe.github.io/quist-ui/#/components/quist-input/)
 - 功能组件
-    - [计数器 counter](https://jdsecretfe.github.io/quist-ui/)
-    - [加载 loading](https://jdsecretfe.github.io/quist-ui/)
-    - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/)
+    - [计数器 counter](https://jdsecretfe.github.io/quist-ui/#/components/quist-counter/)
+    - [加载 loading](https://jdsecretfe.github.io/quist-ui/#/components/quist-loading/)
+    - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/#/components/quist-swiper/)
 - 提示反馈
-    - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/)
-    - [提示 toast](https://jdsecretfe.github.io/quist-ui/)
-    - [对话框 dialog](https://jdsecretfe.github.io/quist-ui/)
+    - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/#/components/quist-drawer/)
+    - [提示 toast](https://jdsecretfe.github.io/quist-ui/#/components/quist-toast/)
+    - [对话框 dialog](https://jdsecretfe.github.io/quist-ui/#/components/quist-dialog/)
 
 ### 反馈沟通
 
