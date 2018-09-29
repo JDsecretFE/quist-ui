@@ -1,0 +1,82 @@
+{
+  "package": "com.quist-ui.demo",
+  "name": "快应用UI组件库",
+  "versionName": "0.0.1",
+  "versionCode": "1",
+  "minPlatformVersion": "1000",
+  "icon": "/Common/quist-logo.png",
+  "features": [
+    {
+      "name": "system.prompt"
+    },
+    {
+      "name": "system.router"
+    },
+    {
+      "name": "system.shortcut"
+    },
+    {
+      "name": "system.device"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {
+    "logLevel": "debug",
+    "designWidth": 750
+  },
+  "router": {
+    "entry": "Home",
+    "pages": {
+      "Home": {
+        "component": "index"
+      },
+      "Button": {
+        "component": "index"
+      },
+      "Toast": {
+        "component": "index"
+      },
+      "Swiper": {
+        "component": "index"
+      },
+      "Checkbox": {
+        "component": "index"
+      },
+      "Radio": {
+        "component": "index"
+      },
+      "Switch": {
+        "component": "index"
+      },
+      "Input": {
+        "component": "index"
+      },
+      "Counter": {
+        "component": "index"
+      },
+      "Dialog": {
+        "component": "index"
+      },
+      "Drawer": {
+        "component": "index"
+      },
+      "Loading": {
+        "component": "index"
+      }
+    }
+  },
+  "display": {
+    "titleBarBackgroundColor": "#ffffff",
+    "titleBarTextColor": "#000000",
+    "menu": false,
+    "pages": {
+      "Home": {
+        "titleBarText": "QuistUI组件库"
+      }
+    }
+  }
+}

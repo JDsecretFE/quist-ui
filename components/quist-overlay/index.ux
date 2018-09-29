@@ -1,0 +1,54 @@
+<template>
+  <div class="quist-overlay">
+    <div class="quist-overlay-mask {{className}}" style="background-color: {{background}}" show="{{show}}" @click="overlayClick">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-overlay/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      maskClosable: {
+        type: Boolean,
+        default: false
+      },
+      visible: {
+        type: Boolean,
+        default: false
+      },
+      background: {
+        type: String,
+        default: 'rgba(0, 0, 0, 0.6)'
+      }
+    },
+    data: {
+      show: false,
+      className: ''
+    },
+    onInit() {
+      this.$watch('visible', 'updateVisible')
+      this.updateVisible()
+    },
+    updateVisible() {
+      this.timeoutId && clearTimeout(this.timeoutId) //防止更改太快
+      if (this.visible) {
+        this.show = true
+        this.className = 'quist-overlay-enter'
+      } else {
+        this.className = 'quist-overlay-leave'
+        this.timeoutId = setTimeout(() => {
+          this.show = false
+        }, 500)
+      }
+    },
+    overlayClick() {
+      this.maskClosable ? this.$emit('quiOverlayClick') : ''
+    }
+  }
+</script>

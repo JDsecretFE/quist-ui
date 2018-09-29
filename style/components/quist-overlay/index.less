@@ -1,0 +1,44 @@
+@overlay-prefix: ~"@{css-prefix}-overlay";
+
+@keyframes quistOverlayEnter {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes quistOverlayLeave {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.@{overlay-prefix} {
+	&-enter {
+		animation-name: quistOverlayEnter;
+	}
+
+	&-leave {
+		animation-name: quistOverlayLeave;
+	}
+
+	&-mask {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		justify-content: center;
+		align-items: center;
+		animation-duration: 200ms;
+		animation-fill-mode: forwards;
+	}
+
+}

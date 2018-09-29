@@ -1,0 +1,94 @@
+<import name="quist-drawer" src="@quist-ui/quist-drawer/index"></import>
+
+<template>
+  <div class="drawer-demo">
+    <input class="input-button" type="button" value="点击弹出底部弹层" onclick="drawer('bottom')" />
+    <input class="input-button" type="button" value="点击弹出顶部弹层" onclick="drawer('top')" />
+    <input class="input-button" type="button" value="点击弹出左侧弹层" onclick="drawer('left')" />
+    <input class="input-button" type="button" value="点击弹出右侧弹层" onclick="drawer('right')" />
+    <quist-drawer visible="{{placement === 'bottom'}}" @on-close="close" placement="bottom">
+      <div class="mask">
+        <text class="mask-cnt">hello qucikapp</text>
+      </div>
+    </quist-drawer>
+
+    <quist-drawer visible="{{placement === 'top'}}" @on-close="close" placement="top">
+      <div class="mask">
+        <text class="mask-cnt">hello qucikapp</text>
+      </div>
+    </quist-drawer>
+
+    <quist-drawer visible="{{placement === 'left'}}" @on-close="close" placement="left">
+      <div class="mask2">
+        <text class="mask-cnt">hello qucikapp</text>
+      </div>
+    </quist-drawer>
+
+    <quist-drawer visible="{{placement === 'right'}}" @on-close="close" placement="right">
+      <div class="mask2">
+        <text class="mask-cnt">hello qucikapp</text>
+      </div>
+    </quist-drawer>
+  </div>
+</template>
+
+<style>
+  .drawer-demo {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+  .input-button {
+    width: 100%;
+    height: 100px;
+    margin: 50px;
+    padding: 20px;
+    color: #666666;
+    background-color: #f6f8fa;
+  }
+
+  .mask {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    background-color: #ffffff;
+  }
+
+  .mask2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100%;
+    background-color: #ffffff;
+  }
+
+  .mask-cnt {
+    font-size: 30px;
+  }
+</style>
+
+<script>
+  export default {
+    private: {
+      placement: ''
+    },
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Drawer'
+      })
+    },
+    drawer(txt) {
+      this.placement = txt;
+    },
+    close() {
+      this.placement = '';
+    }
+  }
+</script>

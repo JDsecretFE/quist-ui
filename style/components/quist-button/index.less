@@ -1,0 +1,44 @@
+@btn-prefix: ~"@{css-prefix}-button";
+
+.@{btn-prefix} {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: @border-radius-base;
+	width: 200px;
+	height: 70px;
+
+	&-default {
+		border: 1px solid @btn-default-border;
+		background-color: @btn-default-bg;
+		color: @btn-default-color;
+	}
+
+	&-primary {
+		border: 1px solid @primary-color;
+		background-color: @primary-color;
+
+		.text {
+			color: @btn-primary-color;
+		}
+	}
+
+	&-danger {
+		border: 1px solid @btn-danger-border;
+		background-color: @btn-danger-bg;
+
+		.text {
+			color: @btn-danger-color;
+		}
+	}
+
+	&-disabled {
+		border: 1px solid @btn-disable-border;
+		background-color: @btn-disable-bg;
+		color: @btn-disable-color;
+	}
+
+	&-block {
+		width: 100%;
+	}
+}

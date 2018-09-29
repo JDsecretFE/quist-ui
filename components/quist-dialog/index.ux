@@ -1,0 +1,69 @@
+<import name="quist-overlay" src="../quist-overlay/index"></import>
+
+<template>
+  <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
+    <div class="quist-dialog">
+      <text class="quist-dialog-title" if="title">{{title}}</text>
+      <div class="quist-dialog-content">
+        <text class="quist-dialog-text">{{content}}</text>
+      </div>
+      <div class="quist-dialog-btns" if="footer">
+        <div class="cancel-btn" if="cancelText" @click="cancelClick"><text class="cancel-text">{{cancelText}}</text></div>
+        <div class="ok-btn" @click="okClick"><text class="ok-text">{{okText}}</text></div>
+      </div>
+    </div>
+  </quist-overlay>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-dialog/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      footer: {
+        type: Boolean,
+        default: true
+      },
+      maskClosable: {
+        type: Boolean,
+        default: false
+      },
+      visible: {
+        type: Boolean,
+        default: false
+      },
+      title: {
+        type: String,
+        default: ''
+      },
+      content: {
+        type: String,
+        default: ''
+      },
+      okText: {
+        type: String,
+        default: '确定'
+      },
+      cancelText: {
+        type: String,
+        default: ''
+      },
+      type: {
+        type: String,
+        default: ''
+      }
+    },
+    overlayClick() {
+      this.$emit('onCancel', this.type)
+    },
+    cancelClick() {
+      this.$emit('onCancel', this.type)
+    },
+    okClick() {
+      this.$emit('onOk', this.type)
+    }
+  }
+</script>

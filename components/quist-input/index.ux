@@ -1,0 +1,96 @@
+<template>
+  <stack>
+      <div class="quist-input" style="width: {{width}};">
+          <input class="quist-input__fix" />
+          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
+            <div class="quist-input__prefix" style="display: {{prefixIcon ? '' : 'none'}}">
+              <image src="{{prefixIcon}}" class="quist-input__icon" />
+            </div>
+            <input id="quist-input__box" class="quist-input__box" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @focus="onfocus" @blur="onblur" @change="onchange" />
+            <div class="quist-input__suffix" @click="clearClick" style="opacity:{{showClear ? '1':'0'}};">
+              <image src="{{suffixIcon}}" class="quist-input__img" />
+            </div>
+          </div>
+        </div>
+  </stack>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-input/index.less";
+</style>
+
+<script>
+
+  export default {
+    props: {
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      width: {
+        type: String,
+        default: '1080px'
+      },
+      prefix: {
+        type: String,
+        default: ''
+      },
+      suffix: {
+        type: String,
+        default: ''
+      }
+    },
+    data() {
+      return {
+        searchValue: '',
+        showClear: false,
+        replaceShow: true
+      }
+    },
+    onInit() {
+      this.initialize()
+    },
+    initialize() {
+      this.prefixIcon = this.prefix;
+      this.suffixIcon = this.suffix;
+    },
+    onchange(e) {
+      this.searchValue = e.value
+      if (this.searchValue) {
+        this.showClear = true
+      } else {
+        this.showClear = false
+      }
+    },
+    onfocus() {
+      this.$emit('onFocus', { value: this.searchValue })
+    },
+    onblur() {
+      this.$emit('onBlur', { value: this.searchValue })
+    },
+    clearClick() {
+      this.searchValue = ''
+      this.showClear = false
+      this.$emit('onClear')
+    },
+    searchClick() {
+      this.blur()
+      this.$emit('onClick', { value: this.searchValue })
+    },
+    focus() {
+      this.$element("quist-input__box").focus({
+        focus: true
+      })
+    },
+    blur() {
+      this.$element("quist-input__box").focus({
+        focus: false
+      })
+    }
+  }
+</script>

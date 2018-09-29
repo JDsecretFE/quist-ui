@@ -1,0 +1,73 @@
+<template>
+  <div class="quist-radio">
+    <block for="(index, row) in options">
+      <div class="quist-radio__item {{isRight ? 'quist-radio__item--isRight' : ''}} {{row.disabled ? 'quist-radio__item--disabled' : ''}}" @click="click(row)">
+        <text class="quist-radio__name" if="isRight" style="color: {{labelColor}}">{{row.label || row}}</text>
+        <stack class="quist-radio__check" style="border-color: {{replaceValue === (row.value || row) ? checkedColor : checkColor}}">
+          <div class="quist-radio__thumb {{replaceValue === (row.value || row) ? 'quist-radio__thumb--open' : 'quist-radio__thumb--close'}}" style="background-color: {{replaceValue === (row.value || row) ? checkedColor : checkColor}}"></div>
+        </stack>
+        <text class="quist-radio__name" if="!isRight" style="color: {{labelColor}}">{{row.label || row}}</text>
+      </div>
+    </block>
+  </div>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-radio/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      value: String,
+      options: {
+        type: Array
+      },
+      labelColor: {
+        type: String,
+        default: '#000000'
+      },
+      isRight: {
+        type: Boolean,
+        default: false
+      },
+      checkColor: {
+        type: String,
+        default: '#CCCCCC'
+      },
+      checkedColor: {
+        type: String,
+        default: '#2998F9'
+      }
+    },
+    data() {
+      return {
+        replaceValue: this.value
+      }
+    },
+    onInit() {
+      this.initialize()
+    },
+    onReady() {
+      this.$watch('value', 'initialize')
+      this.$watch('replaceValue', 'change')
+    },
+    initialize() {
+      this.replaceValue = this.value
+    },
+    click(data) {
+      if (typeof data === 'object') {
+        if (!data.disabled) {
+          this.replaceValue = data.value
+        }
+      }
+      else {
+        this.replaceValue = data
+      }
+    },
+    change() {
+      this.$emit('onChange', { values: this.replaceValue })
+    }
+  }
+</script>

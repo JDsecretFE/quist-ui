@@ -1,0 +1,43 @@
+<template>
+  <stack>
+    <stack class="quist-toast" if="value.text">
+        <div class="quist-toast__wrapper">
+            <div class="quist-toast__content" tid="toast">
+                <image if="value.src" src="{{value.src}}" class="quist-toast__image"></image>
+                <text class="quist-toast__text">{{value.text}}</text>
+              </div>
+        </div>
+      </stack>
+  </stack>
+    
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-toast/index.less";
+</style>
+
+<script>
+
+  export default {
+    data() {
+      return {
+        default: 500,
+        value: {}    //toast实例
+      }
+    },
+    show(option) {
+      this.value = {
+        src: option.img,
+        text: option.text || '',
+        duration: option.duration || this.default   //默认显示500ms
+      };
+      setTimeout(() => {
+        //移除toast
+        setTimeout(() => {
+          this.value = {};
+        }, 500)
+      }, (option.duration || this.default) + 500)
+    }
+  }
+</script>

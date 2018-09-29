@@ -1,0 +1,66 @@
+<import name="quist-swiper" src="@quist-ui/quist-swiper/index"></import>
+<import name="quist-toast" src="@quist-ui/quist-toast/index"></import>
+
+<template>
+  <div class="swiper-demo">
+    <quist-toast id="quist-toast"></quist-toast>
+    <input class="input-button" type="button" value="显示幻灯片(无indicator)" onclick="showlightbox" />
+    <input class="input-button" type="button" value="显示幻灯片(特定indicator样式)" onclick="showlightbox2" />
+    <input class="input-button" type="button" value="自动播放(自定义播放时间)" onclick="showlightbox3" />
+    <quist-swiper visible="{{show1}}" show-indicator="{{false}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
+    <quist-swiper visible="{{show2}}" indicator-color='rgba(0, 0, 0, 1)' indicator-selected-color='#ff0000' indicator-size='40px' options="{{imageList}}" @on-click="choose"></quist-swiper>
+    <quist-swiper visible="{{show3}}" is-auto-play="{{true}}" time="{{5000}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
+  </div>
+</template>
+
+<style>
+  .swiper-demo {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+  .input-button {
+    width: 100%;
+    height: 100px;
+    margin: 50px;
+    padding: 20px;
+    color: #666666;
+    background-color: #f6f8fa;
+  }
+</style>
+
+<script>
+
+  export default {
+    private: {
+      show1: false,
+      show2: false,
+      show3: false,
+      imageList: ['/Swiper/img/demo1.jpg', '/Swiper/img/demo2.jpg', '/Swiper/img/demo3.jpg', '/Swiper/img/demo4.jpg']
+    },
+    onInit() {
+      this.$page.setTitleBar({ text: 'Swiper' })
+    },
+    onReady() {
+      this.toast = this.$child('quist-toast')
+    },
+    showlightbox() {
+      this.show1 = true
+    },
+    showlightbox2() {
+      this.show2 = true
+    },
+    showlightbox3() {
+      this.show3 = true
+    },
+    choose(i) {
+      this.toast.show({
+        text: `点击的是第${i.detail + 1}个`
+      })
+    }
+  }
+</script>

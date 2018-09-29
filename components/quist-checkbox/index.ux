@@ -1,0 +1,130 @@
+<template>
+  <div class="quist-checkbox">
+    <block for="(index, row) in options">
+      <div if="!(index === 0) && replaceHasBorder" class="quist-checkbox-top"></div>
+      <div class="quist-checkbox__item {{isRight ? 'quist-checkbox__item--isRight' : ''}} {{row.disabled ? 'quist-checkbox__item--disabled' : ''}}" @click="clickAction(row)">
+        <text class="quist-checkbox__name" if="isRight" style="color: {{labelColor}}">{{row.label || row}}</text>
+        <stack class="quist-checkbox__checkbox" style="background-color: {{replaceChecked[index] ? checkedColor : checkColor}};border-color: {{replaceChecked[index] ? checkedBorderColor : checkBorderColor}}">
+          <div class="quist-checkbox__thumb {{replaceChecked[index] ? 'quist-checkbox__thumb--open' : 'quist-checkbox__thumb--close'}}"></div>
+        </stack>
+        <text class="quist-checkbox__name" if="!isRight" style="margin-left: {{labelMargin}};color: {{labelColor}}">{{row.label || row}}</text>
+      </div>
+    </block>
+  </div>
+</template>
+
+<style lang="less">
+@import "../../style/index.less";
+@import "../../style/components/quist-checkbox/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      values: {
+        type: Array,
+        default: []
+      },
+      options: {
+        type: Array,
+        default: []
+      },
+      labelMargin: {
+        type: String,
+        default: '30px'
+      },
+      labelColor: {
+        type: String,
+        default: '#000000'
+      },
+      checkColor: {
+        type: String,
+        default: '#FFFFFF'
+      },
+      checkedColor: {
+        type: String,
+        default: '#2998F9'
+      },
+      checkBorderColor: {
+        type: String,
+        default: '#CACBCC'
+      },
+      checkedBorderColor: {
+        type: String,
+        default: '#2998F9'
+      },
+      isRight: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        replaceHasBorder: true,
+        replaceChecked: [],
+        replaceValues: this.values
+      }
+    },
+    onInit() {
+      this.initialize()
+      this.updateChecked()
+      this.$on('evtCast', this.updateArr)
+    },
+    onReady() {
+      this.$watch('values', 'initialize')
+      this.$watch('replaceValues', 'change')
+      this.$watch('replaceValues', 'updateChecked')
+    },
+    initialize() {
+      this.replaceValues = [...this.values]
+    },
+    clickAction(data) {
+      if (typeof data === 'object') {
+        if (!data.disabled) {
+          this.updateArr(data.value)
+        }
+      }
+      else {
+        this.updateArr(data)
+      }
+    },
+    updateChecked() {
+      for (let i = 0, a = this.options.length; i < a; i++) {
+        this.replaceChecked.splice(i, 1, false)
+        for (let j = 0, b = this.replaceValues.length; j < b; j++) {
+          let val = this.options[i].value || this.options[i]
+          if (b > 0 && val === this.replaceValues[j]) {
+            this.replaceChecked.splice(i, 1, true)
+            break
+          }
+        }
+      }
+    },
+    updateArr(params) {
+      let data = (typeof params === 'object' ? params.detail.params : params)
+      if (this.checkInArr(this.replaceValues, data)) {
+        this.replaceValues.forEach((val, idx) => {
+          if (val === data) {
+            this.replaceValues.splice(idx, 1)
+          }
+        })
+      }
+      else {
+        this.replaceValues.push(data)
+      }
+
+    },
+    checkInArr(arr, data) {
+      let isExist = false
+      for (var i = 0, len = arr.length; i < len; i++) {
+        if (arr[i] === data) {
+          isExist = true
+        }
+      }
+      return isExist
+    },
+    change() {
+      this.$emit('onChange', { values: this.replaceValues })
+    }
+  }
+</script>

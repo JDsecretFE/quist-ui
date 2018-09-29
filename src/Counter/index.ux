@@ -1,0 +1,54 @@
+<import name='quist-counter' src='@quist-ui/quist-counter/index'></import>
+
+<template>
+  <div class="counter-demo">
+    <div class="item-box">
+      <text class="item-txt">默认计数器展示</text>
+      <quist-counter value="{{1}}" @on-change="valueChange"></quist-counter>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">禁止更改计数器展示</text>
+      <quist-counter value="{{10}}" disabled></quist-counter>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">设置最大值的计数器展示(最大值为10)</text>
+      <quist-counter value="{{3}}" max="{{10}}" @on-change="valueChange"></quist-counter>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">设置最小值的计数器展示(最小值为2)</text>
+      <quist-counter value="{{1}}" min="{{2}}" @on-change="valueChange"></quist-counter>
+    </div>
+  <div>
+</template>
+
+<style>
+  .counter-demo {
+    flex: 1;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  .item-box {
+    margin: 20px;
+    padding-bottom: 50px;
+    flex-direction: column;
+  }
+
+  .item-txt {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #666666;
+  }
+</style>
+
+<script>
+  export default {
+    onInit() {
+      this.$page.setTitleBar({ text: 'Counter' })
+    },
+    valueChange(e) {
+      console.log('当前的值是：', e.detail.value)
+    }
+  }
+</script>

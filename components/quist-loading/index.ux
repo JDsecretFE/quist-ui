@@ -1,0 +1,55 @@
+<import name="quist-overlay" src="../quist-overlay/index"></import>
+
+<template>
+<<<<<<< HEAD
+  <div>
+    <div show="{{visible}}">
+      <div class="quist-loading-mask"></div>
+      <div class="quist-loading">
+        <div class="quist-loading-box">
+          <slot></slot>
+          <text class="quist-loading-text" if="tip">{{tip}}</text>
+        </div>
+=======
+  <quist-overlay visible="{{visible}}" background="{{background}}">
+    <div class="quist-loading">
+      <div class="quist-loading-box">
+        <slot></slot>>
+        <text class="quist-loading-text" if="tip">{{tip}}</text>
+>>>>>>> 501a842d56007c8e6fab4dfbff382f8d0cbe2c3c
+      </div>
+    </div>
+  </quist-overlay>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-loading/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      visible: {
+        type: Boolean,
+        default: false
+      },
+      tip: {
+        type: String,
+        default: ''
+      },
+      background: {
+        type: String,
+        default: 'rgba(0, 0, 0, 0)'
+      }
+    },
+    data() {
+      return {
+        className: ''
+      }
+    },
+    onInit() {
+      this.mask ? this.className = 'maskShow' : this.className = 'maskHide'
+    }
+  }
+</script>

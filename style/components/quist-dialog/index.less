@@ -1,0 +1,62 @@
+@dialog-prefix: ~"@{css-prefix}-dialog";
+
+.@{dialog-prefix} {
+	flex-direction: column;
+	padding-top: 40px;
+	width: 80%;
+	background-color: @body-background;
+	border-radius: @border-radius-base;
+
+	&-title {
+		margin-bottom: 30px;
+		font-size: 40px;
+		text-align: center;
+	}
+
+	&-content {
+		flex: 1;
+		padding: 0 60px 30px;
+		justify-content: center;
+		font-size: @font-size-base;
+		align-items: center;
+	}
+
+	&-text {
+		text-align: center;
+		line-height: 40px;
+	}
+
+	&-btns {
+		width: 100%;
+		height: 80px;
+		align-items: center;
+		border-top-color: @btn-default-border;
+		border-top-width: 1px;
+		border-style: solid;
+	}
+
+	.cancel-text {
+		color: @text-color;
+	}
+
+	.ok-text {
+		color: @primary-color;
+	}
+
+	.cancel-btn {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex: 1;
+		border-right-color: @btn-default-border;
+		border-right-width: 1px;
+		border-style: solid;
+	}
+
+	.ok-btn {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		flex: 1;
+	}
+}

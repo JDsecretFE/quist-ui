@@ -1,0 +1,81 @@
+<template>
+	<div>
+		<swiper show="{{show}}" class="quist-swiper {{animationClass}}" indicator="{{showIndicator}}" interval="{{time}}" autoplay="{{isAutoPlay}}" style="indicator-color: {{indicatorColor}}; indicator-selected-color: {{indicatorSelectedColor}}; indicator-size: {{indicatorSize}}; animation-duration: {{animationDuration}}">
+			<div class="quist-swiper-item" for="{{options}}" @click="choose($idx)">
+				<image class="quist-swiper-image" src="{{$item}}" />
+			</div>
+		</swiper>
+	</div>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-swiper/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      visible: {
+        type: Boolean,
+        default: false
+      },
+      showIndicator: {
+        type: Boolean,
+        default: true
+			},
+			isAutoPlay: {
+        type: Boolean,
+        default: false
+			},
+			time: {
+				type: Number,
+        default: 3000
+			},
+      indicatorColor: {
+        type: String,
+        default: 'rgba(0, 0, 0, 0.5)'
+      },
+      indicatorSelectedColor: {
+        type: String,
+        default: '#33b4ff'
+			},
+			indicatorSize: {
+        type: String,
+        default: '20px'
+      },
+      options: {
+        type: Array
+      }
+    },
+    data() {
+      return {
+        show: true,
+        animationClass: '',
+        animationDuration: 600,
+      }
+    },
+    onInit() {
+      this.initialize()
+      this.toggleShow(this.show)
+      this.$watch(`visible`, `initialize`)
+      this.$watch(`show`, 'toggleShow')
+    },
+    initialize() {
+      this.visible ? this.show = true : this.show = false
+    },
+    toggleShow(show) {
+      this.timeoutId && clearTimeout(this.timeoutId)
+      if (show) {
+        this.animationClass = 'lightboxenter'
+      } else {
+        this.animationClass = 'lightboxleave'
+        this.timeoutId = setTimeout(() => {
+        }, this.animationDuration - 100)
+      }
+    },
+    choose(i) {
+      this.$emit('onClick', i)
+    }
+  }
+</script>

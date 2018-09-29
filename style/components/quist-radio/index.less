@@ -1,0 +1,64 @@
+@keyframes open {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes close {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@radio-prefix: ~"@{css-prefix}-radio";
+.@{radio-prefix} {
+  flex-direction: column;
+  background-color: #ffffff;
+  font-size: @font-size-base;
+  &__item {
+    padding: 30px 40px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: @radio-default-border;
+  }
+  &__item--disabled {
+    opacity: .5;
+  }
+  &__item--isRight {
+    justify-content: space-between;
+  }
+  &__name {
+
+  }
+  &__check {
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border-width: 4px;
+    margin-right: 10px;
+  }
+  &__thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+  }
+  &__thumb--open {
+    animation-name: open;
+    animation-duration: 0ms;
+    animation-fill-mode: forwards;
+  }
+  &__thumb--close {
+    animation-name: close;
+    animation-duration: 0ms;
+    animation-fill-mode: forwards;
+  }
+}
+

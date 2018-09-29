@@ -1,0 +1,62 @@
+<import name='quist-switch' src='@quist-ui/quist-switch/index'></import>
+
+<template>
+  <div class="switch-demo">
+    <div class="item-box">
+      <text class="item-txt">选项{{data1}}</text>
+      <quist-switch checked="{{false}}" @on-change="callback1" class-name="quist-switch-demo"></quist-switch>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">选项 {{data3}} - 不可用</text>
+      <quist-switch disabled checked="{{false}}"></quist-switch>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">选项 {{data4}} - 不可用</text>
+      <quist-switch disabled="{{true}}" checked></quist-switch>
+    </div>
+    <div class="item-box">
+        <label class="item-txt" target="isDefault">自定义样式开关</label>
+        <quist-switch checked="{{false}}" id='isDefault' checked-color="red"></quist-switch>
+    </div>
+  </div>
+</template>
+
+<style>
+  .switch-demo {
+    flex: 1;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  .item-box {
+    margin: 20px;
+    padding-bottom: 50px;
+    flex-direction: column;
+  }
+
+  .item-txt {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #666666;
+  }
+</style>
+
+<script>
+  export default {
+    data: {
+      data1: false,
+      data3: false,
+      data4: true
+    },
+    onInit() {
+      this.$page.setTitleBar({ text: 'Switch' })
+    },
+    callback1(data) {
+      this.data1 = data.detail.checked
+    },
+    callback2(data) {
+      this.data2 = data.detail.checked
+    }
+  }
+</script>
