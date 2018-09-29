@@ -1,18 +1,29 @@
 {
   "name": "quist-ui",
+  "title": "Quist-UI",
   "version": "1.0.0",
-  "description": "基于快应用 的多功能、富交互、轻量级的UI 组件库",
+  "description": "基于快应用的多功能、富交互、轻量级的UI 组件库",
   "subversion": {
     "toolkit": "0.0.36"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/JDsecretFE/quist-ui.git"
   },
-  "homepage": "",
+  "author": "secretFE",
+  "homepage": "https://jdsecretfe.github.io/quist-ui/",
   "keywords": [
-    "Quist UI"
+    "Quist-UI",
+    "ui-components",
+    "component",
+    "components",
+    "ui",
+    "快应用",
+    "快应用UI组件库"
   ],
+  "bugs": {
+    "url": "https://github.com/JDsecretFE/quist-ui/issues"
+  },
   "scripts": {
     "server": "hap server",
     "postinstall": "hap postinstall",
