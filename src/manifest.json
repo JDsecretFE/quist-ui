@@ -1,6 +1,6 @@
 {
   "package": "com.quist-ui.demo",
-  "name": "快应用UI组件库",
+  "name": "quist-ui",
   "versionName": "0.0.1",
   "versionCode": "1",
   "minPlatformVersion": "1000",
