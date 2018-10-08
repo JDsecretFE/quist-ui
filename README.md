@@ -42,7 +42,7 @@
 
 请扫码进入微信群，此群可快速及时地解答问题。
 
-![群二维码](http://pfrg4qq0y.bkt.clouddn.com/gt.jpeg)
+![群二维码](http://pfrg4qq0y.bkt.clouddn.com/image1015.jpeg)
 
 ### 开源协议
 
