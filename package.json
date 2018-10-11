@@ -30,7 +30,9 @@
     "debug": "hap debug",
     "build": "hap build",
     "release": "hap release",
-    "watch": "hap watch"
+    "watch": "hap watch",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "license": "MIT",
   "devDependencies": {
@@ -39,6 +41,7 @@
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "cross-env": "^5.1.4",
     "css-what": "^2.1.0",
     "hap-toolkit": "0.0.36",
@@ -50,6 +53,10 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "socket.io": "^2.1.0",
-    "webpack": "^3.11.0"
+    "vuepress": "^0.14.4",
+    "webpack": "^3.12.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
   }
 }
