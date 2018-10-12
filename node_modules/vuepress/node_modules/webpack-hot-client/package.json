@@ -1,0 +1,63 @@
+{
+  "name": "webpack-hot-client",
+  "version": "3.0.0",
+  "description": "A client for enabling, and interacting with, webpack Hot Module Replacement",
+  "license": "MIT",
+  "repository": "webpack-contrib/webpack-hot-client",
+  "author": "Andrew Powell <andrew@shellscape.org>",
+  "homepage": "http://github.com/webpack-contrib/webpack-hot-client",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "beautify": "npm run lint -- --fix",
+    "ci": "npm run lint && npm run test",
+    "cover": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=$WHC_CODECOV_TOKEN",
+    "compile:client": "babel lib/client --out-dir client",
+    "lint": "eslint index.js lib test",
+    "mocha": "mocha test/test.js --full-trace --exit",
+    "prepublishOnly": "npm run compile:client",
+    "test": "npm run compile:client && nyc npm run mocha"
+  },
+  "files": [
+    "client/",
+    "index.js",
+    "lib/HotClientError.js",
+    "lib/util.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
+  "dependencies": {
+    "json-stringify-safe": "^5.0.1",
+    "loglevelnext": "^1.0.2",
+    "strip-ansi": "^4.0.0",
+    "uuid": "^3.1.0",
+    "webpack-log": "^1.1.1",
+    "ws": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.37",
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/polyfill": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "@babel/register": "^7.0.0-beta.37",
+    "ansi-regex": "^3.0.0",
+    "babel-loader": "^8.0.0-beta.0",
+    "codecov": "^3.0.0",
+    "eslint": "^4.6.1",
+    "eslint-config-webpack": "^1.2.5",
+    "eslint-plugin-import": "^2.8.0",
+    "expect": "^22.4.3",
+    "loud-rejection": "^1.6.0",
+    "memory-fs": "^0.4.1",
+    "mocha": "^5.0.0",
+    "nyc": "^11.4.1",
+    "time-fix-plugin": "^2.0.0",
+    "touch": "^3.1.0",
+    "webpack": "^4.0.1"
+  }
+}

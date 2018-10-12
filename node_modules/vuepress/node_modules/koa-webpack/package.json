@@ -1,0 +1,48 @@
+{
+  "name": "koa-webpack",
+  "version": "4.0.0",
+  "description": "Development and Hot Reload Middleware for Koa2",
+  "license": "MIT",
+  "repository": "shellscape/koa-webpack",
+  "author": "Andrew Powell <andrew@shellscape.org>",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "scripts": {
+    "ci": "npm run lint && npm run test",
+    "mocha": "mocha test/test.js --exit",
+    "lint": "eslint index.js test/*.js",
+    "test": "npm run mocha"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "merge-options": "^1.0.0",
+    "webpack-dev-middleware": "^3.0.0",
+    "webpack-hot-client": "^3.0.0",
+    "webpack-log": "^1.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.37",
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/polyfill": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "@babel/register": "^7.0.0-beta.37",
+    "deepmerge": "^2.0.1",
+    "eslint": "^4.1.0",
+    "eslint-config-webpack": "^1.2.5",
+    "eslint-plugin-import": "^2.8.0",
+    "killable": "^1.0.0",
+    "koa": "^2.2.0",
+    "koa-compose": "^4.0.0",
+    "loud-rejection": "^1.6.0",
+    "mocha": "^5.0.1",
+    "server-destroy": "^1.0.1",
+    "supertest": "^3.0.0",
+    "webpack": "^4.0.1",
+    "wtfnode": "^0.6.0"
+  }
+}

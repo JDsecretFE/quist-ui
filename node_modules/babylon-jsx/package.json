@@ -1,0 +1,74 @@
+{
+  "name": "babylon-jsx",
+  "version": "1.0.0",
+  "description": "Transform JSX in a babylon AST to call expressions",
+  "main": "distribution/index.js",
+  "scripts": {
+    "build": "babel source/ -d distribution/",
+    "deps": "dependency-check . && dependency-check . --extra --no-dev",
+    "docs": "documentation readme \"source/index.js\" --section \"API\" --github",
+    "lint": "xo source/**",
+    "pretest": "npm run build && npm run lint && npm run deps",
+    "start": "npm run test -- --watch",
+    "test": "ava test/*.js",
+    "update": "tipi update"
+  },
+  "ava": {
+    "babel": "inherit",
+    "sources": [
+      "source/**/*.js",
+      "test/mocks/**/*.js"
+    ],
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015-node4",
+      "stage-2"
+    ]
+  },
+  "tipi": {
+    "version": "3.0.0",
+    "template": "node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marionebl/babylon-jsx.git"
+  },
+  "keywords": [
+    "babylon",
+    "jsx",
+    "react"
+  ],
+  "author": "Mario Nebl <hello@herebecode.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marionebl/babylon-jsx/issues"
+  },
+  "homepage": "https://github.com/marionebl/babylon-jsx#readme",
+  "devDependencies": {
+    "ava": "0.16.0",
+    "babel-cli": "6.14.0",
+    "babel-generator": "6.14.0",
+    "babel-polyfill": "6.13.0",
+    "babel-preset-es2015-node4": "2.1.0",
+    "babel-preset-stage-2": "6.13.0",
+    "babel-register": "6.14.0",
+    "babylon": "6.11.2",
+    "dependency-check": "2.6.0",
+    "documentation": "4.0.0-beta10",
+    "globby": "6.0.0",
+    "mz": "2.4.0",
+    "tipi-cli": "3.0.0",
+    "unexpected": "10.18.1",
+    "xo": "0.16.0"
+  },
+  "dependencies": {
+    "babel-traverse": "6.15.0",
+    "babel-types": "6.15.0",
+    "esutils": "2.0.2"
+  }
+}
