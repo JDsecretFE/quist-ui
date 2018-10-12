@@ -11,6 +11,6 @@ cd docs/.vuepress/dist
 
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:jdsecretfe/quist-ui.git master:gh-pages
+git push -f git@github.com:JDsecretFE/quist-ui.git master:gh-pages
 
 cd -
