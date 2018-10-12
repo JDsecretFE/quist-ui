@@ -9,8 +9,9 @@ npm run docs:build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
+git pull https://github.com/JDsecretFE/quist-ui.git master
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:JDsecretFE/quist-ui.git master
+git push -f https://github.com/JDsecretFE/quist-ui.git master
 
 cd -
