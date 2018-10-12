@@ -3,7 +3,7 @@ module.exports = {
 	title: 'Quist-UI',
 	description: '快应用UI组件库，简洁，易用，高效',
 	head: [
-		['link', { rel: 'icon', href: '/favicon.ico' }]
+		['link', { rel: 'icon', href: 'favicon.ico' }]
 	],
 	themeConfig: {
 		displayAllHeaders: true,
