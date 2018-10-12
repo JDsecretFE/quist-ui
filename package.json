@@ -32,7 +32,8 @@
     "release": "hap release",
     "watch": "hap watch",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "license": "MIT",
   "devDependencies": {

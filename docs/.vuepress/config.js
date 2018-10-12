@@ -1,5 +1,5 @@
 module.exports = {
-	base: 'quist-ui',
+	base: '/quist-ui/',
 	title: 'Quist-UI',
 	description: '快应用UI组件库，简洁，易用，高效',
 	head: [
