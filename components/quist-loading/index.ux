@@ -4,7 +4,7 @@
   <quist-overlay visible="{{visible}}" background="{{background}}">
     <div class="quist-loading">
       <div class="quist-loading-box">
-        <slot></slot>>
+        <slot></slot>
         <text class="quist-loading-text" if="tip">{{tip}}</text>
       </div>
     </div>
