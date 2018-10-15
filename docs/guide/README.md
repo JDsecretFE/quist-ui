@@ -13,7 +13,7 @@
 5. Done~
 
 <b>PS:</b>如果是在已有项目安装，请按如下代码配置webpack
-```
+```js{4}
 var path = require('path')
 module.exports = {
   postHook: function(webpackConf, options){
