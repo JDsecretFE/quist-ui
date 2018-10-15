@@ -1,7 +1,7 @@
 {
   "name": "quist-ui",
   "title": "Quist-UI",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "基于快应用的多功能、富交互、轻量级的UI 组件库",
   "subversion": {
     "toolkit": "0.0.36"
@@ -52,10 +52,12 @@
     "koa-router": "^7.2.1",
     "koa-send": "^4.1.1",
     "koa-static": "^4.0.1",
-    "less": "^3.8.1",
-    "less-loader": "^4.1.0",
     "socket.io": "^2.1.0",
     "vuepress": "^0.14.4",
     "webpack": "^3.12.0"
+  },
+  "dependencies": {
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0"
   }
 }
