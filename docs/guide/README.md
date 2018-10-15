@@ -16,6 +16,6 @@
 
 请扫码进入微信群，此群可快速及时地解答问题。
 
-![群二维码](http://pfrg4qq0y.bkt.clouddn.com/image1015.jpeg)
+![群二维码](http://pfrg4qq0y.bkt.clouddn.com/image-1539569420758-V2VjaGF0SU1HMS5qcGVn.jpeg)
 
 
