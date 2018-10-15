@@ -8,7 +8,7 @@
 
 ![](http://pfrg4qq0y.bkt.clouddn.com/5baf2aa4N0ccc8797.png)
 
-#### 本地体验
+### 本地体验
 
 1. Clone Quist-UI 仓库到本地
 2. 安装依赖 `$ npm install`
@@ -16,6 +16,17 @@
 4. 在 quist-ui 根目录下执行 `$ npm run server`
 5. Done~
 
+<b>PS:</b>如果是在已有项目安装，请按如下代码配置webpack
+```
+var path = require('path')
+module.exports = {
+  postHook: function(webpackConf, options){
+    webpackConf.resolve.alias = {
+      '@quist-ui': path.join(process.cwd(), 'components')
+    }
+  }
+}
+```
 ### 文档
 
 - [Quist-UI 组件库文档](https://jdsecretfe.github.io/quist-ui)
@@ -54,3 +65,7 @@
 #### v1.0.0（2018.09.30）
 
 - 初始版本
+
+#### v1.0.2（2018.10.15）
+
+- 解决loading组件的bug

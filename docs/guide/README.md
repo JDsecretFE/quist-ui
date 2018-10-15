@@ -12,6 +12,18 @@
 4. 在 quist-ui 根目录下执行 `$ npm run server`
 5. Done~
 
+<b>PS:</b>如果是在已有项目安装，请按如下代码配置webpack
+```
+var path = require('path')
+module.exports = {
+  postHook: function(webpackConf, options){
+    webpackConf.resolve.alias = {
+      '@quist-ui': path.join(process.cwd(), 'components')
+    }
+  }
+}
+```
+
 ### 反馈沟通
 
 请扫码进入微信群，此群可快速及时地解答问题。
