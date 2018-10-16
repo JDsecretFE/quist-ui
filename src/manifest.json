@@ -66,6 +66,9 @@
       },
       "Loading": {
         "component": "index"
+      },
+      "Badge": {
+        "component": "index"
       }
     }
   },

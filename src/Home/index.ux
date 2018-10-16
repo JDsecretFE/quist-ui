@@ -26,7 +26,11 @@
         <div class="item-li" onclick="detail('Input')">
             <text class="item-li-detail">input <span class="item-name">输入框</span></text>
             <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-          </div>
+        </div>
+        <div class="item-li" onclick="detail('Badge')">
+          <text class="item-li-detail">badge <span class="item-name">徽标</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+        </div>
       </div>
     </div>
 

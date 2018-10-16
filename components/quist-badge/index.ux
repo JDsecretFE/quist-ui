@@ -1,0 +1,32 @@
+<template>
+  <div class="quist-badge {{className}}">
+    <slot></slot>
+    <span class="quist-badge__sup quist-badge__sup--fixed">12</span>
+  </div>
+</template>
+
+<style lang="less">
+@import "../../style/index.less";
+@import "../../style/components/quist-badge/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      max: Number,
+      value: String,
+      isDot: {
+        type: Boolean,
+        default: false
+      },
+      hidden: {
+        type: Boolean,
+        default: false
+      }
+    },
+    private: {
+      className: '',
+      blockClassName: ''
+    }
+  }
+</script>
