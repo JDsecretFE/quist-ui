@@ -16,7 +16,7 @@
 4. 在 quist-ui 根目录下执行 `$ npm run server`
 5. Done~
 
-<b>PS:</b>如果是在已有项目安装，请按如下代码配置webpack
+> 如果是在已有项目安装，请按如下代码配置webpack
 ```
 var path = require('path')
 module.exports = {
