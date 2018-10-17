@@ -4,7 +4,7 @@
     <div class="quist-city-picker__layout"><text>北京</text></div>
     <div class="quist-city-picker__hot quist-city-picker__label"><text>热门城市</text></div>
     <div class="quist-city-picker__wrapper">
-      <block for="(index, item) in hotCity">
+      <block for="(index, item) in hotCity" if="hotCity.length > 0">
         <div class="quist-city-picker__item" @click="onClick(item)"><text>{{item.name}}</text></div>
       </block>
     </div>
@@ -39,8 +39,8 @@
     onInit() {
       console.error('dataSource', this.dataSource)
     },
-    onClick(data) {
-      console.error('data', data)
+    onClick(value) {
+      this.$emit('onClick', { value })
     }
   }
 </script>

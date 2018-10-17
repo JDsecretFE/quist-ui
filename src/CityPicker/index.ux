@@ -2,7 +2,7 @@
 
 <template>
   <div class="badge-demo">
-    <quist-cityPicker data-source="{{dataSource}}" hot-city="{{hotCity}}"></quist-cityPicker>
+    <quist-cityPicker data-source="{{dataSource}}" hot-city="{{hotCity}}" @on-click="onClick"></quist-cityPicker>
   </div>
 </template>
 
@@ -42,9 +42,12 @@
         name: '青岛',
         code: 370200
       }, {
-        name: '上海',
+        name: '锡林浩特',
         code: 310000
       }]
+    },
+    onClick(data) {
+      console.error('data', data.detail);
     }
   }
 </script>
