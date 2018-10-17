@@ -27,8 +27,8 @@
             <text class="item-li-detail">input <span class="item-name">输入框</span></text>
             <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
-        <div class="item-li" onclick="detail('Badge')">
-          <text class="item-li-detail">badge <span class="item-name">徽标</span></text>
+        <div class="item-li" onclick="detail('CityPicker')">
+          <text class="item-li-detail">cityPicker <span class="item-name">城市选择器</span></text>
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
       </div>

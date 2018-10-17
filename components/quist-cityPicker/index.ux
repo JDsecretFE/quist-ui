@@ -1,0 +1,30 @@
+<template>
+  <div class="quist-city-picker">
+    <text>当前定位城市</text>
+    <div></div>
+    <text>热门城市</text>
+    <div></div>
+    <block for="(index, item) in data">
+        <text>{{item.letter}}</text>
+        <div for="(idx, cityItem) in data.city">
+          <text>{{cityItem.name}}</text>
+        </div>
+    </block>
+  </div>
+</template>
+
+<style lang="less">
+@import "../../style/index.less";
+@import "../../style/components/quist-cityPicker/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      data: {
+        type: Array,
+        default: []
+      }
+    }
+  }
+</script>
