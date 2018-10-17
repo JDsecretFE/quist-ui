@@ -1,15 +1,21 @@
 <template>
   <div class="quist-city-picker">
-    <text>当前定位城市</text>
-    <div></div>
-    <text>热门城市</text>
-    <div></div>
-    <block for="(index, item) in data">
-        <text>{{item.letter}}</text>
-        <div for="(idx, cityItem) in data.city">
-          <text>{{cityItem.name}}</text>
-        </div>
-    </block>
+    <div class="quist-city-picker__current quist-city-picker__label"><text>当前定位城市</text></div>
+    <div class="quist-city-picker__layout"><text>北京</text></div>
+    <div class="quist-city-picker__hot quist-city-picker__label"><text>热门城市</text></div>
+    <div class="quist-city-picker__wrapper">
+      <block for="(index, item) in hotCity">
+        <div class="quist-city-picker__item" @click="onClick(item)"><text>{{item.name}}</text></div>
+      </block>
+    </div>
+    <div class="quist-city-picker__list">
+      <block for="(index, item) in dataSource">
+          <div class="quist-city-picker__letter quist-city-picker__label"><text>{{item.letter}}</text></div>
+          <block for="(idx, cityItem) in item.cities">
+            <div class="quist-city-picker__name quist-city-picker__layout {{(idx === item.cities.length - 1) ? '' : 'quist-city-picker__border'}}" @click="onClick(cityItem)"><text>{{cityItem.cityName}}</text></div>
+          </block>
+      </block>
+    </div>
   </div>
 </template>
 
@@ -21,10 +27,20 @@
 <script>
   export default {
     props: {
-      data: {
+      dataSource: {
+        type: Array,
+        default: []
+      },
+      hotCity: {
         type: Array,
         default: []
       }
+    },
+    onInit() {
+      console.error('dataSource', this.dataSource)
+    },
+    onClick(data) {
+      console.error('data', data)
     }
   }
 </script>

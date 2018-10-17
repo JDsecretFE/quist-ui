@@ -1,4 +1,51 @@
 @city-picker-prefix: ~"@{css-prefix}-city-picker";
+@height: 100px;
 
 .@{city-picker-prefix} {
+  flex: 1;
+  flex-direction: column;
+  &__current {
+  }
+  &__hot {
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: @height;
+    line-height: @height;
+    padding: 20px;
+  }
+  &__item {
+    padding: 0 40px;
+    margin-right: 20px;
+    background-color: @city-picker-default-bg;
+    border-radius: 50px;
+  }
+  &__list {
+    flex: 1;
+    flex-direction: column;
+  }
+  &__letter {
+  }
+  &__name {
+  }
+  &__layout {
+    height: @height;
+    line-height: @height;
+    margin-left: 20px;
+  }
+  &__label {
+    height: @height;
+    line-height: @height;
+    padding-left: 20px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: @city-picker-default-border;
+    background-color: @city-picker-default-bg;
+  }
+  &__border {
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: @city-picker-default-border;
+  }
 }

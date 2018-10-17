@@ -2,7 +2,7 @@
 
 <template>
   <div class="badge-demo">
-    <quist-cityPicker data="{{dataSource}}"></quist-cityPicker>
+    <quist-cityPicker data-source="{{dataSource}}" hot-city="{{hotCity}}"></quist-cityPicker>
   </div>
 </template>
 
@@ -31,10 +31,20 @@
   import { city } from './data'
   export default {
     data: {
-      dataSource: city
-    },
-    onInit() {
-      this.$page.setTitleBar({ text: 'CityPicker' })
+      dataSource: city,
+      hotCity: [{
+        name: '北京',
+        code: 110000
+      }, {
+        name: '天津',
+        code: 120000
+      }, {
+        name: '青岛',
+        code: 370200
+      }, {
+        name: '上海',
+        code: 310000
+      }]
     }
   }
 </script>

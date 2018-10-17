@@ -1,4 +1,4 @@
-const city = [{
+export const city = [{
     "letter": "A",
     "cities": [{
       "cityCode": 210300,
