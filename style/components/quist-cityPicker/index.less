@@ -4,10 +4,6 @@
 .@{city-picker-prefix} {
   flex: 1;
   flex-direction: column;
-  &__current {
-  }
-  &__hot {
-  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -25,14 +21,13 @@
     flex: 1;
     flex-direction: column;
   }
-  &__letter {
-  }
-  &__name {
-  }
   &__layout {
     height: @height;
     line-height: @height;
     margin-left: 20px;
+  }
+  &__name {
+    margin-right: 40px;
   }
   &__label {
     height: @height;
@@ -47,5 +42,21 @@
     border-bottom-width: 1px;
     border-style: solid;
     border-bottom-color: @city-picker-default-border;
+  }
+  &__nav {
+    position: fixed;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: @zIndex1000;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  &__mark {
+    line-height: 60px;
+    color: @city-picker-default-nav-color;
+    justify-content: center;
   }
 }
