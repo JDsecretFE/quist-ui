@@ -1,36 +1,27 @@
 <template>
-  <stack  class="quist-city-picker">
-    <list id='quist-city-picker'>
-      <block>
-          <list-item type="top" class="quist-city-picker__label"><text>当前定位城市</text></list-item>
-          <list-item type="prodcut" class="quist-city-picker__layout"><text>北京</text></list-item>
-          <list-item type="prodcut" class="quist-city-picker__label">
-            <text>热门城市</text>
-          </list-item>
-          <list-item type="prodcut" class="quist-city-picker__wrapper">
-            <block for="(index, item) in hotCity" if="hotCity.length > 0">
-              <div class="quist-city-picker__item" @click="onClick(item)"><text>{{item.name}}</text></div>
-            </block>
-          </list-item>
-      </block>
+  <div  class="quist-city-picker">
+    <list id="quist-city-picker">
+      <list-item type="product" class="quist-city-picker__label"><text>当前定位城市</text></list-item>
+      <list-item type="product" class="quist-city-picker__layout"><text>北京</text></list-item>
+      <list-item type="product" class="quist-city-picker__label"><text>热门城市</text></list-item>
+      <list-item type="hot" class="quist-city-picker__wrapper">
+        <block for="(index, item) in hotCity" if="hotCity.length > 0">
+          <div class="quist-city-picker__item" @click="onClick(item)"><text>{{item.name}}</text></div>
+        </block>
+      </list-item>
       <block for="(index, item) in dataSource">
-          <list-item type="ceiling" class="quist-city-picker__label" ondisappear="showMask(item.letter)" onappear="hideMask"><text>{{item.letter}}</text></list-item>
-          <list-item for="(idx, cityItem) in item.cities" type="common" class="quist-city-picker__layout {{(idx === item.cities.length - 1) ? '' : 'quist-city-picker__border'}}" @click="onClick(cityItem)">
-              <div class="quist-city-picker__name"><text>{{cityItem.cityName}}</text></div>
+          <list-item type="letter" class="quist-city-picker__label"><text>{{item.letter}}</text></list-item>
+          <list-item for="(idx, cityItem) in item.cities" type="city" class="quist-city-picker__layout {{(idx === item.cities.length - 1) ? '' : 'quist-city-picker__border'}}" @click="onClick(cityItem)">
+            <div class="quist-city-picker__name"><text>{{cityItem.cityName}}</text></div>
           </list-item>
       </block>
     </list>
     <div class="quist-city-picker__nav">
-      <div for="(index, item) in dataSource" class="quist-city-picker__mark"  @click="onSelect(index)">
+      <div for="(index, item) in dataSource" class="quist-city-picker__mark"  @click="onSelect(index, item)">
           <text>{{item.letter}}</text>
       </div>
     </div>
-    <div show="{{maskShow}}">
-        <div class="quist-city-picker__label">
-          <text>{{letter}}</text>
-        </div>
-      </div>
-  </stack>
+  </div>
 </template>
 
 <style lang="less">
@@ -50,33 +41,22 @@
         default: []
       }
     },
-    data: {
-      maskShow: false,
-      appearCount: 0,
-      letter: ''
-    },
-    onInit() {
-      console.error('dataSource', this.dataSource)
-    },
     onClick(value) {
       this.$emit('onClick', { value })
     },
-    onSelect(index) {
-      this.$element('quist-city-picker').scrollTo({
-        index: 5 + 2 * index
-      })
-    },
-    showMask (letter) {
-      this.maskShow = false;
-      this.letter = letter;
-    },
-    hideMask () {
-      if (this.appearCount) {
-        this.maskShow = false
-      } else {
-        ++this.appearCount
+    onSelect(index, select) {
+      let num = 0;
+      for(let i = 0, len = this.dataSource.length; i < len; i++) {
+        let cur = this.dataSource[i];
+        if (select.letter !== cur.letter) {
+          num += cur.cities.length + 1;
+        } else {
+          break;
+        }
       }
-      this.letter = '';
+      this.$element('quist-city-picker').scrollTo({
+        index: 4 + num
+      })
     }
   }
 </script>

@@ -2,20 +2,21 @@
 @height: 100px;
 
 .@{city-picker-prefix} {
-  flex: 1;
   flex-direction: column;
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
-    height: @height;
     line-height: @height;
     padding: 20px;
+    padding-bottom: 0;
   }
   &__item {
     padding: 0 40px;
     margin-right: 20px;
     background-color: @city-picker-default-bg;
     border-radius: 50px;
+    margin-bottom: 20px;
+    height: 64px;
   }
   &__list {
     flex: 1;
@@ -45,7 +46,7 @@
   }
   &__nav {
     position: fixed;
-    right: 10px;
+    right: 20px;
     top: 0;
     bottom: 0;
     width: 40px;
@@ -55,8 +56,15 @@
     margin-right: 20px;
   }
   &__mark {
-    line-height: 60px;
     color: @city-picker-default-nav-color;
+    padding: 5px 0;
     justify-content: center;
+  }
+  &__modal {
+    position: fixed;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    z-index: @zIndex1000;
   }
 }

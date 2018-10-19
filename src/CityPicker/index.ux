@@ -44,10 +44,13 @@
       }, {
         name: '锡林浩特',
         code: 310000
+      }, {
+        name: '呼伦贝尔',
+        code: 310000
       }]
     },
     onClick(data) {
-      console.error('data', data.detail);
+      console.log('data', data.detail);
     }
   }
 </script>
