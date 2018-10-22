@@ -66,6 +66,9 @@
       },
       "Loading": {
         "component": "index"
+      },
+      "Picker": {
+        "component": "index"
       }
     }
   },

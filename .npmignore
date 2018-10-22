@@ -3,13 +3,13 @@ build
 config
 dist
 docs
-gui
+deploy.sh
 sign
 src
 .babelrc
 .editorconfig
 .eslintrc.json
 .gitignore
-.nojekyll
 index.html
+package-lock.json
 npm-debug.log

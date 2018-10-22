@@ -45,6 +45,10 @@
           <text class="item-li-detail">swiper <span class="item-name">轮播图</span></text>
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp"/>
         </div>
+        <div class="item-li" @click="detail('Picker')">
+          <text class="item-li-detail">picker <span class="item-name">选择器</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp"/>
+        </div>
     </div>
 
     <div class="item-container">
