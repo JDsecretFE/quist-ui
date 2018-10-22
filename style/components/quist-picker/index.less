@@ -1,0 +1,99 @@
+@picker-prefix: ~"@{css-prefix}-picker";
+
+.pickerenter {
+	animation-name: pickerenter;
+  animation-duration: 400;
+  animation-timing-function: ease-in;
+}
+
+.pickerleave {
+	animation-name: pickerleave;
+  animation-duration: 300;
+  animation-timing-function: ease-in;
+}
+
+@keyframes pickerenter {
+	0% {
+		height: 0;
+		transform: translateY(100%);
+	}
+
+	100% {
+		height: 100%;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pickerleave {
+	0% {
+		height: 100%;
+		transform: translateY(0);
+	}
+
+	100% {
+		height: 0;
+		transform: translateY(100%);
+	}
+}
+
+.@{picker-prefix} {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 700px;
+	animation-fill-mode: forwards;
+	background-color: #ffffff;
+	flex-direction: column;
+
+	&-title {
+		width: 100%;
+    height: 132px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fbf9fe;
+    border-color: #C7C7C7;
+    border-style: solid;
+    border-bottom-width: 1px;
+	}
+
+	&-cancel {
+    padding: 36px;
+    font-size: 36px;
+    color: #828282;
+  }
+
+  &-confirm {
+    padding: 36px;
+    font-size: 36px;
+    color: @primary-color;
+  }
+
+  &-content {
+  }
+
+  &-ul {
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-li {
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .li-text {
+    font-size: 28px;
+  }
+
+  .selected {
+    color: @primary-color;
+  }
+
+}
