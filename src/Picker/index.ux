@@ -1,0 +1,126 @@
+<import name="quist-picker" src="@quist-ui/quist-picker/index"></import>
+
+<template>
+  <div class="picker-demo">
+    <div class="item-container">
+      <text class="item-title">选择一列</text>
+      <div class="item-content">
+        <div class="item-li" onclick="showpicker(1)">
+          <text class="item-li-detail">手机类型 <span class="item-name"></span></text>
+          <div class="select-area">
+            <text>{{selectTxt1}}</text>
+            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
+      <text class="item-title">选择两列</text>
+      <div class="item-content">
+        <div class="item-li" onclick="showpicker(2)">
+          <text class="item-li-detail">详细机型 <span class="item-name"></span></text>
+          <div class="select-area">
+            <text for="{{selectTxt2}}" class="select-txt">{{$item.content}}</text>
+            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <quist-picker visible="{{pickerVisible1}}" @on-close="close(1)" list="{{list1}}" @on-select="select1()"></quist-picker>
+    <quist-picker visible="{{pickerVisible2}}" @on-close="close(2)" list="{{list2}}" @on-select="select2()"></quist-picker>
+  </div>
+</template>
+
+<style>
+  .picker-demo {
+    flex-direction: column;
+  }
+
+  .item-container {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .item-title {
+    margin: 30px;
+    color: #888888;
+    font-size: 32px;
+  }
+
+  .item-content {
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  .item-li {
+    flex-direction: row;
+    border-color: #d9d9d9;
+    border-bottom-width: 1px;
+    align-items: center;
+  }
+
+  .item-li-detail {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #000000;
+    flex: 1;
+    font-size: 28px;
+    margin-left: 30px;
+  }
+
+  .item_arrow_img {
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+    resize-mode: contain;
+  }
+
+  .select-area {
+    align-items: center;
+  }
+
+  .select-txt {
+    padding-left: 10px;
+  }
+
+  .item-name {
+    color: #314659;
+  }
+</style>
+
+<script>
+  export default {
+    private: {
+      pickerVisible1: false,
+      pickerVisible2: false,
+      selectTxt1: '',
+      selectTxt2: [],
+      value2: [],
+      list1: ['iphone', '华为', '小米', '三星', '魅族', '锤子', 'oppo'],
+      list2: [
+        ['iphone', '华为', '小米', '三星', '魅族', '锤子', 'oppo'],
+        ['iphone6', 'iphone6S', 'iphone6PLUS', 'iphone7', 'iphone7PLUS', 'iphoneX', 'iphoneXS']
+      ]
+    },
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Picker'
+      })
+    },
+    showpicker(i) {
+      this[`pickerVisible${i}`] = true
+    },
+    close(i) {
+      this[`pickerVisible${i}`] = false
+    },
+    select1(e) {
+      console.log(e.detail.content, e.detail.arr, e.detail.index)
+      this.selectTxt1 = e.detail.content
+    },
+    select2(e) {
+      console.log('两列所选的值：', e.detail)
+      this.selectTxt2 = e.detail
+    }
+  }
+</script>
