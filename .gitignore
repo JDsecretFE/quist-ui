@@ -5,3 +5,4 @@ npm-debug.log
 .history
 .DS_Store
 .idea
+.vscode
