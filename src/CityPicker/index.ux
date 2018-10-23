@@ -1,0 +1,41 @@
+<import name='quist-cityPicker' src='@quist-ui/quist-cityPicker/index'></import>
+
+<template>
+  <div class="badge-demo">
+    <quist-cityPicker data-source="{{dataSource}}" hot-city="{{hotCity}}" @on-click="onClick"></quist-cityPicker>
+  </div>
+</template>
+
+<style>
+  .badge-demo {
+    flex: 1;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  .item-box {
+    margin: 20px;
+    padding-bottom: 50px;
+    flex-direction: column;
+  }
+
+  .item-txt {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #666666;
+  }
+</style>
+
+<script>
+  import { city, hotCity } from './data'
+  export default {
+    data: {
+      dataSource: city,
+      hotCity
+    },
+    onClick(data) {
+      console.log('data', data.detail);
+    }
+  }
+</script>

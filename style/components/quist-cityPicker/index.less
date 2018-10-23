@@ -1,0 +1,76 @@
+@city-picker-prefix: ~"@{css-prefix}-city-picker";
+@height: 100px;
+
+.@{city-picker-prefix} {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  &__content {
+    width: 750px;
+    flex-grow: 1;
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: @height;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+  &__item {
+    padding: 0 40px;
+    margin-right: 20px;
+    background-color: @city-picker-default-bg;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    height: 64px;
+  }
+  &__list {
+    flex: 1;
+    flex-direction: column;
+  }
+  &__layout {
+    height: @height;
+    line-height: @height;
+    margin-left: 20px;
+  }
+  &__name {
+    margin-right: 40px;
+  }
+  &__label {
+    height: @height;
+    line-height: @height;
+    padding-left: 20px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: @city-picker-default-border;
+    background-color: @city-picker-default-bg;
+  }
+  &__border {
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-bottom-color: @city-picker-default-border;
+  }
+  &__nav {
+    position: fixed;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: @zIndex1000;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  &__mark {
+    color: @city-picker-default-nav-color;
+    padding: 5px 0;
+    justify-content: center;
+  }
+  &__modal {
+    position: fixed;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    z-index: @zIndex1000;
+  }
+}

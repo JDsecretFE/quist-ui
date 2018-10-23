@@ -47,6 +47,7 @@
     "cross-env": "^5.1.4",
     "css-what": "^2.1.0",
     "hap-toolkit": "0.0.36",
+    "js-yaml": "^3.12.0",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",
     "koa-router": "^7.2.1",
