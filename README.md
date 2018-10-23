@@ -69,3 +69,6 @@ module.exports = {
 #### v1.0.2（2018.10.15）
 
 - 解决loading组件的bug
+
+#### v1.0.5 (2018.10.23)
+- 添加`CityPicker`组件
