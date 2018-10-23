@@ -8,7 +8,7 @@
         <text class="quist-picker-confirm" @click="confirmClick">{{okText}}</text>
       </div>
       <div class="quist-picker-content">
-        <list class="quist-picker-ul" for="(idx, res) in doubleList" id="list{{idx}}">
+        <list class="quist-picker-ul" for="(idx, res) in doubleList">
           <list-item class="quist-picker-li" type="listitem" for="(i, r) in res" @click="selectLi(idx, i, r)">
             <text class="li-text {{select[idx] === i ? 'selected':''}}">{{r}}</text>
           </list-item>
@@ -53,7 +53,6 @@
         animationClass: '',
         select: {}, //点击的是数组里的哪一个元素
         selectValue: {},
-        selectArr: [],
         doubleList: [[]]
       }
     },
@@ -94,12 +93,7 @@
     },
     confirmClick() {
       this.$emit('onClose')
-      if (this.doubleList.length === 1) {
-        this.$emit('onSelect', this.selectValue)
-      } else if (this.doubleList.length === this.selectArr.length) {
-        console.error('传过去的值', this.selectArr)
-        this.$emit('onSelect', this.selectArr)
-      }
+      this.$emit('onSelect', this.selectValue)
     },
     selectLi(idx, i, cnt) {
       this.select = Object.assign({}, this.select, {
@@ -112,7 +106,6 @@
           content: cnt
         }
       })
-      this.selectArr.push(this.selectValue)
     }
   }
 </script>

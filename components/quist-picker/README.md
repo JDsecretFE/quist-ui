@@ -1,6 +1,6 @@
-# Drawer
+# Picker
 
-> 抽屉从父窗体边缘滑入，覆盖住部分父窗体内容。用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到到原任务。
+> 单列选择，多列选择。
 
 
 ## 安装
@@ -11,64 +11,40 @@ $ npm install quist-ui -g
 
 ## 引入
 ```ux
-<import name="quist-drawer" src="@quist-ui/quist-drawer/index"></import>
+<import name="quist-picker" src="@quist-ui/quist-picker/index"></import>
 ```
 
 ## 例子
 
-#### 底部弹出
+#### 单列、多列选择
 
 ```ux
-<quist-drawer @on-close="close" placement="bottom">
-  <div class="mask">
-    <text class="mask-cnt">hello qucikapp</text>
-  </div>
-</quist-drawer>
+<quist-picker visible="{{pickerVisible}}" @on-close="close()" list="{{list}}" @on-select="select()" ok-text="ok" cancel-text="cancel"></quist-picker>
 ```
 
-#### 顶部弹出
+#### 点击蒙层不关闭当前组件
 
 ```ux
-<quist-drawer @on-close="close" placement="top">
-  <div class="mask">
-    <text class="mask-cnt">hello qucikapp</text>
-  </div>
-</quist-drawer>
+<quist-picker visible="{{pickerVisible}}" @on-close="close()" list="{{list}}" @on-select="select()" mask-closable="{{false}}"></quist-picker>
 ```
 
-#### 左侧弹出
 
-```ux
-<quist-drawer @on-close="close" placement="left">
-  <div class="mask2">
-    <text class="mask-cnt">hello qucikapp</text>
-  </div>
-</quist-drawer>
-```
-
-#### 右侧弹出
-
-```ux
-<quist-drawer @on-close="close" placement="right">
-  <div class="mask2">
-    <text class="mask-cnt">hello qucikapp</text>
-  </div>
-</quist-drawer>
-```
-
-更详细代码可以参考 [quist-drawer demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Drawer/index.ux)
+更详细代码可以参考 [quist-picker demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Picker/index.ux)
 
 ## API 
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | maskClosable | 点击蒙层是否允许关闭 | `Boolean` | true |
-| visible | Drawer 是否可见 | `Boolean` | false |
-| placement | 抽屉的方向，可选值为 `bottom` `top` `left` `right` | `String` | bottom |
-| on-close | 点击蒙层的回调 | `Function` | - |
+| visible | Picker 是否可见 | `Boolean` | false |
+| okText | 确定按钮文字 | `String` | 确定 |
+| cancelText | 取消按钮文字 | `String` | 取消 |
+| list | 传入的数据，如需要多列显示请传入一个二维数组 | `Array` | - |
+| on-close | 点击取消的回调 | `Function` | - |
+| on-select | 点击确定的回调 | `Function` | - |
 
 
 ## 更新日志
 
-v1.0.0（2018-09-30）
-> 初始版本
+#### v1.0.5（2018-10-23)  
+* 新增 `Picker` 组件

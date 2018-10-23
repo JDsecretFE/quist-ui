@@ -20,14 +20,27 @@
         <div class="item-li" onclick="showpicker(2)">
           <text class="item-li-detail">详细机型 <span class="item-name"></span></text>
           <div class="select-area">
-            <text for="{{selectTxt2}}" class="select-txt">{{$item.content}}</text>
+            <text>{{selectTxt2}}</text>
             <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
           </div>
         </div>
       </div>
     </div>
-    <quist-picker visible="{{pickerVisible1}}" @on-close="close(1)" list="{{list1}}" @on-select="select1()"></quist-picker>
+    <div class="item-container">
+      <text class="item-title">选择三列</text>
+      <div class="item-content">
+        <div class="item-li" onclick="showpicker(3)">
+          <text class="item-li-detail">年月日 <span class="item-name"></span></text>
+          <div class="select-area">
+            <text>{{selectTxt3}}</text>
+            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <quist-picker visible="{{pickerVisible1}}" @on-close="close(1)" list="{{list1}}" @on-select="select1()" mask-closable="{{false}}" ok-text="ok" cancel-text="cancel"></quist-picker>
     <quist-picker visible="{{pickerVisible2}}" @on-close="close(2)" list="{{list2}}" @on-select="select2()"></quist-picker>
+    <quist-picker visible="{{pickerVisible3}}" @on-close="close(3)" list="{{list3}}" @on-select="select3()"></quist-picker>
   </div>
 </template>
 
@@ -80,10 +93,6 @@
     align-items: center;
   }
 
-  .select-txt {
-    padding-left: 10px;
-  }
-
   .item-name {
     color: #314659;
   }
@@ -94,13 +103,19 @@
     private: {
       pickerVisible1: false,
       pickerVisible2: false,
+      pickerVisible3: false,
       selectTxt1: '',
-      selectTxt2: [],
-      value2: [],
+      selectTxt2: '',
+      selectTxt3: '',
       list1: ['iphone', '华为', '小米', '三星', '魅族', '锤子', 'oppo'],
       list2: [
         ['iphone', '华为', '小米', '三星', '魅族', '锤子', 'oppo'],
         ['iphone6', 'iphone6S', 'iphone6PLUS', 'iphone7', 'iphone7PLUS', 'iphoneX', 'iphoneXS']
+      ],
+      list3: [
+        ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+        ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+        ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
       ]
     },
     onInit() {
@@ -115,12 +130,17 @@
       this[`pickerVisible${i}`] = false
     },
     select1(e) {
-      console.log(e.detail.content, e.detail.arr, e.detail.index)
-      this.selectTxt1 = e.detail.content
+      console.log('一列所选的值：', e.detail[0])
+      console.log(e.detail[0].content, e.detail[0].arr, e.detail[0].index)
+      this.selectTxt1 = e.detail[0].content
     },
     select2(e) {
-      console.log('两列所选的值：', e.detail)
-      this.selectTxt2 = e.detail
+      console.log('两列所选的值：', e.detail[0], e.detail[1])
+      this.selectTxt2 = e.detail[0].content + ' ' + e.detail[1].content
+    },
+    select3(e) {
+      console.log('三列所选的值：', e.detail[0], e.detail[1], e.detail[2])
+      this.selectTxt3 = e.detail[0].content + ' ' + e.detail[1].content + ' ' + e.detail[2].content
     }
   }
 </script>
