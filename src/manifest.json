@@ -5,8 +5,7 @@
   "versionCode": "1",
   "minPlatformVersion": "1000",
   "icon": "/Common/quist-logo.png",
-  "features": [
-    {
+  "features": [{
       "name": "system.prompt"
     },
     {
@@ -19,11 +18,9 @@
       "name": "system.device"
     }
   ],
-  "permissions": [
-    {
-      "origin": "*"
-    }
-  ],
+  "permissions": [{
+    "origin": "*"
+  }],
   "config": {
     "logLevel": "debug",
     "designWidth": 750
@@ -67,11 +64,10 @@
       "Loading": {
         "component": "index"
       },
-<<<<<<< HEAD
       "CityPicker": {
-=======
+        "component": "index"
+      },
       "Picker": {
->>>>>>> new
         "component": "index"
       }
     }

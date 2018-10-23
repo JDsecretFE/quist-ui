@@ -44,6 +44,8 @@ module.exports = {
     - [计数器 counter](https://jdsecretfe.github.io/quist-ui/#/components/quist-counter/)
     - [加载 loading](https://jdsecretfe.github.io/quist-ui/#/components/quist-loading/)
     - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/#/components/quist-swiper/)
+    - [城市选择器 cityPicker](https://jdsecretfe.github.io/quist-ui/#/components/quist-cityPicker/)
+    - [选择器 picker](https://jdsecretfe.github.io/quist-ui/#/components/quist-picker/)
 - 提示反馈
     - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/#/components/quist-drawer/)
     - [提示 toast](https://jdsecretfe.github.io/quist-ui/#/components/quist-toast/)
@@ -58,17 +60,3 @@ module.exports = {
 ### 开源协议
 
 本项目基于 [MIT](http://opensource.org/licenses/MIT) License，请自由的享受、参与开源。
-
-
-### 更新记录
-
-#### v1.0.0（2018.09.30）
-
-- 初始版本
-
-#### v1.0.2（2018.10.15）
-
-- 解决loading组件的bug
-
-#### v1.0.5 (2018.10.23)
-- 添加`CityPicker`组件
