@@ -1,0 +1,9 @@
+node_modules
+gui
+build
+npm-debug.log
+.history
+.DS_Store
+.idea
+.vscode
+docs
