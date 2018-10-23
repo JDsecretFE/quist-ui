@@ -1,0 +1,111 @@
+<import name="quist-overlay" src="../quist-overlay/index"></import>
+
+<template>
+  <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
+    <div class="quist-picker {{animationClass}}" show="{{show}}">
+      <div class="quist-picker-title">
+        <text class="quist-picker-cancel" @click="cancelClick">{{cancelText}}</text>
+        <text class="quist-picker-confirm" @click="confirmClick">{{okText}}</text>
+      </div>
+      <div class="quist-picker-content">
+        <list class="quist-picker-ul" for="(idx, res) in doubleList">
+          <list-item class="quist-picker-li" type="listitem" for="(i, r) in res" @click="selectLi(idx, i, r)">
+            <text class="li-text {{select[idx] === i ? 'selected':''}}">{{r}}</text>
+          </list-item>
+        </list>
+      </div>
+    </div>
+  </quist-overlay>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-picker/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      maskClosable: {
+        type: Boolean,
+        default: true
+      },
+      visible: {
+        type: Boolean,
+        default: false
+      },
+      okText: {
+        type: String,
+        default: '确定'
+      },
+      cancelText: {
+        type: String,
+        default: '取消'
+      },
+      list: {
+        type: Array,
+        default: []
+      }
+    },
+    data() {
+      return {
+        show: this.visible,
+        animationClass: '',
+        select: {}, //点击的是数组里的哪一个元素
+        selectValue: {},
+        doubleList: [[]]
+      }
+    },
+    onInit() {
+      this.setDefault()
+      this.transformlist()
+      this.toggleVisible(this.visible)
+    },
+    transformlist() {
+      this.list.map((arr) => {
+        if (Array.isArray(arr)) {
+          this.doubleList = this.list
+        } else {
+          this.doubleList[0] = this.list
+        }
+      })
+    },
+    setDefault() {
+      this.$watch('visible', 'toggleVisible')
+    },
+    toggleVisible(visible) {
+      this.timeoutId && clearTimeout(this.timeoutId)
+      if (visible) {
+        this.show = true
+        this.animationClass = `pickerenter`
+      } else {
+        this.animationClass = `pickerleave`
+        this.timeoutId = setTimeout(() => {
+          this.show = false
+        }, 300)
+      }
+    },
+    overlayClick() {
+      this.$emit('onClose')
+    },
+    cancelClick() {
+      this.$emit('onClose')
+    },
+    confirmClick() {
+      this.$emit('onClose')
+      this.$emit('onSelect', this.selectValue)
+    },
+    selectLi(idx, i, cnt) {
+      this.select = Object.assign({}, this.select, {
+        [idx]: i
+      })
+      this.selectValue = Object.assign({}, this.selectValue, {
+        [idx]: {
+          arr: idx,
+          index: i,
+          content: cnt
+        }
+      })
+    }
+  }
+</script>

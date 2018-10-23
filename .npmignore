@@ -11,4 +11,5 @@ src
 .eslintrc.json
 .gitignore
 index.html
+package-lock.json
 npm-debug.log
