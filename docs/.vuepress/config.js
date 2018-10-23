@@ -37,7 +37,8 @@ module.exports = {
 					'/guide/counter',
 					'/guide/loading',
 					'/guide/swiper',
-					'/guide/cityPicker'
+					'/guide/cityPicker',
+					'/guide/picker'
         ]
 			},
 			{
