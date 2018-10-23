@@ -334,3 +334,20 @@ export const city = [{
       "pinyin": "ZHUHAI"
     }]
   }]
+
+  export const hotCity = [{
+    cityName: '北京',
+    code: 110000
+  }, {
+    cityName: '天津',
+    code: 120000
+  }, {
+    cityName: '青岛',
+    code: 370200
+  }, {
+    cityName: '锡林浩特',
+    code: 310000
+  }, {
+    cityName: '呼伦贝尔',
+    code: 310000
+  }]

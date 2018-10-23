@@ -1,16 +1,16 @@
 <template>
-  <div  class="quist-city-picker">
-    <list id="quist-city-picker">
+  <stack  class="quist-city-picker">
+    <list id="quist-city-picker" class="quist-city-picker__content">
       <list-item type="product" class="quist-city-picker__label"><text>当前定位城市</text></list-item>
       <list-item type="product" class="quist-city-picker__layout"><text>北京</text></list-item>
-      <list-item type="product" class="quist-city-picker__label"><text>热门城市</text></list-item>
+      <list-item type="product" class="quist-city-picker__label" if="hotCity.length > 0"><text>热门城市</text></list-item>
       <list-item type="hot" class="quist-city-picker__wrapper">
         <block for="(index, item) in hotCity" if="hotCity.length > 0">
-          <div class="quist-city-picker__item" @click="onClick(item)"><text>{{item.name}}</text></div>
+          <div class="quist-city-picker__item" @click="onClick(item)"><text>{{item.cityName}}</text></div>
         </block>
       </list-item>
       <block for="(index, item) in dataSource">
-          <list-item type="letter" class="quist-city-picker__label"><text>{{item.letter}}</text></list-item>
+          <list-item type="ceiling" class="quist-city-picker__label"><text>{{item.letter}}</text></list-item>
           <list-item for="(idx, cityItem) in item.cities" type="city" class="quist-city-picker__layout {{(idx === item.cities.length - 1) ? '' : 'quist-city-picker__border'}}" @click="onClick(cityItem)">
             <div class="quist-city-picker__name"><text>{{cityItem.cityName}}</text></div>
           </list-item>
@@ -21,7 +21,13 @@
           <text>{{item.letter}}</text>
       </div>
     </div>
-  </div>
+    <!-- 吸顶元素-->
+    <!-- <div show="{{mask}}">
+      <div class="height-300 bg-red">
+        <text>A</text>
+      </div>
+    </div> -->
+  </stack>
 </template>
 
 <style lang="less">
@@ -39,7 +45,8 @@
       hotCity: {
         type: Array,
         default: []
-      }
+      },
+      mask: false
     },
     onClick(value) {
       this.$emit('onClick', { value })
@@ -57,6 +64,17 @@
       this.$element('quist-city-picker').scrollTo({
         index: 4 + num
       })
+    },
+    showMask () {
+      this.maskShow = true
+    },
+    hideMask () {
+      // 加载页面时，所有元素的appear事件都会被触发一次。因此，需要过滤第一次的appear事件
+      if (this.appearCount) {
+        this.maskShow = false
+      } else {
+        ++this.appearCount
+      }
     }
   }
 </script>

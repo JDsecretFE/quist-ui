@@ -2,7 +2,13 @@
 @height: 100px;
 
 .@{city-picker-prefix} {
+  width: 100%;
+  height: 100%;
   flex-direction: column;
+  &__content {
+    width: 750px;
+    flex-grow: 1;
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;

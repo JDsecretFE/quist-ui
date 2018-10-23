@@ -28,26 +28,11 @@
 </style>
 
 <script>
-  import { city } from './data'
+  import { city, hotCity } from './data'
   export default {
     data: {
       dataSource: city,
-      hotCity: [{
-        name: '北京',
-        code: 110000
-      }, {
-        name: '天津',
-        code: 120000
-      }, {
-        name: '青岛',
-        code: 370200
-      }, {
-        name: '锡林浩特',
-        code: 310000
-      }, {
-        name: '呼伦贝尔',
-        code: 310000
-      }]
+      hotCity
     },
     onClick(data) {
       console.log('data', data.detail);
