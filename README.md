@@ -35,21 +35,21 @@ module.exports = {
 ### 组件列表
 
 - 表单组件
-    - [按钮 button](https://jdsecretfe.github.io/quist-ui/#/components/quist-button/)
-    - [多选框 checkbox](https://jdsecretfe.github.io/quist-ui/#/components/quist-checkbox/)
-    - [单选框 radio](https://jdsecretfe.github.io/quist-ui/#/components/quist-radio/)
-    - [开关 switch](https://jdsecretfe.github.io/quist-ui/#/components/quist-switch/)
-    - [输入框 input](https://jdsecretfe.github.io/quist-ui/#/components/quist-input/)
+    - [按钮 button](https://jdsecretfe.github.io/quist-ui/guide/button.html)
+    - [多选框 checkbox](https://jdsecretfe.github.io/quist-ui/guide/checkbox.html)
+    - [单选框 radio](https://jdsecretfe.github.io/quist-ui/guide/radio.html)
+    - [开关 switch](https://jdsecretfe.github.io/quist-ui/guide/switch.html)
+    - [输入框 input](https://jdsecretfe.github.io/quist-ui/guide/input.html)
 - 功能组件
-    - [计数器 counter](https://jdsecretfe.github.io/quist-ui/#/components/quist-counter/)
-    - [加载 loading](https://jdsecretfe.github.io/quist-ui/#/components/quist-loading/)
-    - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/#/components/quist-swiper/)
-    - [城市选择器 cityPicker](https://jdsecretfe.github.io/quist-ui/#/components/quist-cityPicker/)
-    - [选择器 picker](https://jdsecretfe.github.io/quist-ui/#/components/quist-picker/)
+    - [计数器 counter](https://jdsecretfe.github.io/quist-ui/guide/counter.html)
+    - [加载 loading](https://jdsecretfe.github.io/quist-ui/guide/loading.html)
+    - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/guide/swiper.html)
+    - [城市选择器 cityPicker](https://jdsecretfe.github.io/quist-ui/guide/cityPicker.html)
+    - [选择器 picker](https://jdsecretfe.github.io/quist-ui/guide/picker.html)
 - 提示反馈
-    - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/#/components/quist-drawer/)
-    - [提示 toast](https://jdsecretfe.github.io/quist-ui/#/components/quist-toast/)
-    - [对话框 dialog](https://jdsecretfe.github.io/quist-ui/#/components/quist-dialog/)
+    - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/guide/drawer.html)
+    - [提示 toast](https://jdsecretfe.github.io/quist-ui/guide/toast.html)
+    - [对话框 dialog](https://jdsecretfe.github.io/quist-ui/guide/dialog.html)
 
 ### 反馈沟通
 
