@@ -6,7 +6,7 @@
 ## 安装
 
 ```js{4}
-$ npm install quist-ui -g
+$ npm install quist-ui -D
 ```
 
 ## 引入
