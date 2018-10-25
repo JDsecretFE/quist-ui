@@ -22,6 +22,12 @@ module.exports = {
         ]
 			},
 			{
+				title: '基础组件',
+        children: [
+					'/guide/progress'
+        ]
+			},
+			{
 				title: '表单组件',
         children: [
 					'/guide/button',
