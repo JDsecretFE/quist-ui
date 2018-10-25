@@ -44,6 +44,8 @@ module.exports = {
 
 ### 组件列表  
 
+- 基础组件
+    - [进度条 progress](https://jdsecretfe.github.io/quist-ui/guide/progress.html)
 - 表单组件
     - [按钮 button](https://jdsecretfe.github.io/quist-ui/guide/button.html)
     - [多选框 checkbox](https://jdsecretfe.github.io/quist-ui/guide/checkbox.html)
