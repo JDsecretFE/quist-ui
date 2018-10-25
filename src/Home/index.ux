@@ -5,6 +5,15 @@
       <text class="introduce-text">Quist-UI:快应用UI组件库，简洁，易用，高效</text>
     </div>
     <div class="item-container">
+      <text class="item-title">基础组件</text>
+      <div class="item-content">
+        <div class="item-li" onclick="detail('Progress')">
+          <text class="item-li-detail">progress <span class="item-name">进度条</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
       <text class="item-title">表单组件</text>
       <div class="item-content">
         <div class="item-li" onclick="detail('Button')">

@@ -1,0 +1,40 @@
+<import name="quist-progress" src="@quist-ui/quist-progress/index"></import>
+
+<template>
+  <div class="progress-demo">
+    <div class="progress-title"><text>默认样式：</text></div>
+    <quist-progress percent="{{10}}" class="progress-cell"></quist-progress>
+    <div class="progress-title"><text>自定义进度条颜色：</text></div>
+    <quist-progress percent="{{20}}" class="progress-cell" stroke-color="#52c41a"></quist-progress>
+    <div class="progress-title"><text>不显示提示信息：</text></div>
+    <quist-progress percent="{{40}}" class="progress-cell" show-info="{{false}}"></quist-progress>
+    <div class="progress-title"><text>自定义进度条高度：</text></div>
+    <quist-progress percent="{{60}}" class="progress-cell" stroke-height="{{20}}"></quist-progress>
+    <div class="progress-title"><text>自定义进度条圆角大小：</text></div>
+    <quist-progress percent="{{80}}" class="progress-cell" stroke-height="{{20}}" border-radius="{{6}}"></quist-progress>
+  </div>
+</template>
+
+<style>
+  .progress-demo {
+    flex-direction: column;
+  }
+  .progress-title {
+    margin: 20px;
+  }
+  .progress-cell {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+</style>
+
+<script>
+  export default {
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Progress'
+      })
+    }
+  }
+</script>

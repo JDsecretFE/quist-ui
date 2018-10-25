@@ -1,0 +1,23 @@
+@progress-prefix: ~"@{css-prefix}-progress";
+
+.@{progress-prefix} {
+	flex-direction: column;
+
+  &-cell {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+	&-inner {
+		flex: 1;
+    background-color: #f5f5f5;
+    border-radius: 100px;
+	}
+
+  &-info {
+    margin-left: 10px;
+  }
+
+}
