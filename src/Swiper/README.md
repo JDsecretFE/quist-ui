@@ -43,7 +43,7 @@ $ npm install quist-ui -D
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | show-indicator | 是否显示indicator | `Boolean` | true |
-| visible | Drawer 是否可见 | `Boolean` | false |
+| visible | Swiper 是否可见 | `Boolean` | false |
 | is-auto-play | 是否自动播放 | `Boolean` | false |
 | time | 自动播放的时间 | `Number` | 3000 |
 | options | 轮播的模块 | `Array` | - |

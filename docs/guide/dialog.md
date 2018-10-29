@@ -54,15 +54,19 @@ $ npm install quist-ui -D
 | visible | 对话框是否可见 | `Boolean` | false |
 | title | 标题（如果不想显示标题，请不要传此参数） | `String` | - |
 | content | 内容 | `String` | - |
-| ok-text | 确认按钮文案 | `String` | 确定 |
+| ok-text | 确定按钮文案 | `String` | 确定 |
 | cancel-text | 取消按钮文案（如果只想显示一个按钮，请不要传此参数） | `String` | - |
 | type | 弹窗类型，可选值为 `normal` `onebtn` `notitle` | `String` | - |
 | footer | 底部两个按钮是否都显示 | `Boolean` | true |
 | on-cancel | 点击遮罩层或取消按钮的回调 | `Function` | - |
 | on-ok | 点击确定按钮的回调 | `Function` | - |
+| ok-color | 确定按钮的文字颜色 | `String` | #1890ff |
 
 
 ## 更新日志
 
 #### v1.0.0（2018-09-30）
 * 初始版本
+
+#### v1.0.7（2018-11-05）
+* [优化]  确定按钮颜色可配置

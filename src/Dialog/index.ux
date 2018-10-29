@@ -3,13 +3,13 @@
 <template>
   <div class="dialog-demo">
     <input type="button" value="常规对话框" @click="normal" />
-    <input type="button" value="只有一个按钮的对话框" @click="oneBtn" />
+    <input type="button" value="只有一个按钮的对话框(自定义按钮颜色)" @click="oneBtn" />
     <input type="button" value="无标题的对话框" @click="noTitle" />
     <input type="button" value="无底部按钮无标题的对话框" @click="noFooter" />
     <quist-dialog visible="{{visible}}" mask-closable="{{true}}" title="标题" cancel-text="取消" @on-cancel="onCancel"
       @on-ok="onOk" content="这是内容这是内容" type="normal">
     </quist-dialog>
-    <quist-dialog visible="{{visibleOnebtn}}" mask-closable @on-cancel="onCancel" title="标题" @on-ok="onOk" content="只有一个确定按钮"
+    <quist-dialog visible="{{visibleOnebtn}}" mask-closable ok-color="#ff0000" @on-cancel="onCancel" @on-ok="onOk" content="只有一个确定按钮"
       type="onebtn">
     </quist-dialog>
     <quist-dialog visible="{{visibleNotitle}}" @on-cancel="onCancel" cancel-text="取消" @on-ok="onOk" content="没有标题没有标题没有标题没有标题没有标题"

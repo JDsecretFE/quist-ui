@@ -9,7 +9,7 @@
       </div>
       <div class="quist-dialog-btns" if="footer">
         <div class="cancel-btn" if="cancelText" @click="cancelClick"><text class="cancel-text">{{cancelText}}</text></div>
-        <div class="ok-btn" @click="okClick"><text class="ok-text">{{okText}}</text></div>
+        <div class="ok-btn" @click="okClick"><text style="color: {{okColor}}">{{okText}}</text></div>
       </div>
     </div>
   </quist-overlay>
@@ -54,6 +54,10 @@
       type: {
         type: String,
         default: ''
+      },
+      okColor: {
+        type: String,
+        default: '#1890ff'
       }
     },
     overlayClick() {
