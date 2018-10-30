@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name='quist-indexlist' src='@quist-ui/quist-indexlist/index'></import>
 ```
 
@@ -18,7 +18,7 @@ $ npm install quist-ui -D
 
 #### 基础
 
-```ux
+```js{4}
 <quist-indexlist data-source="{{dataSource}}" hot-item="{{hotCity}}" @on-click="onClick" type="cityName"></quist-indexlist>
 ```
 
@@ -43,7 +43,7 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | letter | 首字母 | `String` | - |
 
-```ux
+```js{4}
 示例
  [{
     "letter": "A",             // 固定字段
@@ -62,7 +62,7 @@ $ npm install quist-ui -D
 ## hotItem属性
 > hot-item是一对象的集合
 
-```ux
+```js{4}
 示例
  [{
     cityName: '北京',    // 此字段通过type属性传递到组件中, 可以自己定义
