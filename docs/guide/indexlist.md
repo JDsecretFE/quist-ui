@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```js{4}
+```ux
 <import name='quist-indexlist' src='@quist-ui/quist-indexlist/index'></import>
 ```
 
@@ -18,7 +18,7 @@ $ npm install quist-ui -D
 
 #### 基础
 
-```js{4}
+```ux
 <quist-indexlist data-source="{{dataSource}}" hot-item="{{hotCity}}" @on-click="onClick" type="cityName"></quist-indexlist>
 ```
 
@@ -43,7 +43,7 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | letter | 首字母 | `String` | - |
 
-```js{4}
+```ux
 示例
  [{
     "letter": "A",             // 固定字段
@@ -62,7 +62,7 @@ $ npm install quist-ui -D
 ## hotItem属性
 > hot-item是一对象的集合
 
-```js{4}
+```ux
 示例
  [{
     cityName: '北京',    // 此字段通过type属性传递到组件中, 可以自己定义
@@ -76,9 +76,9 @@ $ npm install quist-ui -D
 
 ## 更新日志
 
-####v1.0.5（2018-10-23）
+#### v1.0.5（2018-10-23）
 * 添加`CityPicker`组件
 
-####v1.0.7 (2018-10-31)
-* 将`CityPicker`组件名字更改为`Indexlist`, 通用性更强
-* 添加`title`, `current`, `hot-item`, `type`属性, 提升组件的可扩展性
+#### v1.0.7 (2018-10-30)
+* [优化]  将`CityPicker`组件名字更改为`Indexlist`, 通用性更强
+* [优化]  添加`title`, `current`, `hot-item`, `type`属性, 提升组件的可扩展性
