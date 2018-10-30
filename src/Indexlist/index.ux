@@ -1,8 +1,8 @@
-<import name='quist-cityPicker' src='@quist-ui/quist-cityPicker/index'></import>
+<import name='quist-indexlist' src='@quist-ui/quist-indexlist/index'></import>
 
 <template>
   <div class="badge-demo">
-    <quist-cityPicker data-source="{{dataSource}}" hot-city="{{hotCity}}" @on-click="onClick"></quist-cityPicker>
+    <quist-indexlist data-source="{{dataSource}}" title="当前定位城市" current="北京" hot-item="{{hotCity}}" @on-click="onClick" type="cityName" hot-title="热门城市"></quist-indexlist>
   </div>
 </template>
 

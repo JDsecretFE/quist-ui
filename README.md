@@ -56,7 +56,7 @@ module.exports = {
     - [计数器 counter](https://jdsecretfe.github.io/quist-ui/guide/counter.html)
     - [加载 loading](https://jdsecretfe.github.io/quist-ui/guide/loading.html)
     - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/guide/swiper.html)
-    - [城市选择器 cityPicker](https://jdsecretfe.github.io/quist-ui/guide/cityPicker.html)
+    - [列表索引 indexlist](https://jdsecretfe.github.io/quist-ui/guide/indexlist.html)
     - [选择器 picker](https://jdsecretfe.github.io/quist-ui/guide/picker.html)
 - 提示反馈
     - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/guide/drawer.html)
