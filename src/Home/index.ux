@@ -33,15 +33,7 @@
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
         <div class="item-li" onclick="detail('Input')">
-<<<<<<< HEAD
           <text class="item-li-detail">input <span class="item-name">输入框</span></text>
-=======
-            <text class="item-li-detail">input <span class="item-name">输入框</span></text>
-            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-        </div>
-        <div class="item-li" onclick="detail('Indexlist')">
-          <text class="item-li-detail">Indexlist <span class="item-name">列表索引</span></text>
->>>>>>> component
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
       </div>
