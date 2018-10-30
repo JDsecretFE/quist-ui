@@ -19,7 +19,7 @@ $ npm install quist-ui -D
 #### 基础
 
 ```ux
-<quist-indexlist data-source="{{dataSource}}" hot-city="{{hotCity}}" @on-click="onClick"></quist-indexlist>
+<quist-indexlist data-source="{{dataSource}}" hot-item="{{hotCity}}" @on-click="onClick" type="cityName"></quist-indexlist>
 ```
 
 更详细代码可以参考 [quist-indexlist demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Indexlist/index.ux)
