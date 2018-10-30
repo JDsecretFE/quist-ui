@@ -49,6 +49,7 @@ $ npm install quist-ui -D
 ```js{4}
 <quist-dialog mask-closable @on-cancel="onCancel" title="提示" title-size="{{50}}" ok-color="#E64340" content-size="{{42}}" cancel-color="#1890ff" cancel-text="取消" @on-ok="onOk" content="自定义样式">
 </quist-dialog>
+```
 
 更详细代码可以参考 [quist-dialog demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Dialog/index.ux)
 
