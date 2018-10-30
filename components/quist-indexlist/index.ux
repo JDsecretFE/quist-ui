@@ -1,0 +1,111 @@
+<template>
+  <stack  class="quist-indexlist">
+    <list id="quist-indexlist" class="quist-indexlist__content">
+      <list-item type="product" class="quist-indexlist__label" if="title"><text>{{title}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__layout" if="current"><text>{{current}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__label" if="hotItem.length > 0"><text>{{hotTitle}}</text></list-item>
+      <list-item type="hot" class="quist-indexlist__wrapper">
+        <block for="(index, item) in hotItem" if="hotItem.length > 0">
+          <div class="quist-indexlist__item" @click="onClick(item)"><text>{{item[type]}}</text></div>
+        </block>
+      </list-item>
+      <block for="(index, item) in dataSource">
+          <list-item type="ceiling" class="quist-indexlist__label"><text>{{item.letter}}</text></list-item>
+          <list-item for="(idx, dataItem) in item[listType]" type="item" class="quist-indexlist__layout {{(idx === item[listType].length - 1) ? '' : 'quist-indexlist__border'}}" @click="onClick(dataItem)">
+            <div class="quist-indexlist__name"><text>{{dataItem[type]}}</text></div>
+          </list-item>
+      </block>
+    </list>
+    <div class="quist-indexlist__nav">
+      <div for="(index, item) in dataSource" class="quist-indexlist__mark"  @click="onSelect(index, item)">
+          <text>{{item.letter}}</text>
+      </div>
+    </div>
+    <!-- 吸顶元素-->
+    <!-- <div show="{{mask}}">
+      <div class="height-300 bg-red">
+        <text>A</text>
+      </div>
+    </div> -->
+  </stack>
+</template>
+
+<style lang="less">
+@import "../../style/index.less";
+@import "../../style/components/quist-indexlist/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      dataSource: {
+        type: Array,
+        default: []
+      },
+      hotItem: {
+        type: Array,
+        default: []
+      },
+      mask: false,
+      type: {
+        type: String,
+        default: ''
+      },
+      title: {
+        type: String,
+        default: ''
+      },
+      current: {
+        type: String,
+        default: ''
+      },
+      hotTitle: {
+        type: String,
+        default: ''
+      }
+    },
+    data: {
+      listType: ''
+    },
+    onInit() {
+      let dataSource = this.dataSource;
+      if(dataSource && dataSource.length > 0) {
+        let dataItem = dataSource[0];
+        for (let [key, value] of Object.entries(dataItem)) {
+          if (Object.prototype.toString.call(value) === "[object Array]") {
+            this.listType = key;
+          }
+        }
+        
+      }
+    },
+    onClick(value) {
+      this.$emit('onClick', { value })
+    },
+    onSelect(index, select) {
+      let num = 0;
+      for(let i = 0, len = this.dataSource.length; i < len; i++) {
+        let cur = this.dataSource[i];
+        if (select.letter !== cur.letter) {
+          num += cur.cities.length + 1;
+        } else {
+          break;
+        }
+      }
+      this.$element('quist-indexlist').scrollTo({
+        index: 4 + num
+      })
+    },
+    showMask () {
+      this.maskShow = true
+    },
+    hideMask () {
+      // 加载页面时，所有元素的appear事件都会被触发一次。因此，需要过滤第一次的appear事件
+      if (this.appearCount) {
+        this.maskShow = false
+      } else {
+        ++this.appearCount
+      }
+    }
+  }
+</script>

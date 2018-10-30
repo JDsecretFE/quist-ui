@@ -64,7 +64,7 @@
       "Loading": {
         "component": "index"
       },
-      "CityPicker": {
+      "Indexlist": {
         "component": "index"
       },
       "Picker": {
