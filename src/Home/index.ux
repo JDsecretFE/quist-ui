@@ -36,10 +36,6 @@
             <text class="item-li-detail">input <span class="item-name">输入框</span></text>
             <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
-        <div class="item-li" onclick="detail('Indexlist')">
-          <text class="item-li-detail">Indexlist <span class="item-name">列表索引</span></text>
-          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-        </div>
       </div>
     </div>
 
@@ -58,8 +54,8 @@
           <text class="item-li-detail">swiper <span class="item-name">轮播图</span></text>
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
-        <div class="item-li" onclick="detail('CityPicker')">
-          <text class="item-li-detail">cityPicker <span class="item-name">城市选择器</span></text>
+        <div class="item-li" onclick="detail('Indexlist')">
+          <text class="item-li-detail">Indexlist <span class="item-name">列表索引</span></text>
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
         <div class="item-li" @click="detail('Picker')">
