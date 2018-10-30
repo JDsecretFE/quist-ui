@@ -35,10 +35,10 @@ $ npm install quist-ui -D
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
-| maskClosable | 点击蒙层是否允许关闭 | `Boolean` | true |
+| mask-closable | 点击蒙层是否允许关闭 | `Boolean` | true |
 | visible | Picker 是否可见 | `Boolean` | false |
-| okText | 确定按钮文字 | `String` | 确定 |
-| cancelText | 取消按钮文字 | `String` | 取消 |
+| ok-text | 确定按钮文字 | `String` | 确定 |
+| cancel-text | 取消按钮文字 | `String` | 取消 |
 | list | 传入的数据，如需要多列显示请传入一个二维数组 | `Array` | - |
 | on-close | 点击取消的回调 | `Function` | - |
 | on-select | 点击确定的回调 | `Function` | - |

@@ -44,23 +44,35 @@ $ npm install quist-ui -D
 </quist-dialog>
 ```
 
+#### 自定义样式
+
+```ux
+<quist-dialog mask-closable @on-cancel="onCancel" title="提示" title-size="{{50}}" ok-color="#E64340" content-size="{{42}}" cancel-color="#1890ff" cancel-text="取消" @on-ok="onOk" content="自定义样式">
+</quist-dialog>
+
 更详细代码可以参考 [quist-dialog demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Dialog/index.ux)
 
 ## API 
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
-| maskClosable | 点击蒙层是否允许关闭 | `Boolean` | false |
+| mask-closable | 点击蒙层是否允许关闭 | `Boolean` | false |
 | visible | 对话框是否可见 | `Boolean` | false |
 | title | 标题（如果不想显示标题，请不要传此参数） | `String` | - |
+| title-size | 标题大小 | `Number` | 36 |
+| title-color | 标题文字颜色 | `String` | #333333 |
 | content | 内容 | `String` | - |
+| content-size | 内容大小 | `Number` | 32 |
+| content-color | 内容文字颜色 | `String` | #666666 |
 | ok-text | 确定按钮文案 | `String` | 确定 |
+| ok-color | 确定按钮的文字颜色 | `String` | #1890ff |
 | cancel-text | 取消按钮文案（如果只想显示一个按钮，请不要传此参数） | `String` | - |
-| type | 弹窗类型，可选值为 `normal` `onebtn` `notitle` | `String` | - |
+| cancel-color | 取消按钮的文字颜色 | `String` | #999999 |
+| type | 弹窗类型，可选值为 `normal` `onebtn` `notitle` `nofooter` | `String` | - |
 | footer | 底部两个按钮是否都显示 | `Boolean` | true |
 | on-cancel | 点击遮罩层或取消按钮的回调 | `Function` | - |
 | on-ok | 点击确定按钮的回调 | `Function` | - |
-| ok-color | 确定按钮的文字颜色 | `String` | #1890ff |
+
 
 
 ## 更新日志
@@ -68,5 +80,5 @@ $ npm install quist-ui -D
 #### v1.0.0（2018-09-30）
 * 初始版本
 
-#### v1.0.7（2018-11-05）
-* [优化]  确定按钮颜色可配置
+#### v1.0.7（2018-10-30）
+* [优化]  可自定义样式，标题和内容的文字大小、颜色，确定和取消按钮的颜色

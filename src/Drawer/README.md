@@ -62,7 +62,7 @@ $ npm install quist-ui -D
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
-| maskClosable | 点击蒙层是否允许关闭 | `Boolean` | true |
+| mask-closable | 点击蒙层是否允许关闭 | `Boolean` | true |
 | visible | Drawer 是否可见 | `Boolean` | false |
 | placement | 抽屉的方向，可选值为 `bottom` `top` `left` `right` | `String` | bottom |
 | on-close | 点击蒙层的回调 | `Function` | - |

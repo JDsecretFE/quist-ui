@@ -54,10 +54,10 @@ $ npm install quist-ui -D
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | percent | 百分比 | `Number` | 0 |
-| showInfo | 是否显示进度数值 | `Boolean` | true |
-| strokeColor | 进度条的颜色 | `String` | #1890ff |
-| strokeHeight | 进度条的高度 | `Number` | 32 |
-| borderRadius | 进度条的圆角大小| `Number` | 20 |
+| show-info | 是否显示进度数值 | `Boolean` | true |
+| stroke-color | 进度条的颜色 | `String` | #1890ff |
+| stroke-height | 进度条的高度 | `Number` | 32 |
+| border-radius | 进度条的圆角大小| `Number` | 20 |
 
 
 ## 更新日志

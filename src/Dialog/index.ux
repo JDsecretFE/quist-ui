@@ -3,20 +3,24 @@
 <template>
   <div class="dialog-demo">
     <input type="button" value="常规对话框" @click="normal" />
-    <input type="button" value="只有一个按钮的对话框(自定义按钮颜色)" @click="oneBtn" />
-    <input type="button" value="无标题的对话框" @click="noTitle" />
+    <input type="button" value="只有一个按钮的对话框" @click="oneBtn" />
+    <input type="button" value="无标题的对话框(点蒙层不关闭)" @click="noTitle" />
     <input type="button" value="无底部按钮无标题的对话框" @click="noFooter" />
+    <input type="button" value="自定义dialog样式" @click="set" />
     <quist-dialog visible="{{visible}}" mask-closable="{{true}}" title="标题" cancel-text="取消" @on-cancel="onCancel"
       @on-ok="onOk" content="这是内容这是内容" type="normal">
     </quist-dialog>
-    <quist-dialog visible="{{visibleOnebtn}}" mask-closable ok-color="#ff0000" @on-cancel="onCancel" @on-ok="onOk" content="只有一个确定按钮"
+    <quist-dialog visible="{{visibleOnebtn}}" mask-closable title="标题" @on-cancel="onCancel" @on-ok="onOk" content="只有一个确定按钮"
       type="onebtn">
     </quist-dialog>
-    <quist-dialog visible="{{visibleNotitle}}" @on-cancel="onCancel" cancel-text="取消" @on-ok="onOk" content="没有标题没有标题没有标题没有标题没有标题"
+    <quist-dialog visible="{{visibleNotitle}}" @on-cancel="onCancel" cancel-text="取消" @on-ok="onOk" content="没有标题"
       type="notitle">
     </quist-dialog>
     <quist-dialog visible="{{visibleNofooter}}" mask-closable="{{true}}" footer="{{false}}" @on-cancel="onCancel"
       content="没有标题没有标题没有标题没有标题没有标题" type="nofooter">
+    </quist-dialog>
+    <quist-dialog visible="{{visibleSet}}" mask-closable @on-cancel="onCancel" title="提示" title-size="{{50}}" ok-color="#E64340" content-size="{{42}}" cancel-color="#1890ff" cancel-text="取消" @on-ok="onOk" content="自定义样式"
+      type="set">
     </quist-dialog>
   </div>
 </template>
@@ -46,7 +50,8 @@
         visible: false,
         visibleOnebtn: false,
         visibleNotitle: false,
-        visibleNofooter: false
+        visibleNofooter: false,
+        visibleSet: false
       }
     },
     onInit() {
@@ -66,6 +71,9 @@
     noFooter() {
       this.visibleNofooter = true
     },
+    set() {
+      this.visibleSet = true
+    },
     onCancel(data) {
       switch (data.detail) {
         case 'normal':
@@ -79,6 +87,9 @@
           break;
         case 'nofooter':
           this.visibleNofooter = false
+          break;
+        case 'set':
+          this.visibleSet = false
           break;
       }
       console.log('点击了取消按钮')
@@ -96,6 +107,9 @@
           break;
         case 'nofooter':
           this.visibleNofooter = false
+          break;
+        case 'set':
+          this.visibleSet = false
           break;
       }
       console.log('点击了确认按钮')

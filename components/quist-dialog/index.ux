@@ -3,13 +3,13 @@
 <template>
   <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
     <div class="quist-dialog">
-      <text class="quist-dialog-title" if="title">{{title}}</text>
-      <div class="quist-dialog-content">
-        <text class="quist-dialog-text">{{content}}</text>
+      <text class="quist-dialog-title" style="font-size: {{titleSize}}px; color: {{titleColor}};" if="title">{{title}}</text>
+      <div class="{{title ? 'quist-dialog-content' : 'quist-dialog-contentb'}}">
+        <text class="quist-dialog-text" style="font-size: {{contentSize}}px; color: {{contentColor}};">{{content}}</text>
       </div>
       <div class="quist-dialog-btns" if="footer">
-        <div class="cancel-btn" if="cancelText" @click="cancelClick"><text class="cancel-text">{{cancelText}}</text></div>
-        <div class="ok-btn" @click="okClick"><text style="color: {{okColor}}">{{okText}}</text></div>
+        <div class="cancel-btn" if="cancelText" @click="cancelClick"><text class="btn-text" style="color: {{cancelColor}}">{{cancelText}}</text></div>
+        <div class="ok-btn" @click="okClick"><text class="btn-text" style="color: {{okColor}}">{{okText}}</text></div>
       </div>
     </div>
   </quist-overlay>
@@ -58,7 +58,27 @@
       okColor: {
         type: String,
         default: '#1890ff'
-      }
+      },
+      cancelColor: {
+        type: String,
+        default: '#999999'
+      },
+      titleSize: {
+        type: Number,
+        default: 36
+      },
+      titleColor: {
+        type: String,
+        default: '#333333'
+      },
+      contentSize: {
+        type: Number,
+        default: 32
+      },
+      contentColor: {
+        type: String,
+        default: '#666666'
+      },
     },
     overlayClick() {
       this.$emit('onCancel', this.type)
