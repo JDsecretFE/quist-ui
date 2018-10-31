@@ -72,6 +72,9 @@
       },
       "Progress": {
         "component": "index"
+      },
+      "Tabs": {
+        "component": "index"
       }
     }
   },

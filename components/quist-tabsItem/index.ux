@@ -1,0 +1,82 @@
+<template>
+  <div class="quist-tabs-item" style="{{wrapperStyle()}}" @click="select">
+    <text style="{{innerStyle()}}">{{tab}}</text>
+  </div>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-tabs/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      tab: {
+        type: String,
+        default: ''
+      },
+      defaultColor: {
+        type: String,
+        default: '#666666'
+      },
+      activeColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      lineWidth: {
+        type: Number,
+        default: 0
+      },
+      fSize: {
+        type: Number,
+        default: 32
+      },
+      selected: {
+        type: Boolean,
+        default: false
+      },
+      layout: {
+        type: String,
+        default: 'left'
+      }
+    },
+    select() {
+      this.$emit('onClick')
+    },
+    onInit() {
+      console.log('111', this.innerBarStyle)
+    },
+    innerStyle() {
+      if (this.selected) {
+        return {
+          color: this.activeColor,
+          fontSize: this.fSize+'px'
+        }
+      } else {
+        return {
+          color: this.defaultColor,
+          fontSize: this.fSize+'px'
+        }
+      }
+    },
+    wrapperStyle() {
+      let baseStyle = {
+        borderColor: this.activeColor,
+        borderStyle: 'solid',
+        borderBottomWidth: this.lineWidth+'px'
+      }
+      if (this.layout === 'center' && this.selected) {
+        return Object.assign(baseStyle, {
+          flex: 1,
+          justifyContent: 'center'
+        });
+      } else if (this.layout === 'center' && !this.selected) {
+        return {
+          flex: 1,
+          justifyContent: 'center'
+        };
+      }
+    }
+  }
+</script>

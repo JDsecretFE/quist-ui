@@ -62,6 +62,10 @@
           <text class="item-li-detail">picker <span class="item-name">选择器</span></text>
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
+        <div class="item-li" @click="detail('Tabs')">
+          <text class="item-li-detail">tabs <span class="item-name">选项卡</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+        </div>
       </div>
 
       <div class="item-container">

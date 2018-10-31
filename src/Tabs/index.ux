@@ -1,0 +1,66 @@
+<import name="quist-tabs" src="@quist-ui/quist-tabs/index"></import>
+<import name="quist-tabs-item" src="@quist-ui/quist-tabsItem/index"></import>
+
+<template>
+  <div class="tabs-demo">
+    <div class="base-demo">
+      <div class="demo-title"><text>默认样式:</text></div>
+      <quist-tabs>
+        <quist-tabs-item selected="{{curIdx === tabIdx}}" @on-click="select(tabIdx)" for="(tabIdx, tabItem) in tabs" tab="{{tabItem}}"></quist-tabs-item>
+      </quist-tabs>
+      <div class="{{curIdx === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabs"><text>{{tabItem}} Container</text></div>
+    </div>
+    <div class="base-demo">
+      <div class="demo-title"><text>自定义样式（水平分布）:</text></div>
+      <quist-tabs border-color="#1890ff">
+        <quist-tabs-item layout="center" line-width="{{3}}" f-size="{{36}}" active-color="#fac450" default-color="#333333" selected="{{curIdxb === tabIdx}}" @on-click="selectb(tabIdx)" for="(tabIdx, tabItem) in tabsb" tab="{{tabItem}}"></quist-tabs-item>
+      </quist-tabs>
+      <div class="{{curIdxb === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabsb"><text>{{tabItem}} Container</text></div>
+    </div>
+  </div>
+</template>
+
+<style>
+  .tabs-demo {
+    flex-direction: column;
+  }
+  .base-demo {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+  .demo-title {
+    margin-bottom: 20px;
+  }
+  .tab-content-active {
+    display: flex;
+  }
+  .tab-content {
+    display: none;
+  }
+</style>
+
+<script>
+  export default {
+    private: {
+      tabs: [
+        '选项一', '选项二', '选项三'
+      ],
+      tabsb: [
+        'tab1', 'tab2'
+      ],
+      curIdx: 0, //默认第一个是选中状态
+      curIdxb: 1 //默认第二个是选中状态
+    },
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Tabs'
+      })
+    },
+    select(e) {
+      this.curIdx = e
+    },
+    selectb(e) {
+      this.curIdxb = e
+    }
+  }
+</script>
