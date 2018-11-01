@@ -58,6 +58,7 @@ module.exports = {
     - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/guide/swiper.html)
     - [列表索引 indexlist](https://jdsecretfe.github.io/quist-ui/guide/indexlist.html)
     - [选择器 picker](https://jdsecretfe.github.io/quist-ui/guide/picker.html)
+    - [选项卡 tabs](https://jdsecretfe.github.io/quist-ui/guide/tabs.html)
 - 提示反馈
     - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/guide/drawer.html)
     - [提示 toast](https://jdsecretfe.github.io/quist-ui/guide/toast.html)
