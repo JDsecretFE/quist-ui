@@ -44,7 +44,8 @@ module.exports = {
 					'/guide/loading',
 					'/guide/swiper',
 					'/guide/indexlist',
-					'/guide/picker'
+					'/guide/picker',
+					'/guide/tabs'
         ]
 			},
 			{
