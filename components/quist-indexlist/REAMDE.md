@@ -80,5 +80,5 @@ $ npm install quist-ui -D
 * 添加`CityPicker`组件
 
 #### v1.0.7 (2018-10-30)
-* [优化]  将`CityPicker`组件名字更改为`Indexlist`, 通用性更强
-* [优化]  添加`title`, `current`, `hot-item`, `type`属性, 提升组件的可扩展性
+* [优化] 将 `CityPicker` 组件名字更改为 `Indexlist` , 通用性更强
+* [优化] 添加`title`, `current`, `hot-item`, `type`属性, 提升组件的可扩展性

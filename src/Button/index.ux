@@ -36,6 +36,14 @@
         <quist-button disabled block value="Disabled"></quist-button>
       </div>
     </div>
+    <div class="button-type">
+      <div class="explain">
+        <text class="explain-title">自定义样式按钮</text>
+      </div>
+      <div class="button-type__short">
+        <quist-button @on-click="onClick" value="自定义样式按钮" bg-color="#fac450" f-color="#ffffff" f-size="{{42}}" width="{{400}}" height="{{120}}" border-radius="{{0}}" border-color="#E64340"></quist-button>
+      </div>
+    </div>
   </div>
 </template>
 
