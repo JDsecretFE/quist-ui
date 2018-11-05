@@ -1,9 +1,9 @@
 <template>
   <stack  class="quist-indexlist">
     <list id="quist-indexlist" class="quist-indexlist__content">
-      <list-item type="product" class="quist-indexlist__label" if="title"><text>{{title}}</text></list-item>
-      <list-item type="product" class="quist-indexlist__layout" if="current"><text>{{current}}</text></list-item>
-      <list-item type="product" class="quist-indexlist__label" if="hotItem.length > 0"><text>{{hotTitle}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__label" show="title"><text>{{title}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__layout" show="current"><text>{{current}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__label" show="hotItem.length > 0"><text>{{hotTitle}}</text></list-item>
       <list-item type="hot" class="quist-indexlist__wrapper">
         <block for="(index, item) in hotItem" if="hotItem.length > 0">
           <div class="quist-indexlist__item" @click="onClick(item)"><text>{{item[type]}}</text></div>
@@ -68,6 +68,9 @@
       listType: ''
     },
     onInit() {
+      this.$watch('dataSource', 'change');
+    },
+    change() {
       let dataSource = this.dataSource;
       if(dataSource && dataSource.length > 0) {
         let dataItem = dataSource[0];
@@ -76,7 +79,6 @@
             this.listType = key;
           }
         }
-        
       }
     },
     onClick(value) {
