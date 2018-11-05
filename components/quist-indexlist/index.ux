@@ -68,7 +68,7 @@
       listType: ''
     },
     onInit() {
-      this.$watch('dataSource', 'change');
+      this.$watch('dataSource', 'change')
     },
     change() {
       let dataSource = this.dataSource;
