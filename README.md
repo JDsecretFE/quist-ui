@@ -69,7 +69,7 @@ module.exports = {
 
 请扫码进入微信群，此群可快速及时地解答问题。
 
-![群二维码](http://phcawhbff.bkt.clouddn.com/1105.jpeg)
+![微信沟通群二维码](http://phcawhbff.bkt.clouddn.com/1105.jpeg)
 
 
 ### 开源协议  
