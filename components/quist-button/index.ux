@@ -64,7 +64,7 @@
       let baseStyle = {
         width: this.width + 'px',
         height: this.height + 'px',
-        borderRadius: this.borderRadius,
+        borderRadius: this.borderRadius + 'px',
         borderColor: this.borderColor
       }
       if (this.block) {

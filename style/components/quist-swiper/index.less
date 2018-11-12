@@ -2,10 +2,12 @@
 
 .lightboxenter {
 	animation-name: lightboxenter;
+	animation-duration: 600ms;
 }
 
 .lightboxleave {
 	animation-name: lightboxleave;
+	animation-duration: 600ms;
 }
 
 @keyframes lightboxenter {
@@ -29,17 +31,22 @@
 }
 
 .@{swiper-prefix} {
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.4);
-	animation-fill-mode: forwards;
 
+	&-pop {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: rgba(0, 0, 0, 1);
+		animation-fill-mode: forwards;
+	}
 	&-item {
 		flex-direction: column;
 		justify-content: center;
@@ -48,7 +55,27 @@
 
 	&-image {
 		width: 100%;
-		resize-mode: contain;
 	}
 
+}
+
+.swiper-pagination {
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.pagination-item {
+	width: 10px;
+	height: 4px;
+	margin: 0 2px;
+	border-radius: 67px;
+}
+
+.pagination-number {
+	margin-top: 20px;
+}
+
+.number-text {
+	color: #ffffff;
+	font-size: 32px;
 }

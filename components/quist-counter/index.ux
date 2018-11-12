@@ -1,11 +1,11 @@
 <template>
-  <div class="quist-counter">
-    <div class="quist-counter-reduce" onclick="reduceClicked" disabled="{{disabled}}">
-      <text class="quist-counter-icon {{minClass, disabled ? 'quist-counter-disabled' : ''}}">-</text>
+  <div class="quist-counter" style="{{wrapperStyle()}}">
+    <div class="quist-counter-reduce" style="{{operationStyle()}}" onclick="reduceClicked" disabled="{{disabled}}">
+      <text style="{{reduceStyle()}}">-</text>
     </div>
-    <input id="counter-input" class="quist-counter-input {{disabled ? 'quist-counter-disabled' : ''}}" type="number" value="{{counterValue}}" disabled="{{disabled}}" onchange="onChange" />
-    <div class="quist-counter-plus" onclick="plusClicked" disabled="{{disabled}}">
-      <text class="quist-counter-icon {{maxClass, disabled ? 'quist-counter-disabled' : ''}}">+</text>
+    <text class="quist-counter-input" style="{{inputStyle()}}">{{counterValue}}</text>
+    <div class="quist-counter-plus" style="{{operationStyle()}}" onclick="plusClicked" disabled="{{disabled}}">
+      <text style="{{plusStyle()}}">+</text>
     </div>
   </div>
 </template>
@@ -32,28 +32,55 @@
       disabled: {
         type: Boolean,
         default: false
+      },
+      borderRadius: {
+        type: Number,
+        default: 6
+      },
+      borderColor: {
+        type: String,
+        default: '#d9d9d9'
+      },
+      width: {
+        type: Number,
+        default: 240
+      },
+      height: {
+        type: Number,
+        default: 80
+      },
+      bgColor: {
+        type: String,
+        default: '#f3f2f8'
+      },
+      fSize: {
+        type: Number,
+        default: 32
+      },
+      fColor: {
+        type: String,
+        default: '#666666'
+      },
+      disabledColor: {
+        type: String,
+        default: '#cccccc'
       }
     },
     data() {
       return {
         counterValue: this.value,
-        minClass: '',
-        maxClass: '',
-        disabledClass: ''
+        reduceDisabled: false,
+        plusDisabled: false
       }
     },
     onInit() {
-      if (this.min && this.value < this.min) {
+      if (this.min && (this.value < this.min)) {
         this.counterValue = this.min
-        this.minClass = 'quist-counter-disabled'
-      } else if (this.max && this.value > this.max) {
+        this.reduceDisabled = true
+      } else if (this.max && (this.value > this.max)) {
         this.counterValue = this.max
-        this.maxClass = 'quist-counter-disabled'
+        this.plusDisabled = true
       }
-    },
-    onChange(e) {
-      this.counterValue = e.value * 1
-      this.$emit('onChange', {value: this.counterValue})
     },
     reduceClicked() {
       if (this.counterValue === this.min) {
@@ -62,14 +89,12 @@
         this.counterValue -= 1
       }
       if (this.counterValue <= this.min) {
-        this.minClass = 'quist-counter-disabled'
+        this.reduceDisabled = true
       } else {
-        this.minClass = ''
-        this.maxClass = ''
+        this.reduceDisabled = false
+        this.plusDisabled = false
       }
-      this.$element("counter-input").focus({
-        focus: false
-      })
+      this.$emit('onChange', {value: this.counterValue})
     },
     plusClicked() {
       if (this.counterValue === this.max) {
@@ -78,14 +103,68 @@
         this.counterValue += 1
       }
       if (this.counterValue >= this.max) {
-        this.maxClass = 'quist-counter-disabled'
+        this.plusDisabled = true
       } else {
-        this.minClass = ''
-        this.maxClass = ''
+        this.reduceDisabled = false
+        this.plusDisabled = false
       }
-      this.$element("counter-input").focus({
-        focus: false
-      })
+      this.$emit('onChange', {value: this.counterValue})
+    },
+    wrapperStyle() {
+      let baseStyle = {
+        width: this.width + 'px',
+        height: this.height + 'px',
+        borderRadius: this.borderRadius + 'px',
+        borderColor: this.borderColor
+      }
+      return baseStyle;
+    },
+    operationStyle() {
+      let baseStyle = {
+        borderColor: this.borderColor,
+        backgroundColor: this.bgColor
+      }
+      return baseStyle;
+    },
+    reduceStyle() {
+      let baseStyle = {
+        fontSize: this.fSize + 'px',
+        color: this.fColor
+      }
+      if (this.disabled || this.reduceDisabled) {
+        return Object.assign(baseStyle, {
+          color: this.disabledColor
+        })
+      } else {
+        return baseStyle;
+      }
+    },
+    plusStyle() {
+      let baseStyle = {
+        fontSize: this.fSize + 'px',
+        color: this.fColor
+      }
+      if (this.disabled || this.plusDisabled) {
+        return Object.assign(baseStyle, {
+          color: this.disabledColor
+        })
+      } else {
+        return baseStyle;
+      }
+    },
+    inputStyle() {
+      let baseStyle = {
+        fontSize: this.fSize + 'px',
+        color: this.fColor,
+        lineHeight: this.height + 'px'
+      }
+      if (this.disabled) {
+        return Object.assign(baseStyle, {
+          color: this.disabledColor
+        })
+      } else {
+        return baseStyle;
+      }
     }
   }
 </script>

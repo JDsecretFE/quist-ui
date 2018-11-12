@@ -1,11 +1,19 @@
 <template>
-	<div>
-		<swiper show="{{show}}" class="quist-swiper {{animationClass}}" indicator="{{showIndicator}}" interval="{{time}}" autoplay="{{isAutoPlay}}" style="indicator-color: {{indicatorColor}}; indicator-selected-color: {{indicatorSelectedColor}}; indicator-size: {{indicatorSize}}; animation-duration: {{animationDuration}}">
-			<div class="quist-swiper-item" for="{{options}}" @click="choose($idx)">
-				<image class="quist-swiper-image" src="{{$item}}" />
-			</div>
-		</swiper>
-	</div>
+  <div>
+    <stack show="{{visible}}" class="{{type === 'pop' ? 'quist-swiper-pop' : 'quist-swiper'}}">
+      <swiper class="{{animationClass}}" indicator="{{false}}" interval="{{time}}" autoplay="{{isAutoPlay}}" onChange="swiperChange">
+        <div class="quist-swiper-item" for="{{options}}" @click="choose($idx)">
+          <image class="quist-swiper-image" src="{{$item}}" />
+        </div>
+      </swiper>
+      <div if="{{showIndicator && type === ''}}" class="swiper-pagination">
+        <div class="pagination-item" style="{{currentNav === $idx ? indicatorSelectedStyle() : indicatorColorStyle()}}" for="{{options}}"></div>
+      </div>
+      <div elif="{{showIndicator && type === 'pop'}}" class="pagination-number">
+        <text class="number-text">{{currentNav + 1}}/{{options.length}}</text>
+      </div>
+    </stack>
+  </div>
 </template>
 
 <style lang="less">
@@ -20,62 +28,72 @@
         type: Boolean,
         default: false
       },
-      showIndicator: {
-        type: Boolean,
-        default: true
-			},
-			isAutoPlay: {
+      isAutoPlay: {
         type: Boolean,
         default: false
-			},
-			time: {
-				type: Number,
-        default: 3000
-			},
-      indicatorColor: {
-        type: String,
-        default: 'rgba(0, 0, 0, 0.5)'
       },
-      indicatorSelectedColor: {
-        type: String,
-        default: '#33b4ff'
-			},
-			indicatorSize: {
-        type: String,
-        default: '20px'
+      time: {
+        type: Number,
+        default: 3000
       },
       options: {
         type: Array
+      },
+      showIndicator: {
+        type: Boolean,
+        default: true
+      },
+      indicatorColor: {
+        type: String,
+        default: '#E1E1E1'
+      },
+      selectedColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      type: {
+        type: String,
+        default: ''
       }
     },
     data() {
       return {
-        show: true,
         animationClass: '',
-        animationDuration: 600,
+        currentNav: 0,
+        numberCur: 0
       }
     },
     onInit() {
-      this.initialize()
-      this.toggleShow(this.show)
-      this.$watch(`visible`, `initialize`)
-      this.$watch(`show`, 'toggleShow')
+      this.toggleShow()
+      this.$watch(`visible`, 'toggleShow')
     },
-    initialize() {
-      this.visible ? this.show = true : this.show = false
-    },
-    toggleShow(show) {
+    toggleShow() {
       this.timeoutId && clearTimeout(this.timeoutId)
-      if (show) {
+      if (this.visible) {
         this.animationClass = 'lightboxenter'
       } else {
         this.animationClass = 'lightboxleave'
-        this.timeoutId = setTimeout(() => {
-        }, this.animationDuration - 100)
+        this.timeoutId = setTimeout(() => {}, 600)
       }
     },
     choose(i) {
       this.$emit('onClick', i)
+    },
+    swiperChange(e) {
+      this.currentNav = e.index
+    },
+    indicatorColorStyle() {
+      let baseStyle = {
+	      backgroundColor: this.indicatorColor
+      }
+      return baseStyle;
+    },
+    indicatorSelectedStyle() {
+      let baseStyle = {
+        width: '15px',
+	      backgroundColor: this.selectedColor
+      }
+      return baseStyle;
     }
   }
 </script>

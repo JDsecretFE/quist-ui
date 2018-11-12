@@ -6,7 +6,7 @@
 
 通过下面的二维码，可以在手机中体验 Quist-UI (请使用快应用调试器扫码)：
 
-![](http://pfrg4qq0y.bkt.clouddn.com/5baf2aa4N0ccc8797.png)
+![体验二维码](https://camo.githubusercontent.com/1637de016a1e70707c8715716c496aa4cd3383e4/687474703a2f2f7066726734717130792e626b742e636c6f7564646e2e636f6d2f35626166326161344e30636363383739372e706e67)
 
 
 ### 安装  

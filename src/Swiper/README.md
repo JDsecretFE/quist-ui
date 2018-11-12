@@ -16,23 +16,28 @@ $ npm install quist-ui -D
 
 ## 例子
 
-#### 显示幻灯片(无indicator)
+#### 默认样式
 
 ```ux
-<quist-swiper show-indicator="{{false}}" options="{{imageList}}" @qui-swiper-click="choose"></quist-swiper>
+<quist-swiper visible="{{true}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
 ```
 
-#### 显示幻灯片(特定indicator样式)
+#### 自定义当前索引和非当前索引的背景色
 
 ```ux
-<quist-swiper indicator-color='rgba(0, 0, 0, 1)' indicator-selected-color='#ff0000' indicator-size='40px' options="{{imageList}}" @on-click="choose">
-</quist-swiper>
+<quist-swiper visible="{{true}}" options="{{imageList}}" @on-click="choose" selected-color="#ff0000" indicator-color="#fac450"></quist-swiper>
 ```
 
-#### 自动播放(自定义播放时间)
+#### 自动轮播且轮播时间设置为5s
 
 ```ux
-<quist-swiper is-auto-play="{{true}}" time="{{5000}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
+<quist-swiper visible="{{true}}" is-auto-play="{{true}}" time="{{5000}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
+```
+
+#### 蒙层形式展示轮播图
+
+```ux
+<quist-swiper visible="{{swiperBig}}" type="pop" options="{{imageList}}" @on-click="close"></quist-swiper>
 ```
 
 
@@ -42,17 +47,20 @@ $ npm install quist-ui -D
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
-| show-indicator | 是否显示indicator | `Boolean` | true |
 | visible | Swiper 是否可见 | `Boolean` | false |
 | is-auto-play | 是否自动播放 | `Boolean` | false |
 | time | 自动播放的时间 | `Number` | 3000 |
 | options | 轮播的模块 | `Array` | - |
-| indicator-color | indicator的颜色 | `String` | rgba(0, 0, 0, 0.5) |
-| indicator-selected-color | indicator当前的颜色 | `String` | #33b4ff |
-| indicator-size | indicator的大小 | `String` | 20px |
+| show-indicator | 是否显示indicator | `Boolean` | true |
+| indicator-color | indicator的颜色 | `String` | #E1E1E1 |
+| selected-color | indicator当前的颜色 | `String` | #1890ff |
+| type | Swiper 展示的形式(当需要以蒙层形式展示时，务必传`pop`) | `String` | ' ' |
 | on-click | 点击当前轮播的回调 | `Function` | - |
 
 ## 更新日志
 
 #### v1.0.0（2018-09-30）
 * 初始版本
+
+#### v1.0.9（2018-11-12）
+* 更新了 `Swiper` 的展示形式及索引的样式

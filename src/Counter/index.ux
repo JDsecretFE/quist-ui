@@ -4,7 +4,8 @@
   <div class="counter-demo">
     <div class="item-box">
       <text class="item-txt">默认计数器展示</text>
-      <quist-counter value="{{1}}" @on-change="valueChange"></quist-counter>
+      <quist-counter value="{{curvala}}" @on-change="valueChangeA"></quist-counter>
+      <text class="item-show">当前的值是：{{curvala}}</text>
     </div>
     <div class="item-box">
       <text class="item-txt">禁止更改计数器展示</text>
@@ -12,11 +13,18 @@
     </div>
     <div class="item-box">
       <text class="item-txt">设置最大值的计数器展示(最大值为10)</text>
-      <quist-counter value="{{3}}" max="{{10}}" @on-change="valueChange"></quist-counter>
+      <quist-counter value="{{curvalb}}" max="{{10}}" @on-change="valueChangeB"></quist-counter>
+      <text class="item-show">当前的值是：{{curvalb}}</text>
     </div>
     <div class="item-box">
       <text class="item-txt">设置最小值的计数器展示(最小值为2)</text>
-      <quist-counter value="{{1}}" min="{{2}}" @on-change="valueChange"></quist-counter>
+      <quist-counter value="{{1}}" min="{{2}}" @on-change="valueChangeC"></quist-counter>
+      <text class="item-show">当前的值是：{{curvalc}}</text>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">自定义计数器样式</text>
+      <quist-counter value="{{curvald}}" @on-change="valueChangeD" width="{{200}}" height="{{60}}" bg-color="#f8f8f8" border-radius="{{1}}" disabled-color="#E64340" border-color="#1890ff" f-color="#1890ff" f-size="{{48}}"></quist-counter>
+      <text class="item-show">当前的值是：{{curvald}}</text>
     </div>
   <div>
 </template>
@@ -40,15 +48,36 @@
     font-size: 32px;
     color: #666666;
   }
+
+  .item-show {
+    padding-top: 10px;
+  }
 </style>
 
 <script>
   export default {
+    data() {
+      return {
+        curvala: 1,
+        curvalb: 3,
+        curvalc: 2,
+        curvald: 1
+      }
+    },
     onInit() {
       this.$page.setTitleBar({ text: 'Counter' })
     },
-    valueChange(e) {
-      console.log('当前的值是：', e.detail.value)
+    valueChangeA(e) {
+      this.curvala = e.detail.value
+    },
+    valueChangeB(e) {
+      this.curvalb = e.detail.value
+    },
+    valueChangeC(e) {
+      this.curvalc = e.detail.value
+    },
+    valueChangeD(e) {
+      this.curvald = e.detail.value
     }
   }
 </script>

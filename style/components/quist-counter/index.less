@@ -1,48 +1,29 @@
 @counter-prefix: ~"@{css-prefix}-counter";
 
 .@{counter-prefix} {
-	width: 240px;
-	height: 80px;
 	display: flex;
 	align-items: center;
-	border: 1px solid @btn-default-border;
-	border-radius: @border-radius-base;
+	border-style: solid;
+	border-width: 1px;
 	&-reduce {
-		width: 80px;
+		width: 30%;
     height: 100%;
-    background-color: #f3f2f8;
     align-items: center;
 		justify-content: center;
-		border-right-color: @btn-default-border;
-		border-right-width: 1px;
 		border-style: solid;
+		border-right-width: 1px;
 	}
 	&-plus {
-		width: 80px;
+		width: 30%;
     height: 100%;
-    background-color: #f3f2f8;
     align-items: center;
 		justify-content: center;
-		border-left-color: @btn-default-border;
 		border-left-width: 1px;
 		border-style: solid;
 	}
 	&-input {
-		text-align: center;
-		width: 118px;
+		flex: 1;
 		height: 100%;
-		line-height: 80px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		text-align: center;
 	}
-	&-icon {
-		font-size: @font-size-base;
-    color: @text-color;
-    font-weight: bold;
-	}
-	&-disabled {
-		color: @btn-disable-color;
-	}
-
 }
