@@ -44,6 +44,7 @@ $ npm install quist-ui -D
 
 ```js{4}
 <quist-counter value="{{1}}" @on-change="valueChange" width="{{200}}" height="{{60}}" bg-color="#f8f8f8" border-radius="{{1}}" disabled-color="#E64340" border-color="#1890ff" f-color="#1890ff" f-size="{{48}}"></quist-counter>
+```
 
 更详细代码可以参考 [quist-counter demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Counter/index.ux)
 
