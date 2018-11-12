@@ -49,11 +49,16 @@ $ npm install quist-ui -g
 | placeholder | 占位 | `String` | - |
 | prefix | 带有前缀图标的input | `String` | - |
 | suffix | 带有后缀图标的input | `String` | - |
+| on-change | 监测数据改变事件 | `function` | - |
 | on-focus | 获取焦点事件 | `function` | - |
 | on-blur | 失去焦点事件 | `function` | - |
 | on-clear | 清空输入内容事件 | `function` | - |
 
 ## 更新日志
 
-v1.0.0（2018-09-30）
+#### v1.0.0（2018-09-30）
 > 初始版本
+
+#### v1.1.0 (2018-09-19)
+ * [优化] 调整自定义宽度的传入参数
+ * [优化] 添加on-change事件
