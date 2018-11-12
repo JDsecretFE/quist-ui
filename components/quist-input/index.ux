@@ -1,6 +1,6 @@
 <template>
   <stack>
-      <div class="quist-input" style="width: {{width}};">
+      <div class="quist-input" style="width: {{width}}px;">
           <input class="quist-input__fix" />
           <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
             <div class="quist-input__prefix" style="display: {{prefixIcon ? '' : 'none'}}">
@@ -34,7 +34,7 @@
       },
       width: {
         type: String,
-        default: '1080px'
+        default: '1080'
       },
       prefix: {
         type: String,
@@ -66,6 +66,7 @@
       } else {
         this.showClear = false
       }
+      this.$emit('onChange', { value: this.searchValue })
     },
     onfocus() {
       this.$emit('onFocus', { value: this.searchValue })
