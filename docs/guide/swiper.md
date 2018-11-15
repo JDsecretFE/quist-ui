@@ -22,6 +22,12 @@ $ npm install quist-ui -D
 <quist-swiper visible="{{true}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
 ```
 
+#### 不轮询播放
+
+```js{4}
+<quist-swiper visible="{{true}}" is-loop="{{false}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
+```
+
 #### 自定义当前索引和非当前索引的背景色
 
 ```js{4}
@@ -49,6 +55,7 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | visible | Swiper 是否可见 | `Boolean` | false |
 | is-auto-play | 是否自动播放 | `Boolean` | false |
+| is-loop | 是否轮询播放 | `Boolean` | true |
 | time | 自动播放的时间 | `Number` | 3000 |
 | options | 轮播的模块 | `Array` | - |
 | show-indicator | 是否显示indicator | `Boolean` | true |
