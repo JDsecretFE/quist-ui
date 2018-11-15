@@ -10,6 +10,12 @@
       </div>
     </div>
     <div class="example">
+      <div class="example-title"><text>不轮询播放:</text></div>
+      <div class="swiper">
+        <quist-swiper visible="{{true}}" is-loop="{{false}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
+      </div>
+    </div>
+    <div class="example">
       <div class="example-title"><text>自定义当前索引和非当前索引的背景色:</text></div>
       <div class="swiper">
         <quist-swiper visible="{{true}}" options="{{imageList}}" @on-click="choose" selected-color="#ff0000" indicator-color="#fac450"></quist-swiper>
