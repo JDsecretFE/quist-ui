@@ -10,10 +10,10 @@
       <text class="item-txt">带前缀与后缀的输入框</text>
       <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}"></quist-input>
     </div>
-    <div class="item-box">
+    <!-- <div class="item-box">
       <text class="item-txt">禁用状态的输入框</text>
       <quist-input placeholder='请输入关键字' disabled></quist-input>
-    </div>
+    </div> -->
     <div>
 </template>
 
