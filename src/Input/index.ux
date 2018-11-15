@@ -4,15 +4,11 @@
   <div class="input-demo">
     <div class="item-box">
       <text class="item-txt">默认输入框</text>
-      <quist-input id="search" placeholder='请输入关键字' @on-focus="focus" @on-blur="blur" @on-clear="clear"></quist-input>
+      <quist-input id="search" placeholder='请输入关键字' vlaue="{{value1}}" @on-change="onChange1"></quist-input>
     </div>
     <div class="item-box">
-      <text class="item-txt">带后缀的输入框</text>
-      <quist-input placeholder='请输入关键字' @on-focus="focus" @on-blur="blur" @on-clear="clear" suffix="{{suffix}}"></quist-input>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">带前缀的输入框</text>
-      <quist-input placeholder='请输入关键字' @on-focus="focus" @on-blur="blur" @on-clear="clear" prefix="{{prefix}}" suffix="{{suffix}}"></quist-input>
+      <text class="item-txt">带前缀与后缀的输入框</text>
+      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}"></quist-input>
     </div>
     <div class="item-box">
       <text class="item-txt">禁用状态的输入框</text>
@@ -49,7 +45,9 @@
   export default {
     data: {
       prefix: SEARCH_ICON,
-      suffix: CLEAR_ICON
+      suffix: CLEAR_ICON,
+      value1: '',
+      value2: ''
     },
     onInit() {
       this.$page.setTitleBar({ text: 'Input' })
@@ -57,24 +55,23 @@
         this.$child("search").focus()
       }, 1000);
     },
-    focus(e) {
-      prompt.showToast({
-        message: 'focus value:' + e.detail.value
-      })
-    },
-    blur(e) {
-      prompt.showToast({
-        message: 'blur value:' + e.detail.value
-      })
-    },
-    clear() {
-      prompt.showToast({
-        message: 'clear'
-      })
-    },
     search(e) {
       prompt.showToast({
         message: 'value:' + e.detail.value
+      })
+    },
+    onChange1(e) {
+      let value = e.detail.value;
+      this.value1 = value;
+      prompt.showToast({
+        message: 'value1:' + value
+      })
+    },
+    onChange2(e) {
+      let value = e.detail.value;
+      this.value2 = value;
+      prompt.showToast({
+        message: 'value2:' + value
       })
     }
   }
