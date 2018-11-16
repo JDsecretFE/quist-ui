@@ -50,7 +50,7 @@
       value2: '',
       wrapperStyle: {
         height: '68px',
-        widht: '560px',
+        width: '560px',
         borderRadius: '50px',
         border: '10px solid #E3E5E9'
       },

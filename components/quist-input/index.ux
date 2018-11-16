@@ -56,7 +56,6 @@
     },
     data() {
       return {
-        width: '1080px',
         searchValue: '',
         showClear: false,
         replaceShow: true
@@ -105,7 +104,7 @@
     },
     wrapper() {
       let baseStyle = {
-        width: this.width
+        width: '1080px'
       }
       return Object.assign(baseStyle, this.wrapperStyle)
     },
