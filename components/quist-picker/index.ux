@@ -4,13 +4,13 @@
   <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
     <div class="quist-picker {{animationClass}}" show="{{show}}">
       <div class="quist-picker-title">
-        <text class="quist-picker-cancel" @click="cancelClick">{{cancelText}}</text>
-        <text class="quist-picker-confirm" @click="confirmClick">{{okText}}</text>
+        <text class="quist-picker-cancel" style="{{cancelStyle()}}" @click="cancelClick">{{cancelText}}</text>
+        <text class="quist-picker-confirm" style="{{confirmStyle()}}" @click="confirmClick">{{okText}}</text>
       </div>
       <div class="quist-picker-content">
         <list class="quist-picker-ul" for="(idx, res) in doubleList">
           <list-item class="quist-picker-li" type="listitem" for="(i, r) in res" @click="selectLi(idx, i, r)">
-            <text class="li-text {{select[idx] === i ? 'selected':''}}">{{r}}</text>
+            <text style="{{select[idx] === i ? selectedStyle() : normalStyle()}}">{{r}}</text>
           </list-item>
         </list>
       </div>
@@ -45,6 +45,30 @@
       list: {
         type: Array,
         default: []
+      },
+      titleFontSize: {
+        type: Number,
+        default: 32
+      },
+      cancelColor: {
+        type: String,
+        default: '#828282'
+      },
+      confirmColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      itemColor: {
+        type: String,
+        default: '#666666'
+      },
+      itemSelectColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      itemFontSize: {
+        type: Number,
+        default: 28
       }
     },
     data() {
@@ -106,6 +130,34 @@
           content: cnt
         }
       })
+    },
+    cancelStyle() {
+      let baseStyle = {
+        fontSize: this.titleFontSize + 'px',
+        color: this.cancelColor
+      }
+      return baseStyle;
+    },
+    confirmStyle() {
+      let baseStyle = {
+        fontSize: this.titleFontSize + 'px',
+        color: this.confirmColor
+      }
+      return baseStyle;
+    },
+    selectedStyle() {
+      let baseStyle = {
+        fontSize: this.itemFontSize + 'px',
+        color: this.itemSelectColor
+      }
+      return baseStyle;
+    },
+    normalStyle() {
+      let baseStyle = {
+        fontSize: this.itemFontSize + 'px',
+        color: this.itemColor
+      }
+      return baseStyle;
     }
   }
 </script>

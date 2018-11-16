@@ -1,7 +1,7 @@
 <template>
   <div>
     <stack show="{{visible}}" class="{{type === 'pop' ? 'quist-swiper-pop' : 'quist-swiper'}}">
-      <swiper class="{{animationClass}}" indicator="{{false}}" interval="{{time}}" autoplay="{{isAutoPlay}}" onChange="swiperChange">
+      <swiper class="{{animationClass}}" indicator="{{false}}" interval="{{time}}" autoplay="{{isAutoPlay}}" loop="{{isLoop}}" onChange="swiperChange">
         <div class="quist-swiper-item" for="{{options}}" @click="choose($idx)">
           <image class="quist-swiper-image" src="{{$item}}" />
         </div>
@@ -54,6 +54,10 @@
       type: {
         type: String,
         default: ''
+      },
+      isLoop: {
+        type: Boolean,
+        default: true
       }
     },
     data() {
