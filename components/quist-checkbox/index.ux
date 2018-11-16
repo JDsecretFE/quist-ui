@@ -3,11 +3,11 @@
     <block for="(index, row) in options">
       <div if="!(index === 0) && replaceHasBorder" class="quist-checkbox-top"></div>
       <div class="quist-checkbox__item {{isRight ? 'quist-checkbox__item--isRight' : ''}} {{row.disabled ? 'quist-checkbox__item--disabled' : ''}}" @click="clickAction(row)">
-        <text class="quist-checkbox__name" if="isRight" style="color: {{labelColor}}">{{row.label || row}}</text>
-        <stack class="quist-checkbox__checkbox" style="background-color: {{replaceChecked[index] ? checkedColor : checkColor}};border-color: {{replaceChecked[index] ? checkedBorderColor : checkBorderColor}}">
-          <div class="quist-checkbox__thumb {{replaceChecked[index] ? 'quist-checkbox__thumb--open' : 'quist-checkbox__thumb--close'}}"></div>
+        <text class="quist-checkbox__name" if="isRight" style="{{label()}}">{{row.label || row}}</text>
+        <stack class="quist-checkbox__checkbox" style="{{wrapper(replaceChecked[index] ? checkedColor : checkColor, replaceChecked[index] ? checkedBorderColor : checkBorderColor)}}">
+          <div class="quist-checkbox__thumb {{replaceChecked[index] ? 'quist-checkbox__thumb--open' : 'quist-checkbox__thumb--close'}}" style="{{inner()}}"></div>
         </stack>
-        <text class="quist-checkbox__name" if="!isRight" style="margin-left: {{labelMargin}};color: {{labelColor}}">{{row.label || row}}</text>
+        <text class="quist-checkbox__name" if="!isRight" style="{{label()}}">{{row.label || row}}</text>
       </div>
     </block>
   </div>
@@ -56,6 +56,18 @@
       isRight: {
         type: Boolean,
         default: false
+      },
+      labelStyle: {
+        type: Object,
+        default: {}
+      },
+      wrapperStyle: {
+        type: Object,
+        default: {}
+      },
+      innerStyle: {
+        type: Object,
+        default: {}
       }
     },
     data() {
@@ -125,6 +137,26 @@
     },
     change() {
       this.$emit('onChange', { values: this.replaceValues })
+    },
+    label() {
+      let baseStyle = {
+        color: this.labelColor,
+        marginLeft: this.labelMargin
+      }
+      return Object.assign(baseStyle, this.labelStyle)
+    },
+    wrapper(backgroundColor, borderColor) {
+      let baseStyle = {
+        backgroundColor,
+        borderColor
+      }
+      return Object.assign(baseStyle, this.wrapperStyle)
+    },
+    inner() {
+      let baseStyle = {
+
+      }
+      return Object.assign(baseStyle, this.innerStyle)
     }
   }
 </script>

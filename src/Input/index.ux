@@ -8,7 +8,7 @@
     </div>
     <div class="item-box">
       <text class="item-txt">带前缀与后缀的输入框</text>
-      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}"></quist-input>
+      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}" icon-style="{{iconStyle}}"></quist-input>
     </div>
     <!-- <div class="item-box">
       <text class="item-txt">禁用状态的输入框</text>
@@ -47,7 +47,16 @@
       prefix: SEARCH_ICON,
       suffix: CLEAR_ICON,
       value1: '',
-      value2: ''
+      value2: '',
+      wrapperStyle: {
+        height: '68px',
+        widht: '560px',
+        borderRadius: '50px',
+        border: '10px solid #E3E5E9'
+      },
+      iconStyle: {
+
+      }
     },
     onInit() {
       this.$page.setTitleBar({ text: 'Input' })

@@ -1,17 +1,18 @@
 <template>
   <stack>
-      <div class="quist-input" style="width: {{width}}px;">
+      <div class="quist-input">
           <input class="quist-input__fix" />
-          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
-            <div class="quist-input__prefix" style="display: {{prefixIcon ? '' : 'none'}}">
+          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}" style="{{wrapper()}}">
+            <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
               <image src="{{prefixIcon}}" class="quist-input__icon" />
             </div>
             <input id="quist-input__box" class="quist-input__box" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" @focus="onfocus" @blur="onblur" disabled="{{disabled}}" @change="onchange" />
-            <div class="quist-input__suffix" @click="clearClick" style="opacity:{{showClear ? '1':'0'}};">
-              <image src="{{suffixIcon}}" class="quist-input__img" />
+            <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showClear}}">
+              <image src="{{suffixIcon}}" class="quist-input__icon" />
             </div>
           </div>
         </div>
+      </div>
   </stack>
 </template>
 
@@ -32,10 +33,6 @@
         type: Boolean,
         default: false
       },
-      width: {
-        type: String,
-        default: '1080'
-      },
       prefix: {
         type: String,
         default: ''
@@ -47,10 +44,19 @@
       value: {
         type: String,
         default: null
+      },
+      wrapperStyle: {
+        type: Object,
+        default: {}
+      },
+      iconStyle: {
+        type: Object,
+        default: {}
       }
     },
     data() {
       return {
+        width: '1080px',
         searchValue: '',
         showClear: false,
         replaceShow: true
@@ -96,6 +102,17 @@
       this.$element("quist-input__box").focus({
         focus: false
       })
+    },
+    wrapper() {
+      let baseStyle = {
+        width: this.width
+      }
+      return Object.assign(baseStyle, this.wrapperStyle)
+    },
+    icon() {
+      let baseStyle = {
+      }
+      return Object.assign(baseStyle, this.iconStyle)
     }
   }
 </script>
