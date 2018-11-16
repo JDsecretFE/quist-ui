@@ -16,7 +16,7 @@
     </div>
     <div class="item-box">
         <label class="item-txt" target="isDefault">自定义样式开关</label>
-        <quist-switch checked="{{false}}" id='isDefault' checked-color="red"></quist-switch>
+        <quist-switch checked="{{false}}" id='isDefault' checked-color="red" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
     </div>
   </div>
 </template>
@@ -47,7 +47,13 @@
     data: {
       data1: false,
       data3: false,
-      data4: true
+      data4: true,
+      wrapperStyle: {
+        borderRadius: 0
+      },
+      innerStyle: {
+        borderRadius: 0
+      }
     },
     onInit() {
       this.$page.setTitleBar({ text: 'Switch' })

@@ -50,10 +50,19 @@ $ npm install quist-ui -D
 | disabled | 是否禁用	 | `Boolean` | false |
 | check-color | 未选中时的背景颜色 | `String` | #C1C1C1 |
 | checked-color | 选中时的背景颜色 | `String` | #2998F9 |
+| wrapper-style | 外层样式覆盖入口 | `Object` | {} |
+| inner-style | 内层样式覆盖入口 | `Object` | {} |
 | on-change | `change` 事件的 handler | `function` | - |
 
 
 ## 更新日志
 
 #### v1.0.0（2018-09-30）
+<<<<<<< HEAD
 * 初始版本
+=======
+> 初始版本
+
+#### v1.1.0 (2018-09-19)
+* [优化] 调整样式传递方式
+>>>>>>> component

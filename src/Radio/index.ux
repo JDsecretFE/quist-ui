@@ -8,7 +8,7 @@
     </div>
     <div class="item-box">
       <text class="item-txt" @click="evtEmit">自定义样式</text>
-      <quist-radio checked-color='red' is-right options="{{data1}}" value="{{value1}}" @on-change="callback1"></quist-radio>
+      <quist-radio checked-color='red' is-right options="{{data1}}" value="{{value1}}" @on-change="callback1" label-style="{{labelStyle}}" wrapper-style="{{wrapperStyle}}" inner-style="{{innerStyle}}"></quist-radio>
     </div>
     <div>
 </template>
@@ -65,7 +65,20 @@
           label: '女',
           value: '2'
         }
-      ]
+      ],
+      labelStyle: {
+        color: 'red'
+      },
+      wrapperStyle: {
+        width: '40px',
+        height: '40px',
+        borderRadius: 0
+      },
+      innerStyle: {
+        width: '24px',
+        height: '24px',
+        borderRadius: 0
+      }
     },
     onInit() {
       this.value = this.data[0].value

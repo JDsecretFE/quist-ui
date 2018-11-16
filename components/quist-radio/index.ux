@@ -2,11 +2,11 @@
   <div class="quist-radio">
     <block for="(index, row) in options">
       <div class="quist-radio__item {{isRight ? 'quist-radio__item--isRight' : ''}} {{row.disabled ? 'quist-radio__item--disabled' : ''}}" @click="click(row)">
-        <text class="quist-radio__name" if="isRight" style="color: {{labelColor}}">{{row.label || row}}</text>
-        <stack class="quist-radio__check" style="border-color: {{replaceValue === (row.value || row) ? checkedColor : checkColor}}">
-          <div class="quist-radio__thumb {{replaceValue === (row.value || row) ? 'quist-radio__thumb--open' : 'quist-radio__thumb--close'}}" style="background-color: {{replaceValue === (row.value || row) ? checkedColor : checkColor}}"></div>
+        <text if="isRight" style="{{label()}}">{{row.label || row}}</text>
+        <stack class="quist-radio__check" style="{{wrapper(replaceValue === (row.value || row) ? checkedColor : checkColor)}}">
+          <div class="quist-radio__thumb {{replaceValue === (row.value || row) ? 'quist-radio__thumb--open' : 'quist-radio__thumb--close'}}" style="{{inner(replaceValue === (row.value || row) ? checkedColor : checkColor)}}"></div>
         </stack>
-        <text class="quist-radio__name" if="!isRight" style="color: {{labelColor}}">{{row.label || row}}</text>
+        <text if="!isRight" style="{{label()}}">{{row.label || row}}</text>
       </div>
     </block>
   </div>
@@ -39,6 +39,18 @@
       checkedColor: {
         type: String,
         default: '#2998F9'
+      },
+      labelStyle: {
+        type: Object,
+        default: {}
+      },
+      wrapperStyle: {
+        type: Object,
+        default: {}
+      },
+      innerStyle: {
+        type: Object,
+        default: {}
       }
     },
     data() {
@@ -68,6 +80,25 @@
     },
     change() {
       this.$emit('onChange', { values: this.replaceValue })
+    },
+    label() {
+      let baseStyle = {
+        color: this.labelColor
+      }
+      return Object.assign(baseStyle, this.labelStyle)
+    },
+    wrapper(borderColor) {
+      let baseStyle = {
+        borderColor
+      }
+      return Object.assign(baseStyle, this.wrapperStyle)
+    },
+    inner(backgroundColor) {
+      let baseStyle = {
+        backgroundColor 
+      }
+      return Object.assign(baseStyle, this.innerStyle)
     }
+
   }
 </script>
