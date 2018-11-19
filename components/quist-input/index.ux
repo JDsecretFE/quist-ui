@@ -1,12 +1,12 @@
 <template>
   <stack>
-      <div class="quist-input">
+      <div class="quist-input" style="{{wrapper()}}">
           <input class="quist-input__fix" />
-          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}" style="{{wrapper()}}">
+          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
             <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
               <image src="{{prefixIcon}}" class="quist-input__icon" />
             </div>
-            <input id="quist-input__box" class="quist-input__box" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" @focus="onfocus" @blur="onblur" disabled="{{disabled}}" @change="onchange" />
+            <input id="quist-input__box" class="quist-input__box" style="{{input()}}" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" @focus="onfocus" @blur="onblur" disabled="{{disabled}}" @change="onchange" />
             <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showClear}}">
               <image src="{{suffixIcon}}" class="quist-input__icon" />
             </div>
@@ -52,6 +52,10 @@
       iconStyle: {
         type: Object,
         default: {}
+      },
+      inputStyle: {
+        type: Object,
+        default: {}
       }
     },
     data() {
@@ -68,6 +72,7 @@
     initialize() {
       this.prefixIcon = this.prefix;
       this.suffixIcon = this.suffix;
+      this.searchValue = this.value;
     },
     change() {
       this.searchValue = this.value
@@ -112,6 +117,12 @@
       let baseStyle = {
       }
       return Object.assign(baseStyle, this.iconStyle)
+    },
+    input() {
+      let baseStyle = {
+
+      }
+      return Object.assign(baseStyle, this.inputStyle)
     }
   }
 </script>

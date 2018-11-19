@@ -351,3 +351,8 @@ export const city = [{
     cityName: '呼伦贝尔',
     code: 310000
   }]
+
+  export const current = {
+    cityName: '北京',
+    code: 110000
+  }

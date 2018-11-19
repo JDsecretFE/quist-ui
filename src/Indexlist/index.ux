@@ -2,7 +2,7 @@
 
 <template>
   <div class="badge-demo">
-    <quist-indexlist data-source="{{dataSource}}" title="当前定位城市" current="北京" hot-item="{{hotCity}}" @on-click="onClick" type="cityName" hot-title="热门城市"></quist-indexlist>
+    <quist-indexlist data-source="{{dataSource}}" title="当前定位城市" current="{{current}}" hot-item="{{hotCity}}" @on-click="onClick" type="cityName" hot-title="热门城市"></quist-indexlist>
   </div>
 </template>
 
@@ -28,11 +28,12 @@
 </style>
 
 <script>
-  import { city, hotCity } from './data'
+  import { city, hotCity, current } from './data'
   export default {
     data: {
       dataSource: city,
-      hotCity
+      hotCity,
+      current
     },
     onClick(data) {
       console.log('data', data.detail);

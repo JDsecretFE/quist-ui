@@ -9,6 +9,7 @@
     <div class="item-box">
       <text class="item-txt" @click="evtEmit">自定义样式</text>
       <quist-radio checked-color='red' is-right options="{{data1}}" value="{{value1}}" @on-change="callback1" label-style="{{labelStyle}}" wrapper-style="{{wrapperStyle}}" inner-style="{{innerStyle}}"></quist-radio>
+      <quist-radio checked-color='#1890ff' is-right options="{{data1}}" value="{{value2}}" @on-change="callback2" label-style="{{labelStyle1}}" wrapper-style="{{wrapperStyle1}}" inner-style="{{innerStyle1}}"></quist-radio>
     </div>
     <div>
 </template>
@@ -39,6 +40,7 @@
     data: {
       value: '',
       value1: '',
+      value2: '',
       data: [
         {
           disabled: true,
@@ -78,6 +80,19 @@
         width: '24px',
         height: '24px',
         borderRadius: 0
+      },
+      labelStyle1: {
+        color: '#1890ff'
+      },
+      wrapperStyle1: {
+        width: '60px',
+        height: '60px',
+        borderRadius: 0
+      },
+      innerStyle1: {
+        width: '44px',
+        height: '44px',
+        borderRadius: 0
       }
     },
     onInit() {
@@ -92,6 +107,9 @@
     },
     callback1(data) {
       this.value1 = data.detail.values
+    },
+    callback2(data) {
+      this.value2 = data.detail.values
     }
   }
 </script>
