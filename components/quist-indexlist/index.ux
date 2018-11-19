@@ -2,7 +2,7 @@
   <stack  class="quist-indexlist">
     <list id="quist-indexlist" class="quist-indexlist__content">
       <list-item type="product" class="quist-indexlist__label" if="title"><text>{{title}}</text></list-item>
-      <list-item type="product" class="quist-indexlist__layout" if="current" @click="onClick(item, 1)"><text>{{current[type]}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__layout" if="current" @click="onClick(current, 1)"><text>{{current[type]}}</text></list-item>
       <list-item type="product" class="quist-indexlist__label" if="hotTitle"><text>{{hotTitle}}</text></list-item>
       <list-item type="hot" class="quist-indexlist__wrapper" if="hotItem.length > 0">
         <block for="(index, item) in hotItem">
