@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-progress" src="@quist-ui/quist-progress/index"></import>
 ```
 
@@ -18,31 +18,31 @@ $ npm install quist-ui -D
 
 #### 默认样式：
 
-```ux
+```js{4}
 <quist-progress percent="{{10}}"></quist-progress>
 ```
 
 #### 自定义进度条颜色：
 
-```ux
+```js{4}
 <quist-progress percent="{{20}}" stroke-color="#52c41a"></quist-progress>
 ```
 
 #### 不显示提示信息：
 
-```ux
+```js{4}
 <quist-progress percent="{{40}}" show-info="{{false}}"></quist-progress>
 ```
 
 #### 自定义进度条高度：
 
-```ux
+```js{4}
 <quist-progress percent="{{60}}" stroke-height="{{20}}"></quist-progress>
 ```
 
 #### 自定义进度条圆角大小：
 
-```ux
+```js{4}
 <quist-progress percent="{{80}}" border-radius="{{6}}"></quist-progress>
 ```
 

@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-loading" src="@quist-ui/quist-loading/index"></import>
 ```
 
@@ -18,7 +18,7 @@ $ npm install quist-ui -D
 
 #### 显示图标
 
-```ux
+```js{4}
 <quist-loading tip="{{tip}}">
   <image src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif" />
 </quist-loading>
@@ -26,13 +26,13 @@ $ npm install quist-ui -D
 
 #### 不显示图标
 
-```ux
+```js{4}
 <quist-loading tip="{{tip}}"></quist-loading>
 ```
 
 #### 不显示蒙层
 
-```ux
+```js{4}
 <quist-loading visible="{{visible}}" tip="{{tip}}" background="rgba(0, 0, 0, 0)">
   <image src="http://www.sucaijishi.com/uploadfile/2014/0524/20140524124238403.gif" />
 </quist-loading>

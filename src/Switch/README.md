@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name='quist-switch' src='@quist-ui/quist-switch/index'></import>
 ```
 
@@ -18,25 +18,25 @@ $ npm install quist-ui -D
 
 #### 默认开关
 
-```ux
+```js{4}
 <quist-switch checked></quist-switch>
 ```
 
 #### 禁用开关
 
-```ux
+```js{4}
 <quist-switch disabled checked="{{false}}"></quist-switch>
 ```
 
 #### 自定义样式开关
 
-```ux
+```js{4}
 <quist-switch checked="{{false}}" checked-color="red"></quist-switch>
 ```
 
 #### 绑定 change 事件
 
-```ux
+```js{4}
 <quist-switch checked @on-change="callback"></quist-switch>
 ```
 

@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name='quist-radio' src='@quist-ui/quist-radio/index'></import>
 ```
 
@@ -18,13 +18,13 @@ $ npm install quist-ui -D
 
 #### 基础(绑定onChange事件)
 
-```ux
+```js{4}
 <quist-radio value='apple' options="{{data}}" @on-change="callback"></quist-radio>
 ```
 
 #### 自定义样式
 
-```ux
+```js{4}
 <quist-radio thumb-checked-color='red' checked-border-color='red' is-right options="{{data1}}" value="{{value1}}" @on-change="callback1"></quist-radio>
 ```
 

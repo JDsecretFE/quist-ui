@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name='quist-counter' src='@quist-ui/quist-counter/index'></import>
 ```
 
@@ -18,31 +18,31 @@ $ npm install quist-ui -D
 
 #### 默认计数器展示
 
-```ux
+```js{4}
 <quist-counter value="{{1}}" @on-change="valueChange"></quist-counter>
 ```
 
 #### 禁止更改计数器展示
 
-```ux
+```js{4}
 <quist-counter value="{{10}}" disabled></quist-counter>
 ```
 
 #### 设置最大值的计数器展示(最大值为10)
 
-```ux
+```js{4}
 <quist-counter value="{{3}}" max="{{10}}" @on-change="valueChange"></quist-counter>
 ```
 
 #### 设置最小值的计数器展示(最小值为2)
 
-```ux
+```js{4}
 <quist-counter value="{{1}}" min="{{2}}" @on-change="valueChange"></quist-counter>
 ```
 
 #### 自定义计数器样式
 
-```ux
+```js{4}
 <quist-counter value="{{1}}" @on-change="valueChange" width="{{200}}" height="{{60}}" bg-color="#f8f8f8" border-radius="{{1}}" disabled-color="#E64340" border-color="#1890ff" f-color="#1890ff" f-size="{{48}}"></quist-counter>
 ```
 

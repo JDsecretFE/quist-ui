@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-toast" src="@quist-ui/quist-toast/index"></import>
 ```
 
@@ -18,7 +18,7 @@ $ npm install quist-ui -D
 
 #### 提示
 
-```ux
+```js{4}
 视图
 <input type="button" value="demo" @click="showToast({{type}})" />
 方法

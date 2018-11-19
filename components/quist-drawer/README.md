@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-drawer" src="@quist-ui/quist-drawer/index"></import>
 ```
 
@@ -18,7 +18,7 @@ $ npm install quist-ui -D
 
 #### 底部弹出
 
-```ux
+```js{4}
 <quist-drawer @on-close="close" placement="bottom">
   <div class="mask">
     <text class="mask-cnt">hello qucikapp</text>
@@ -28,7 +28,7 @@ $ npm install quist-ui -D
 
 #### 顶部弹出
 
-```ux
+```js{4}
 <quist-drawer @on-close="close" placement="top">
   <div class="mask">
     <text class="mask-cnt">hello qucikapp</text>
@@ -38,7 +38,7 @@ $ npm install quist-ui -D
 
 #### 左侧弹出
 
-```ux
+```js{4}
 <quist-drawer @on-close="close" placement="left">
   <div class="mask2">
     <text class="mask-cnt">hello qucikapp</text>
@@ -48,7 +48,7 @@ $ npm install quist-ui -D
 
 #### 右侧弹出
 
-```ux
+```js{4}
 <quist-drawer @on-close="close" placement="right">
   <div class="mask2">
     <text class="mask-cnt">hello qucikapp</text>

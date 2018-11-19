@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-tabs" src="@quist-ui/quist-tabs/index"></import>
 <import name="quist-tabs-item" src="@quist-ui/quist-tabsItem/index"></import>
 ```
@@ -19,7 +19,7 @@ $ npm install quist-ui -D
 
 #### 默认样式：
 
-```ux
+```js{4}
 <quist-tabs>
   <quist-tabs-item @on-click="select(tabIdx)" for="(tabIdx, tabItem) in tabs" tab="{{tabItem}}">
   </quist-tabs-item>
@@ -28,7 +28,7 @@ $ npm install quist-ui -D
 
 #### 自定义样式（水平分布）:
 
-```ux
+```js{4}
 <quist-tabs border-color="#1890ff">
   <quist-tabs-item layout="center" line-width="{{3}}" f-size="{{36}}" active-color="#fac450" default-color="#333333" @on-click="selectb(tabIdx)" for="(tabIdx, tabItem) in tabsb" tab="{{tabItem}}">
   </quist-tabs-item>
