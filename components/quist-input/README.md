@@ -50,6 +50,9 @@ $ npm install quist-ui -D
 | placeholder | 占位 | `String` | - |
 | prefix | 带有前缀图标的input | `String` | - |
 | suffix | 带有后缀图标的input | `String` | - |
+| icon-style | 图标样式覆盖入口 | `Object` | {} |
+| wrapper-style | 外层样式覆盖入口 | `Object` | {} |
+| input-style | 输入框样式覆盖入口 | `Object` | {} |
 | on-change | 监测数据改变事件 | `function` | - |
 
 ## 更新日志
@@ -57,8 +60,9 @@ $ npm install quist-ui -D
 #### v1.0.0（2018-09-30）
 * 初始版本
 
-#### v1.1.0 (2018-09-19)
- * [优化] 调整自定义宽度的传入参数
+#### v1.1.0 (2018-11-19)
+ * [优化] 优化样式传递方式
  * [优化] 添加on-change事件
  * [优化] 删除on-focus、on-blur、on-clear事件
  * [优化] 添加value属性,与on-change事件结合动态改变数据
+

@@ -1,17 +1,17 @@
 <template>
   <stack  class="quist-indexlist">
     <list id="quist-indexlist" class="quist-indexlist__content">
-      <list-item type="product" class="quist-indexlist__label" show="title"><text>{{title}}</text></list-item>
-      <list-item type="product" class="quist-indexlist__layout" show="current"><text>{{current}}</text></list-item>
-      <list-item type="product" class="quist-indexlist__label" show="hotItem.length > 0"><text>{{hotTitle}}</text></list-item>
-      <list-item type="hot" class="quist-indexlist__wrapper">
-        <block for="(index, item) in hotItem" if="hotItem.length > 0">
-          <div class="quist-indexlist__item" @click="onClick(item)"><text>{{item[type]}}</text></div>
+      <list-item type="product" class="quist-indexlist__label" if="title"><text>{{title}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__layout" if="current" @click="onClick(item, 1)"><text>{{current[type]}}</text></list-item>
+      <list-item type="product" class="quist-indexlist__label" if="hotTitle"><text>{{hotTitle}}</text></list-item>
+      <list-item type="hot" class="quist-indexlist__wrapper" if="hotItem.length > 0">
+        <block for="(index, item) in hotItem">
+          <div class="quist-indexlist__item" @click="onClick(item, 2)"><text>{{item[type]}}</text></div>
         </block>
       </list-item>
       <block for="(index, item) in dataSource">
           <list-item type="ceiling" class="quist-indexlist__label"><text>{{item.letter}}</text></list-item>
-          <list-item for="(idx, dataItem) in item[listType]" type="item" class="quist-indexlist__layout {{(idx === item[listType].length - 1) ? '' : 'quist-indexlist__border'}}" @click="onClick(dataItem)">
+          <list-item for="(idx, dataItem) in item[listType]" type="item" class="quist-indexlist__layout {{(idx === item[listType].length - 1) ? '' : 'quist-indexlist__border'}}" @click="onClick(dataItem, 3)">
             <div class="quist-indexlist__name"><text>{{dataItem[type]}}</text></div>
           </list-item>
       </block>
@@ -56,8 +56,8 @@
         default: ''
       },
       current: {
-        type: String,
-        default: ''
+        type: Object,
+        default: {}
       },
       hotTitle: {
         type: String,
@@ -65,9 +65,12 @@
       }
     },
     data: {
-      listType: ''
+      listType: '',
+      count: 0
     },
     onInit() {
+      this.change();
+      this.hasValue();
       this.$watch('dataSource', 'change')
     },
     change() {
@@ -80,9 +83,10 @@
           }
         }
       }
+      this.hasValue();
     },
-    onClick(value) {
-      this.$emit('onClick', { value })
+    onClick(value, type) {
+      this.$emit('onClick', { value, type })
     },
     onSelect(index, select) {
       let num = 0;
@@ -95,7 +99,7 @@
         }
       }
       this.$element('quist-indexlist').scrollTo({
-        index: 4 + num
+        index: this.count + num
       })
     },
     showMask () {
@@ -108,6 +112,22 @@
       } else {
         ++this.appearCount
       }
+    },
+    hasValue() {
+      let count = 0;
+      if (this.title) {
+        count += 1;
+      }
+      if (this.current) {
+        count += 1;
+      }
+      if (this.hotTitle) {
+        count += 1;
+      }
+      if (this.hotItem && this.hotItem.length > 0) {
+        count += 1;
+      }
+      this.count = count;
     }
   }
 </script>

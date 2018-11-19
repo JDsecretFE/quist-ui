@@ -7,13 +7,21 @@
       <quist-input id="search" placeholder='请输入关键字' vlaue="{{value1}}" @on-change="onChange1"></quist-input>
     </div>
     <div class="item-box">
-      <text class="item-txt">带前缀与后缀的输入框</text>
-      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}" icon-style="{{iconStyle}}"></quist-input>
-    </div>
-    <!-- <div class="item-box">
       <text class="item-txt">禁用状态的输入框</text>
       <quist-input placeholder='请输入关键字' disabled></quist-input>
-    </div> -->
+    </div>
+    <div class="item-box">
+      <text class="item-txt">带前缀的输入框</text>
+      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}"></quist-input>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">带前缀与后缀的输入框</text>
+      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value3}}" @on-change="onChange3" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}"></quist-input>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">自定义样式的输入框</text>
+      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value4}}" @on-change="onChange4" suffix="{{suffix}}" wrapper-style="{{wrapperStyle1}}" input-style="{{inputStyle}}"></quist-input>
+    </div>
     <div>
 </template>
 
@@ -48,6 +56,8 @@
       suffix: CLEAR_ICON,
       value1: '',
       value2: '',
+      value3: 'hello world',
+      value4: '你好, 世界',
       wrapperStyle: {
         height: '68px',
         width: '560px',
@@ -56,6 +66,16 @@
       },
       iconStyle: {
 
+      },
+      wrapperStyle1: {
+        height: '68px',
+        width: '560px',
+        borderRadius: '50px',
+        border: '10px solid #E3E5E9',
+        backgroundColor: '#ffffff'
+      },
+      inputStyle: {
+        color: '#1890ff'
       }
     },
     onInit() {
@@ -81,6 +101,20 @@
       this.value2 = value;
       prompt.showToast({
         message: 'value2:' + value
+      })
+    },
+    onChange3(e) {
+      let value = e.detail.value;
+      this.value3 = value;
+      prompt.showToast({
+        message: 'value3:' + value
+      })
+    },
+    onChange4(e) {
+      let value = e.detail.value;
+      this.value4 = value;
+      prompt.showToast({
+        message: 'value4:' + value
       })
     }
   }

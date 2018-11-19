@@ -40,7 +40,7 @@ $ npm install quist-ui -D
 <quist-switch checked @on-change="callback"></quist-switch>
 ```
 
-更详细代码可以参考 [quist-checkbox demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Switch/index.ux)
+更详细代码可以参考 [quist-switch demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Switch/index.ux)
 
 ## API 
 
@@ -50,6 +50,8 @@ $ npm install quist-ui -D
 | disabled | 是否禁用	 | `Boolean` | false |
 | check-color | 未选中时的背景颜色 | `String` | #C1C1C1 |
 | checked-color | 选中时的背景颜色 | `String` | #2998F9 |
+| wrapper-style | 外层样式覆盖入口 | `Object` | {} |
+| inner-style | 内层样式覆盖入口 | `Object` | {} |
 | on-change | `change` 事件的 handler | `function` | - |
 
 
@@ -57,3 +59,6 @@ $ npm install quist-ui -D
 
 #### v1.0.0（2018-09-30）
 * 初始版本
+
+#### v1.1.0 (2018-11-19)
+* [优化] 优化样式传递方式

@@ -43,6 +43,9 @@ $ npm install quist-ui -D
 | check-border-color| 未选中状态选择框颜色 | `String` | #CACBCC |
 | checked-border-color| 选中状态选择框颜色 | `String` | #2998F9 |
 | is-right| 选择框是否在右侧 | `Boolean` | false |
+| label-style | 标签样式覆盖入口 | `Object` | {} |
+| wrapper-style | 外层样式覆盖入口 | `Object` | {} |
+| inner-style | 内层样式覆盖入口 | `Object` | {} |
 | on-change| 变化时回调函数 | `Function` | - |
 
 ## Options属性
@@ -58,3 +61,6 @@ $ npm install quist-ui -D
 
 #### v1.0.0（2018-09-30）
 * 初始版本
+
+#### v1.1.0 (2018-11-19)
+* [优化] 优化样式传递方式
