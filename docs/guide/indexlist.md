@@ -5,7 +5,7 @@
 
 ## 安装
 
-```js{4}
+```
 $ npm install quist-ui -D
 ```
 
@@ -30,7 +30,7 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | data-source | 数据源 | `Array` | [] |
 | title | 标题 | `String` | - |
-| current | 当前定位 | `String` | - |
+| current | 当前定位 | `Object` | {} |
 | hot-title | 热门标题 | `String` | - |
 | hot-item | 热门数据源 | `Array` | [] |
 | type | 需要展示字段的名称 | `String` | - |
@@ -77,8 +77,11 @@ $ npm install quist-ui -D
 ## 更新日志
 
 #### v1.0.5（2018-10-23）
-* 添加 `CityPicker` 组件
+* 添加`CityPicker`组件
 
 #### v1.0.7 (2018-10-30)
 * [优化] 将 `CityPicker` 组件名字更改为 `Indexlist` , 通用性更强
 * [优化] 添加`title`, `current`, `hot-item`, `type`属性, 提升组件的可扩展性
+
+#### v1.1.0 (2018-11-19)
+* [优化] 修改`current`属性为`Object`类型
