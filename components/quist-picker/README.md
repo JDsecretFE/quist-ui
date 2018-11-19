@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-picker" src="@quist-ui/quist-picker/index"></import>
 ```
 
@@ -18,19 +18,19 @@ $ npm install quist-ui -D
 
 #### 单列、多列选择
 
-```ux
+```js{4}
 <quist-picker visible="{{pickerVisible}}" @on-close="close()" list="{{list}}" @on-select="select()" ok-text="ok" cancel-text="cancel"></quist-picker>
 ```
 
 #### 点击蒙层不关闭当前组件
 
-```ux
+```js{4}
 <quist-picker visible="{{pickerVisible}}" @on-close="close()" list="{{list}}" @on-select="select()" mask-closable="{{false}}"></quist-picker>
 ```
 
 #### 自定义样式
 
-```ux
+```js{4}
 <quist-picker visible="{{pickerVisible4}}" title-font-size="{{24}}" cancel-color="#666666" confirm-color="#87d068" item-color="#999999" item-select-color="#87d068" item-font-size="{{24}}" @on-close="close(4)" list="{{list1}}" @on-select="select4()" mask-closable="{{false}}" ok-text="ok" cancel-text="cancel"></quist-picker>
 ```
 

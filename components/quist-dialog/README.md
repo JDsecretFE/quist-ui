@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-dialog" src="@quist-ui/quist-dialog/index"></import>
 ```
 
@@ -18,35 +18,35 @@ $ npm install quist-ui -D
 
 #### 常规对话框
 
-```ux
+```js{4}
 <quist-dialog mask-closable="{{true}}" title="标题" cancel-text="取消" @on-cancel="onCancel" @on-ok="onOk" content="这是内容这是内容" type="normal">
 </quist-dialog>
 ```
 
 #### 只有一个按钮的对话框
 
-```ux
+```js{4}
 <quist-dialog mask-closable @on-cancel="onCancel" title="标题" @on-ok="onOk" content="只有一个确定按钮" type="onebtn">
 </quist-dialog>
 ```
 
 #### 无标题的对话框（点击蒙层不关闭弹窗）
 
-```ux
+```js{4}
 <quist-dialog @on-cancel="onCancel" cancel-text="取消" @on-ok="onOk" content="没有标题没有标题没有标题没有标题没有标题" type="notitle">
 </quist-dialog>
 ```
 
 #### 无底部按钮无标题的对话框
 
-```ux
+```js{4}
 <quist-dialog mask-closable="{{true}}" footer="{{false}}" @on-cancel="onCancel" content="没有标题没有标题没有标题没有标题没有标题" type="nofooter">
 </quist-dialog>
 ```
 
 #### 自定义样式
 
-```ux
+```js{4}
 <quist-dialog mask-closable @on-cancel="onCancel" title="提示" title-size="{{50}}" ok-color="#E64340" content-size="{{42}}" cancel-color="#1890ff" cancel-text="取消" @on-ok="onOk" content="自定义样式">
 </quist-dialog>
 ```

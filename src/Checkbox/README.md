@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name='quist-checkbox' src='@quist-ui/quist-checkbox/index'></import>
 ```
 
@@ -18,13 +18,13 @@ $ npm install quist-ui -D
 
 #### 基础(绑定change事件)
 
-```ux
+```js{4}
 <quist-checkbox values="{{data1.values}}" options="{{data1.options}}" @on-change="callback"></quist-checkbox>
 ```
 
 #### 自定义样式
 
-```ux
+```js{4}
 <quist-checkbox values="{{data2.values}}" checked="{{data2.checked}}" options="{{data2.options}}" checked-color='red' checked-border-color='red' is-right></quist-checkbox>
 ```
 

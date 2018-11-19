@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name='quist-input' src='@quist-ui/quist-input/index'></import>
 ```
 
@@ -18,25 +18,25 @@ $ npm install quist-ui -D
 
 #### 默认输入框
 
-```ux
+```js{4}
 <quist-input placeholder='请输入关键字'></quist-input>
 ```
 
 #### 带后缀的输入框
 
-```ux
+```js{4}
 <quist-input placeholder='请输入关键字' suffix="{{suffix}}"></quist-input>
 ```
 
 #### 带前缀的输入框
 
-```ux
+```js{4}
 <quist-input placeholder='请输入关键字' prefix="{{prefix}}" suffix="{{suffix}}"></quist-input>
 ```
 
 #### 禁用状态的输入框
 
-```ux
+```js{4}
 <quist-input placeholder='请输入关键字' disabled></quist-input>
 ```
 

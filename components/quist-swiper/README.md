@@ -10,7 +10,7 @@ $ npm install quist-ui -D
 ```
 
 ## 引入
-```ux
+```js{4}
 <import name="quist-swiper" src="@quist-ui/quist-swiper/index"></import>
 ```
 
@@ -18,31 +18,31 @@ $ npm install quist-ui -D
 
 #### 默认样式
 
-```ux
+```js{4}
 <quist-swiper visible="{{true}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
 ```
 
 #### 不轮询播放
 
-```ux
+```js{4}
 <quist-swiper visible="{{true}}" is-loop="{{false}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
 ```
 
 #### 自定义当前索引和非当前索引的背景色
 
-```ux
+```js{4}
 <quist-swiper visible="{{true}}" options="{{imageList}}" @on-click="choose" selected-color="#ff0000" indicator-color="#fac450"></quist-swiper>
 ```
 
 #### 自动轮播且轮播时间设置为5s
 
-```ux
+```js{4}
 <quist-swiper visible="{{true}}" is-auto-play="{{true}}" time="{{5000}}" options="{{imageList}}" @on-click="choose"></quist-swiper>
 ```
 
 #### 蒙层形式展示轮播图
 
-```ux
+```js{4}
 <quist-swiper visible="{{swiperBig}}" type="pop" options="{{imageList}}" @on-click="close"></quist-swiper>
 ```
 
