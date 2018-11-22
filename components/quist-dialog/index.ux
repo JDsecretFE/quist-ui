@@ -4,7 +4,7 @@
   <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
     <div class="quist-dialog">
       <text class="quist-dialog-title" style="font-size: {{titleSize}}px; color: {{titleColor}};" if="title">{{title}}</text>
-      <div class="{{title ? 'quist-dialog-content' : 'quist-dialog-contentb'}}">
+      <div class="{{title ? 'quist-dialog-content' : 'quist-dialog-contentb'}}" style="justify-content: {{direction}};">
         <text class="quist-dialog-text" style="font-size: {{contentSize}}px; color: {{contentColor}};">{{content}}</text>
       </div>
       <div class="quist-dialog-btns" if="footer">
@@ -79,6 +79,24 @@
         type: String,
         default: '#666666'
       },
+      align: {
+        type: String,
+        default: 'center'
+      }
+    },
+    data() {
+      return {
+        direction: ''
+      }
+    },
+    onInit() {
+      if (this.align === 'left') {
+        this.direction = 'flex-start'
+      } else if (this.align === 'center') {
+        this.direction = 'center'
+      } else if (this.align === 'right') {
+        this.direction = 'flex-end'
+      }
     },
     overlayClick() {
       this.$emit('onCancel', this.type)

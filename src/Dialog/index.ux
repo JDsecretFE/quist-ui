@@ -10,7 +10,7 @@
     <quist-dialog visible="{{visible}}" mask-closable="{{true}}" title="标题" cancel-text="取消" @on-cancel="onCancel"
       @on-ok="onOk" content="这是内容这是内容" type="normal">
     </quist-dialog>
-    <quist-dialog visible="{{visibleOnebtn}}" mask-closable title="标题" @on-cancel="onCancel" @on-ok="onOk" content="只有一个确定按钮"
+    <quist-dialog visible="{{visibleOnebtn}}" mask-closable title="标题" align="left" @on-cancel="onCancel" @on-ok="onOk" content="只有一个确定按钮"
       type="onebtn">
     </quist-dialog>
     <quist-dialog visible="{{visibleNotitle}}" @on-cancel="onCancel" cancel-text="取消" @on-ok="onOk" content="没有标题"

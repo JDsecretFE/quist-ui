@@ -63,6 +63,7 @@ $ npm install quist-ui -D
 | title-size | 标题大小 | `Number` | 36 |
 | title-color | 标题文字颜色 | `String` | #333333 |
 | content | 内容 | `String` | - |
+| align | 内容的对齐方式，可传的值有`left`、`center`、`right` | `String` | center |
 | content-size | 内容大小 | `Number` | 32 |
 | content-color | 内容文字颜色 | `String` | #666666 |
 | ok-text | 确定按钮文案 | `String` | 确定 |
