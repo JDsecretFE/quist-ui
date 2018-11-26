@@ -46,6 +46,11 @@ $ npm install quist-ui -D
 <quist-swiper visible="{{swiperBig}}" type="pop" options="{{imageList}}" @on-click="close"></quist-swiper>
 ```
 
+#### 自定义蒙层背景颜色
+
+```js{4}
+<quist-swiper visible="{{swiperBigb}}" background="rgba(255, 255, 255, 1)" pop-pagination-color="#000000" type="pop" options="{{imageList}}"></quist-swiper>
+```
 
 更详细代码可以参考 [quist-swiper demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Swiper/index.ux)
 
@@ -62,6 +67,8 @@ $ npm install quist-ui -D
 | indicator-color | indicator的颜色 | `String` | #E1E1E1 |
 | selected-color | indicator当前的颜色 | `String` | #1890ff |
 | type | Swiper 展示的形式(当需要以蒙层形式展示时，务必传`pop`) | `String` | ' ' |
+| background | 以蒙层形式展示时的背景色 | `String` | rgba(0, 0, 0, 1) |
+| pop-pagination-color | 以蒙层形式展示时的索引文字颜色 | `String` | #ffffff |
 | on-click | 点击当前轮播的回调 | `Function` | - |
 
 ## 更新日志

@@ -44,19 +44,16 @@
     select() {
       this.$emit('onClick')
     },
-    onInit() {
-      console.log('111', this.innerBarStyle)
-    },
     innerStyle() {
       if (this.selected) {
         return {
           color: this.activeColor,
-          fontSize: this.fSize+'px'
+          fontSize: this.fSize + 'px'
         }
       } else {
         return {
           color: this.defaultColor,
-          fontSize: this.fSize+'px'
+          fontSize: this.fSize + 'px'
         }
       }
     },
@@ -64,7 +61,7 @@
       let baseStyle = {
         borderColor: this.activeColor,
         borderStyle: 'solid',
-        borderBottomWidth: this.lineWidth+'px'
+        borderBottomWidth: this.lineWidth + 'px'
       }
       if (this.layout === 'center' && this.selected) {
         return Object.assign(baseStyle, {
