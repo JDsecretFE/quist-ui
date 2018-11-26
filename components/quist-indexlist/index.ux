@@ -77,13 +77,17 @@
       let dataSource = this.dataSource;
       if(dataSource && dataSource.length > 0) {
         let dataItem = dataSource[0];
-        for (let [key, value] of Object.entries(dataItem)) {
-          if (Object.prototype.toString.call(value) === "[object Array]") {
-            this.listType = key;
-          }
-        }
+        this.getEntries(dataItem);
       }
       this.hasValue();
+    },
+    getEntries(dataItem){
+      for(let key in dataItem){
+        let value = dataItem[key];
+        if (Object.prototype.toString.call(value) === "[object Array]") {
+          this.listType = key;
+        }
+      }
     },
     onClick(value, type) {
       this.$emit('onClick', { value, type })
