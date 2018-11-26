@@ -6,8 +6,8 @@
             <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
               <image src="{{prefixIcon}}" class="quist-input__icon" />
             </div>
-            <input id="quist-input__box" class="quist-input__box" style="{{input()}}" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" @focus="onfocus" @blur="onblur" disabled="{{disabled}}" @change="onchange" />
-            <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showClear}}">
+            <input id="search-input" class="quist-input__box" style="{{input()}}" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onchange" />
+            <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showSuffix}}">
               <image src="{{suffixIcon}}" class="quist-input__icon" />
             </div>
           </div>
@@ -56,20 +56,28 @@
       inputStyle: {
         type: Object,
         default: {}
+      },
+      autofocus: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
       return {
         searchValue: '',
-        showClear: false,
+        showSuffix: false,
         replaceShow: true
       }
     },
     onInit() {
-      this.initialize()
+      this.init()
       this.$watch('value', 'change')
     },
-    initialize() {
+    onReady() {
+      this.statusChange()
+      this.$watch('autofocus', 'statusChange')
+    },
+    init() {
       this.prefixIcon = this.prefix;
       this.suffixIcon = this.suffix;
       this.searchValue = this.value;
@@ -77,39 +85,24 @@
     change() {
       this.searchValue = this.value
     },
+    statusChange() {
+      let input = this.$element("search-input");
+      input.focus({
+        focus: !!this.autofocus
+      });
+    },
     onchange(e) {
       let value = e.value
-      if (value) {
-        this.showClear = true
-      } else {
-        this.showClear = false
-      }
+      this.showSuffix = !!value
       this.$emit('onChange', { value: e.value })
     },
-    // onfocus() {
-    //   this.$emit('onFocus', { value: this.searchValue })
-    // },
-    // onblur() {
-    //   this.$emit('onBlur', { value: this.searchValue })
-    // },
     clearClick() {
-      // this.searchValue = ''
-      this.showClear = false
+      this.showSuffix = false
       this.$emit('onChange', { value: '' })
-    },
-    focus() {
-      this.$element("quist-input__box").focus({
-        focus: true
-      })
-    },
-    blur() {
-      this.$element("quist-input__box").focus({
-        focus: false
-      })
     },
     wrapper() {
       let baseStyle = {
-        width: '1080px'
+        width: '750px'
       }
       return Object.assign(baseStyle, this.wrapperStyle)
     },
@@ -120,7 +113,6 @@
     },
     input() {
       let baseStyle = {
-
       }
       return Object.assign(baseStyle, this.inputStyle)
     }

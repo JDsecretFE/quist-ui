@@ -59,13 +59,13 @@
       }
     },
     onInit() {
-      this.initialize()
+      this.init()
     },
     onReady() {
-      this.$watch('value', 'initialize')
+      this.$watch('value', 'init')
       this.$watch('replaceValue', 'change')
     },
-    initialize() {
+    init() {
       this.replaceValue = this.value
     },
     click(data) {

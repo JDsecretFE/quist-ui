@@ -12,7 +12,7 @@
       <block for="(index, item) in dataSource">
           <list-item type="ceiling" class="quist-indexlist__label"><text>{{item.letter}}</text></list-item>
           <list-item for="(idx, dataItem) in item[listType]" type="item" class="quist-indexlist__layout {{(idx === item[listType].length - 1) ? '' : 'quist-indexlist__border'}}" @click="onClick(dataItem, 3)">
-            <div class="quist-indexlist__name"><text>{{dataItem[type]}}</text></div>
+            <div class="quist-indexlist__name" @click="onClick(dataItem, 3)"><text>{{dataItem[type]}}</text></div>
           </list-item>
       </block>
     </list>
