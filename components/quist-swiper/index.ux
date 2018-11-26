@@ -1,6 +1,6 @@
 <template>
   <div>
-    <stack show="{{visible}}" class="{{type === 'pop' ? 'quist-swiper-pop' : 'quist-swiper'}}">
+    <stack show="{{visible}}" style="{{layoutStyle()}}">
       <swiper class="{{animationClass}}" indicator="{{false}}" interval="{{time}}" autoplay="{{isAutoPlay}}" loop="{{isLoop}}" onChange="swiperChange">
         <div class="quist-swiper-item" for="{{options}}" @click="choose($idx)">
           <image class="quist-swiper-image" src="{{$item}}" />
@@ -10,7 +10,7 @@
         <div class="pagination-item" style="{{currentNav === $idx ? indicatorSelectedStyle() : indicatorColorStyle()}}" for="{{options}}"></div>
       </div>
       <div elif="{{showIndicator && type === 'pop'}}" class="pagination-number">
-        <text class="number-text">{{currentNav + 1}}/{{options.length}}</text>
+        <text class="number-text" style="color: {{popPaginationColor}}">{{currentNav + 1}}/{{options.length}}</text>
       </div>
     </stack>
   </div>
@@ -58,6 +58,14 @@
       isLoop: {
         type: Boolean,
         default: true
+      },
+      background: {
+        type: String,
+        default: 'rgba(0, 0, 0, 1)'
+      },
+      popPaginationColor: {
+        type: String,
+        default: '#ffffff'
       }
     },
     data() {
@@ -98,6 +106,27 @@
 	      backgroundColor: this.selectedColor
       }
       return baseStyle;
+    },
+    layoutStyle() {
+      if (this.type === 'pop') {
+        return {
+          position: 'fixed',
+          right: 0,
+          top: 0,
+          bottom: 0,
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          backgroundColor: this.background,
+          animationFillMode: 'forwards'
+        }
+      } else {
+        return {
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          alignItems: 'center'
+        }
+      }
     }
   }
 </script>
