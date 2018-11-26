@@ -85,7 +85,7 @@
       for(let key in dataItem){
         let value = dataItem[key];
         if (Object.prototype.toString.call(value) === "[object Array]") {
-          this.listType = key;
+          this.listType = key
         }
       }
     },
