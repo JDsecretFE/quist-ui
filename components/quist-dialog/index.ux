@@ -3,9 +3,9 @@
 <template>
   <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
     <div class="quist-dialog">
-      <text class="quist-dialog-title" style="font-size: {{titleSize}}px; color: {{titleColor}};" if="title">{{title}}</text>
+      <text style="{{titleStyle()}}" if="title">{{title}}</text>
       <div class="{{title ? 'quist-dialog-content' : 'quist-dialog-contentb'}}" style="justify-content: {{direction}};">
-        <text class="quist-dialog-text" style="font-size: {{contentSize}}px; color: {{contentColor}};">{{content}}</text>
+        <text style="{{contentStyle()}}">{{content}}</text>
       </div>
       <div class="quist-dialog-btns" if="footer">
         <div class="cancel-btn" if="cancelText" @click="cancelClick"><text class="btn-text" style="color: {{cancelColor}}">{{cancelText}}</text></div>
@@ -97,6 +97,23 @@
       } else if (this.align === 'right') {
         this.direction = 'flex-end'
       }
+    },
+    titleStyle() {
+      let baseStyle = {
+        marginTop: '30px',
+        textAlign: 'center',
+        fontSize: this.titleSize + 'px',
+        color: this.titleColor
+      }
+      return baseStyle;
+    },
+    contentStyle() {
+      let baseStyle = {
+        lineHeight: '40px',
+        fontSize: this.contentSize + 'px',
+        color: this.contentColor
+      }
+      return baseStyle;
     },
     overlayClick() {
       this.$emit('onCancel', this.type)

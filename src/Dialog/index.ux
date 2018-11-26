@@ -3,7 +3,7 @@
 <template>
   <div class="dialog-demo">
     <input type="button" value="常规对话框" @click="normal" />
-    <input type="button" value="只有一个按钮的对话框" @click="oneBtn" />
+    <input type="button" value="只有一个按钮的对话框(内容居左显示)" @click="oneBtn" />
     <input type="button" value="无标题的对话框(点蒙层不关闭)" @click="noTitle" />
     <input type="button" value="无底部按钮无标题的对话框" @click="noFooter" />
     <input type="button" value="自定义dialog样式" @click="set" />

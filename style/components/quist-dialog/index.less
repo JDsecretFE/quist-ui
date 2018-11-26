@@ -6,17 +6,11 @@
 	background-color: @body-background;
 	border-radius: @border-radius-base;
 
-	&-title {
-		margin-top: 30px;
-		text-align: center;
-	}
-
 	&-content {
 		flex: 1;
 		margin-top: 40px;
 		margin-bottom: 40px;
 		padding: 0 60px;
-		justify-content: center;
 		align-items: center;
 	}
 
@@ -25,21 +19,14 @@
 		margin-top: 70px;
 		margin-bottom: 70px;
 		padding: 0 60px;
-		justify-content: center;
 		align-items: center;
-	}
-
-	&-text {
-		line-height: 40px;
 	}
 
 	&-btns {
 		width: 100%;
 		height: 88px;
 		align-items: center;
-		border-top-color: @btn-default-border;
-		border-top-width: 1px;
-		border-style: solid;
+		.set-border(top);
 	}
 
 	.cancel-btn {
@@ -47,9 +34,7 @@
 		display: flex;
 		justify-content: center;
 		flex: 1;
-		border-right-color: @btn-default-border;
-		border-right-width: 1px;
-		border-style: solid;
+		.set-border(right);
 	}
 
 	.ok-btn {
@@ -60,6 +45,6 @@
 	}
 
 	.btn-text {
-		font-size: 32px;
+		font-size: @font-size-base;
 	}
 }

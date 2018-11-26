@@ -2,7 +2,7 @@
   <div class="quist-progress">
     <div class="quist-progress-cell">
       <div class="quist-progress-inner" style="height: {{strokeHeight}}px; border-radius: {{borderRadius}}px;">
-        <div style="width: {{percent}}%; background-color: {{strokeColor}}; height: {{strokeHeight}}px;  border-radius: {{borderRadius}}px;"></div>
+        <div style="{{innerStyle()}}"></div>
       </div>
       <div if="{{showInfo}}" class="quist-progress-info"><text>{{percent}}%</text></div>
     </div>
@@ -37,6 +37,15 @@
         type: Number,
         default: 20
       }
+    },
+    innerStyle() {
+      let baseStyle = {
+        width: this.percent + '%',
+        height: this.strokeHeight + 'px',
+        backgroundColor: this.strokeColor,
+        borderRadius: this.borderRadius + 'px'
+      }
+      return baseStyle;
     }
   }
 </script>
