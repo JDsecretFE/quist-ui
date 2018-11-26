@@ -69,7 +69,7 @@ module.exports = {
 
 请扫码进入微信群，此群可快速及时地解答问题。
 
-![微信沟通群二维码](https://img-blog.csdnimg.cn/2018112609063110.jpeg)
+![微信沟通群二维码](https://camo.githubusercontent.com/85c1f2204391dd89f974ffa13d8e17e3bc14f21e/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f323031383131323630393036333131302e6a706567)
 
 
 ### 开源协议  
