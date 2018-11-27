@@ -1,0 +1,43 @@
+<import name="quist-steps" src="@quist-ui/quist-steps/index"></import>
+
+<template>
+  <div class="steps-demo">
+    <quist-steps steps="{{steps}}" current="{{1}}"></quist-steps>
+    <quist-steps steps="{{steps}}" current="{{1}}" direction="vertical" placement="bottom"></quist-steps>
+  </div>
+</template>
+
+<style>
+  .steps-demo {
+    flex-direction: column;
+  }
+</style>
+
+<script>
+  export default {
+    data: {
+      steps: [
+        {
+          title: '',
+          desc: '这是一个描述',
+          value: 'apple'
+        },
+        {
+          title: '步骤2',
+          desc: '这是一个描述2',
+          value: 'banana'
+        },
+        {
+          title: '步骤3',
+          desc: '这是一个描述3',
+          value: 'mango'
+        }
+      ]
+    },
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Steps'
+      })
+    }
+  }
+</script>

@@ -1,0 +1,48 @@
+@steps-prefix: ~"@{css-prefix}-steps";
+
+.@{steps-prefix} {
+  &__container {
+    align-items: flex-start;
+    &--v {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    flex-direction: column;
+    padding: 0 12px;
+    &--v {
+      padding: 12px 0;
+    }
+  }
+  &__icon {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    font-size: 32px;
+    background-color: @steps-icon-bg;
+    color: #ffffff;
+  }
+  &__content {
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 32px;
+  }
+  &__desc {
+    font-size: 24px;
+    color: @steps-desc-color;
+  }
+  &__line {
+    height: 2px;
+    width: 90px;
+    background-color: @steps-default-bg;
+    &--active {
+      background-color: @steps-bg-active;
+    }
+    &--v {
+      height: 90px;
+      width: 2px;
+    }
+  }
+}
