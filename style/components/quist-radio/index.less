@@ -19,13 +19,11 @@
 @radio-prefix: ~"@{css-prefix}-radio";
 .@{radio-prefix} {
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: @radio-default-bg;
   font-size: @font-size-base;
   &__item {
     padding: 30px 40px;
-    border-bottom-width: 1px;
-    border-style: solid;
-    border-bottom-color: @radio-default-border;
+    .set-border(bottom, @radio-default-border, 1px);
   }
   &__item--disabled {
     opacity: .5;
