@@ -10,7 +10,6 @@
     flex-grow: 1;
   }
   &__wrapper {
-    display: flex;
     flex-wrap: wrap;
     line-height: @height;
     padding: 20px;
@@ -19,7 +18,7 @@
   &__item {
     padding: 0 40px;
     margin-right: 20px;
-    background-color: @city-picker-default-bg;
+    background-color: @indexlist-default-bg;
     border-radius: 50px;
     margin-bottom: 20px;
     height: 64px;
@@ -40,15 +39,11 @@
     height: @height;
     line-height: @height;
     padding-left: 20px;
-    border-bottom-width: 1px;
-    border-style: solid;
-    border-bottom-color: @city-picker-default-border;
-    background-color: @city-picker-default-bg;
+    background-color: @indexlist-default-bg;
+    .set-border(bottom, @indexlist-default-border, 1px);
   }
   &__border {
-    border-bottom-width: 1px;
-    border-style: solid;
-    border-bottom-color: @city-picker-default-border;
+    .set-border(bottom, @indexlist-default-border, 1px);
   }
   &__nav {
     position: fixed;
@@ -61,7 +56,7 @@
     margin-right: 20px;
   }
   &__mark {
-    color: @city-picker-default-nav-color;
+    color: @indexlist-default-nav-color;
     padding: 5px 0;
     justify-content: center;
   }

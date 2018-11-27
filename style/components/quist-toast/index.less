@@ -1,4 +1,4 @@
-@keyframes quisttoastenter {
+@keyframes enter {
 	0% {
 		opacity: 0;
 	}
@@ -8,7 +8,7 @@
 	}
 }
 
-@keyframes quisttoastleave {
+@keyframes leave {
 	0% {
 		opacity: 1;
 	}
@@ -29,10 +29,9 @@
 	&__wrapper {
 		width: 100%;
 		height: 100%;
-		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation-name: quisttoastenter;
+		animation-name: enter;
 		animation-duration: 500ms;
 		animation-fill-mode: forwards;
 	}
@@ -52,6 +51,6 @@
 		font-size: @font-size-base;
 	}
 	&-leave {
-		animation-name: quisttoastleave;
+		animation-name: leave;
 	}
 }

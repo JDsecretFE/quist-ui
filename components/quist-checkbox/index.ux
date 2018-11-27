@@ -77,7 +77,7 @@
       }
     },
     onInit() {
-      this.initialize()
+      this.init()
       this.updateChecked()
       this.$on('evtCast', this.updateArr)
     },
@@ -104,7 +104,7 @@
         this.replaceChecked.splice(i, 1, false)
         for (let j = 0, len = this.replaceValues.length; j < len; j++) {
           let val = this.options[i].value || this.options[i]
-          if (b > 0 && val === this.replaceValues[j]) {
+          if (len > 0 && val === this.replaceValues[j]) {
             this.replaceChecked.splice(i, 1, true)
             break
           }
