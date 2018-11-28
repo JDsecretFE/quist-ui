@@ -75,6 +75,9 @@
       },
       "Tabs": {
         "component": "index"
+      },
+      "Rate": {
+        "component": "index"
       }
     }
   },

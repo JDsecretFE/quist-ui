@@ -1,0 +1,71 @@
+<import name="quist-rate" src="@quist-ui/quist-rate/index"></import>
+
+<template>
+  <div class="rate-demo">
+    <div class="rate-block">
+      <div class="rate-title"><text>默认样式：</text></div>
+      <div class="rate-cell">
+        <quist-rate @on-change="onClick"></quist-rate>
+      </div>
+    </div>
+    <div class="rate-block">
+      <div class="rate-title"><text>自定义颜色、大小、个数、间距：</text></div>
+      <div class="rate-cell">
+        <quist-rate @on-change="onClick" count="{{6}}" star-color="#999999" active-color="#87d068" size="{{80}}" margin="{{10}}"></quist-rate>
+      </div>
+    </div>
+    <div class="rate-block">
+      <div class="rate-title"><text>设置默认选中的个数：</text></div>
+      <div class="rate-cell">
+        <quist-rate @on-change="onClick" value="{{3}}"></quist-rate>
+      </div>
+    </div>
+    <div class="rate-block">
+      <div class="rate-title"><text>禁用状态：</text></div>
+      <div class="rate-cell">
+        <quist-rate @on-change="onClick" value="{{2}}" disabled="{{true}}"></quist-rate>
+      </div>
+    </div>
+    <div class="rate-block">
+      <div class="rate-title"><text>再次点击不清除：</text></div>
+      <div class="rate-cell">
+        <quist-rate @on-change="onClick" allow-clear="{{false}}"></quist-rate>
+      </div>
+    </div>
+    <div class="rate-block">
+      <div class="rate-title"><text>自定义形状：</text></div>
+      <div class="rate-cell">
+        <quist-rate star-icon="✩" @on-change="onClick"></quist-rate>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+  .rate-demo {
+    flex-direction: column;
+  }
+  .rate-block {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .rate-title {
+    margin: 20px;
+  }
+  .rate-cell {
+    margin-left: 20px;
+  }
+</style>
+
+<script>
+  export default {
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Rate'
+      })
+    },
+    onClick(e) {
+      console.log('当前点击的值是：', e.detail)
+    }
+  }
+</script>
