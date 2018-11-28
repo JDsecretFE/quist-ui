@@ -1,0 +1,91 @@
+<template>
+  <div class="quist-rate">
+    <text style="{{currentValue > $idx - 1 ? rateActiveStyle() : rateStyle()}}" for="{{star}}" @click="handleClick($idx)">{{starIcon}}</text>
+  </div>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-rate/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      count: {
+        type: Number,
+        default: 5
+      },
+      starIcon: {
+        type: String,
+        default: '★'
+      },
+      starColor: {
+        type: String,
+        default: '#cccccc'
+      },
+      activeColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      size: {
+        type: Number,
+        default: 56
+      },
+      margin: {
+        type: Number,
+        default: 5
+      },
+      value: {
+        type: Number,
+        default: 0
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      allowClear: {
+        type: Boolean,
+        default: true
+      }
+    },
+    data() {
+      return {
+        star: [],
+        currentValue: this.value - 1
+      }
+    },
+    onInit() {
+      this.star = Array.from({ length: this.count }, () => '')
+    },
+    rateActiveStyle() {
+      let baseStyle = {
+        fontSize: this.size + 'px',
+        color: this.activeColor,
+        marginLeft: this.margin + 'px',
+        marginRight: this.margin + 'px',
+      }
+      return baseStyle;
+    },
+    rateStyle() {
+      let baseStyle = {
+        fontSize: this.size + 'px',
+        color: this.starColor,
+        marginLeft: this.margin + 'px',
+        marginRight: this.margin + 'px',
+      }
+      return baseStyle;
+    },
+    handleClick(i) {
+      if (this.disabled) {
+        return false;
+      }
+      if (this.currentValue === i && this.allowClear) {
+        this.currentValue =  i - 1
+      } else {
+        this.currentValue = i
+      }
+      this.$emit('onChange', this.currentValue + 1)
+    }
+  }
+</script>

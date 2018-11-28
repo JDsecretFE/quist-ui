@@ -33,8 +33,12 @@
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
         <div class="item-li" onclick="detail('Input')">
-            <text class="item-li-detail">input <span class="item-name">输入框</span></text>
-            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+          <text class="item-li-detail">input <span class="item-name">输入框</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+        </div>
+        <div class="item-li" onclick="detail('Rate')">
+          <text class="item-li-detail">rate <span class="item-name">评分</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
       </div>
     </div>
