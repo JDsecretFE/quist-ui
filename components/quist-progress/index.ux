@@ -1,11 +1,9 @@
 <template>
   <div class="quist-progress">
-    <div class="quist-progress-cell">
-      <div class="quist-progress-inner" style="height: {{strokeHeight}}px; border-radius: {{borderRadius}}px;">
-        <div style="{{innerStyle()}}"></div>
-      </div>
-      <div if="{{showInfo}}" class="quist-progress-info"><text>{{percent}}%</text></div>
+    <div class="quist-progress-inner" style="height: {{strokeHeight}}px; border-radius: {{borderRadius}}px; background-color: {{strokeBgcolor}};">
+      <div style="{{innerStyle()}}"></div>
     </div>
+    <div if="{{showInfo}}" class="quist-progress-info"><text>{{percent}}%</text></div>
   </div>
 </template>
 
@@ -29,13 +27,17 @@
         type: String,
         default: '#1890ff'
       },
+      strokeBgcolor: {
+        type: String,
+        default: '#f5f5f5'
+      },
       strokeHeight: {
         type: Number,
-        default: 32
+        default: 3
       },
       borderRadius: {
         type: Number,
-        default: 20
+        default: 0
       }
     },
     innerStyle() {

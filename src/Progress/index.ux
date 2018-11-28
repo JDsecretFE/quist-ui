@@ -2,30 +2,59 @@
 
 <template>
   <div class="progress-demo">
-    <div class="progress-title"><text>默认样式：</text></div>
-    <quist-progress percent="{{10}}" class="progress-cell"></quist-progress>
-    <div class="progress-title"><text>不显示提示信息：</text></div>
-    <quist-progress percent="{{40}}" class="progress-cell" show-info="{{false}}"></quist-progress>
-    <div class="progress-title"><text>自定义进度条高度：</text></div>
-    <quist-progress percent="{{60}}" class="progress-cell" stroke-height="{{20}}"></quist-progress>
-    <div class="progress-title"><text>自定义进度条圆角大小：</text></div>
-    <quist-progress percent="{{80}}" class="progress-cell" border-radius="{{6}}"></quist-progress>
-    <div class="progress-title"><text>自定义进度条颜色：</text></div>
-    <quist-progress percent="{{20}}" class="progress-cell" stroke-color="#52c41a"></quist-progress>
+    <div class="demo-block">
+      <div class="progress-cell">
+        <div class="progress-title"><text class="title-text">默认样式：</text></div>
+        <quist-progress percent="{{10}}"></quist-progress>
+      </div>
+    </div>
+    <div class="demo-block">
+      <div class="progress-cell">
+        <div class="progress-title"><text class="title-text">不显示提示信息：</text></div>
+        <quist-progress percent="{{20}}" show-info="{{false}}"></quist-progress>
+      </div>
+      <div class="progress-cell">
+        <div class="progress-title"><text class="title-text">自定义进度条高度：</text></div>
+        <quist-progress percent="{{20}}" stroke-height="{{10}}"></quist-progress>
+      </div>
+      <div class="progress-cell">
+        <div class="progress-title"><text class="title-text">自定义进度条圆角大小：</text></div>
+        <quist-progress percent="{{40}}" stroke-height="{{10}}" border-radius="{{8}}"></quist-progress>
+      </div>
+      <div class="progress-cell">
+        <div class="progress-title"><text class="title-text">自定义进度条颜色：</text></div>
+        <quist-progress percent="{{60}}" stroke-color="#87d068"></quist-progress>
+      </div>
+      <div class="progress-cell">
+        <div class="progress-title"><text class="title-text">自定义进度条背景颜色：</text></div>
+        <quist-progress percent="{{80}}" stroke-bgcolor="#fac450"></quist-progress>
+      </div>
+    </div>
   </div>
 </template>
 
 <style>
   .progress-demo {
     flex-direction: column;
+    background-color: #f5f5f5;
   }
-  .progress-title {
+  .demo-block {
+    flex-direction: column;
+    background-color: #ffffff;
     margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
   .progress-cell {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    margin: 30px 0;
+  }
+  .progress-title {
+    margin-bottom: 10px;
+  }
+  .title-text {
+    font-size: 32px;
+    color: #333333;
   }
 </style>
 

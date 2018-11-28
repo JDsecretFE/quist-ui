@@ -55,12 +55,17 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | percent | 百分比 | `Number` | 0 |
 | show-info | 是否显示进度数值 | `Boolean` | true |
+| stroke-bgcolor | 进度条的背景颜色 | `String` | #f5f5f5 |
 | stroke-color | 进度条的颜色 | `String` | #1890ff |
-| stroke-height | 进度条的高度 | `Number` | 32 |
-| border-radius | 进度条的圆角大小| `Number` | 20 |
+| stroke-height | 进度条的高度 | `Number` | 3 |
+| border-radius | 进度条的圆角大小| `Number` | 0 |
 
 
 ## 更新日志
 
 #### v1.0.6（2018-10-25)  
 * 新增 `Progress` 组件
+
+#### v1.1.1（2018-12-03)  
+* 支持修改进度条背景颜色
+* 修改默认样式
