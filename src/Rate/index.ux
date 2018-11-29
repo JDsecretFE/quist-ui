@@ -2,40 +2,31 @@
 
 <template>
   <div class="rate-demo">
-    <div class="rate-block">
-      <div class="rate-title"><text>默认样式：</text></div>
-      <div class="rate-cell">
-        <quist-rate @on-change="onClick"></quist-rate>
-      </div>
+    <div class="demo-block">
+      <div class="rate-title"><text class="title-text">默认样式：</text></div>
+      <quist-rate @on-change="onClick"></quist-rate>
     </div>
-    <div class="rate-block">
-      <div class="rate-title"><text>自定义颜色、大小、个数、间距：</text></div>
-      <div class="rate-cell">
+    <div class="demo-block">
+      <div class="rate-block">
+        <div class="rate-title"><text class="title-text">自定义背景及选中颜色、大小、个数、间距：</text></div>
         <quist-rate @on-change="onClick" count="{{6}}" star-color="#999999" active-color="#87d068" size="{{80}}" margin="{{10}}"></quist-rate>
       </div>
-    </div>
-    <div class="rate-block">
-      <div class="rate-title"><text>设置默认选中的个数：</text></div>
-      <div class="rate-cell">
+      <div class="rate-block">
+        <div class="rate-title"><text class="title-text">设置默认选中的个数：</text></div>
         <quist-rate @on-change="onClick" value="{{3}}"></quist-rate>
       </div>
-    </div>
-    <div class="rate-block">
-      <div class="rate-title"><text>禁用状态：</text></div>
-      <div class="rate-cell">
-        <quist-rate @on-change="onClick" value="{{2}}" disabled="{{true}}"></quist-rate>
+      <div class="rate-block">
+        <div class="rate-title"><text class="title-text">禁用状态：</text></div>
+        <quist-rate value="{{2}}" disabled="{{true}}"></quist-rate>
       </div>
-    </div>
-    <div class="rate-block">
-      <div class="rate-title"><text>再次点击不清除：</text></div>
-      <div class="rate-cell">
+      <div class="rate-block">
+        <div class="rate-title"><text class="title-text">再次点击不清除：</text></div>
         <quist-rate @on-change="onClick" allow-clear="{{false}}"></quist-rate>
       </div>
-    </div>
-    <div class="rate-block">
-      <div class="rate-title"><text>自定义形状：</text></div>
-      <div class="rate-cell">
+      <div class="rate-block">
+        <div class="rate-title"><text class="title-text">自定义形状：</text></div>
         <quist-rate star-icon="✩" @on-change="onClick"></quist-rate>
+        <quist-rate star-icon="☻" @on-change="onClick"></quist-rate>
       </div>
     </div>
   </div>
@@ -44,16 +35,25 @@
 <style>
   .rate-demo {
     flex-direction: column;
+    background-color: #f5f5f5;
+  }
+  .demo-block {
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
   .rate-block {
     flex-direction: column;
-    margin-bottom: 50px;
+    margin: 30px 0;
   }
   .rate-title {
-    margin: 20px;
+    margin-bottom: 10px;
   }
-  .rate-cell {
-    margin-left: 20px;
+  .title-text {
+    font-size: 32px;
+    color: #333333;
   }
 </style>
 

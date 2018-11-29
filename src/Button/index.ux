@@ -2,46 +2,50 @@
 
 <template>
   <div class="button-demo">
-    <div class="button-type">
-      <div class="explain">
-        <text class="explain-title">普通按钮</text>
+    <div class="demo-block">
+      <div class="button-type">
+        <div class="explain">
+          <text class="explain-title">普通按钮</text>
+        </div>
+        <div class="button-type">
+          <quist-button type="primary" @on-click="onClick" value="Primary"></quist-button>
+        </div>
+        <div class="button-type">
+          <quist-button @on-click="onClick"></quist-button>
+        </div>
+        <div class="button-type">
+          <quist-button type="danger" @on-click="onClick" value="Danger"></quist-button>
+        </div>
+        <div class="button-type">
+          <quist-button disabled value="Disabled"></quist-button>
+        </div>
       </div>
-      <div class="button-type__short">
-        <quist-button type="primary" @on-click="onClick" value="Primary"></quist-button>
-      </div>
-      <div class="button-type__short">
-        <quist-button @on-click="onClick"></quist-button>
-      </div>
-      <div class="button-type__short">
-        <quist-button type="danger" @on-click="onClick" value="Danger"></quist-button>
-      </div>
-      <div class="button-type__short">
-        <quist-button disabled value="Disabled"></quist-button>
+      <div class="button-type">
+        <div class="explain">
+          <text class="explain-title">block 按钮</text>
+        </div>
+        <div class="button-type">
+          <quist-button type="primary" block @on-click="onClick" value="Primary"></quist-button>
+        </div>
+        <div class="button-type">
+          <quist-button block @on-click="onClick"></quist-button>
+        </div>
+        <div class="button-type">
+          <quist-button type="danger" block @on-click="onClick" value="Danger"></quist-button>
+        </div>
+        <div class="button-type">
+          <quist-button disabled block value="Disabled"></quist-button>
+        </div>
       </div>
     </div>
-    <div class="button-type">
-      <div class="explain">
-        <text class="explain-title">block 按钮</text>
-      </div>
-      <div class="button-type__long">
-        <quist-button type="primary" block @on-click="onClick" value="Primary"></quist-button>
-      </div>
-      <div class="button-type__long">
-        <quist-button block @on-click="onClick"></quist-button>
-      </div>
-      <div class="button-type__long">
-        <quist-button type="danger" block @on-click="onClick" value="Danger"></quist-button>
-      </div>
-      <div class="button-type__long">
-        <quist-button disabled block value="Disabled"></quist-button>
-      </div>
-    </div>
-    <div class="button-type">
-      <div class="explain">
-        <text class="explain-title">自定义样式按钮</text>
-      </div>
-      <div class="button-type__short">
-        <quist-button @on-click="onClick" value="自定义样式按钮" bg-color="#fac450" f-color="#ffffff" f-size="{{42}}" width="{{400}}" height="{{120}}" border-radius="{{0}}" border-color="#E64340"></quist-button>
+    <div class="demo-block">
+      <div class="button-type">
+        <div class="explain">
+          <text class="explain-title">自定义样式按钮</text>
+        </div>
+        <div class="button-type">
+          <quist-button @on-click="onClick" value="自定义样式按钮" bg-color="#fac450" f-color="#ffffff" f-size="{{42}}" width="{{400}}" height="{{92}}" border-radius="{{0}}" border-color="#E64340"></quist-button>
+        </div>
       </div>
     </div>
   </div>
@@ -50,25 +54,25 @@
 <style lang="less">
   .button-demo {
     flex-direction: column;
+    background-color: #f5f5f5;
+  }
+  .demo-block {
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .button-type {
     flex-direction: column;
-  }
-
-  .button-type__short {
-    margin: 20px;
-  }
-
-  .button-type__long {
     width: 100%;
-    padding: 20px;
+    margin: 20px 0;
   }
 
   .explain {
-    margin: 20px;
     &-title {
-      color: #666666;
+      color: #333333;
       font-size: 32px;
     }
   }

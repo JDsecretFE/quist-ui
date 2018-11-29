@@ -22,19 +22,19 @@
       },
       starColor: {
         type: String,
-        default: '#cccccc'
+        default: '#e8e8e8'
       },
       activeColor: {
         type: String,
-        default: '#1890ff'
+        default: '#fdba3b'
       },
       size: {
         type: Number,
-        default: 56
+        default: 50
       },
       margin: {
         type: Number,
-        default: 5
+        default: 4
       },
       value: {
         type: Number,
@@ -72,7 +72,7 @@
         fontSize: this.size + 'px',
         color: this.starColor,
         marginLeft: this.margin + 'px',
-        marginRight: this.margin + 'px',
+        marginRight: this.margin + 'px'
       }
       return baseStyle;
     },

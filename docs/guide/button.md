@@ -5,7 +5,7 @@
 
 ## 安装
 
-```js{4}
+```
 $ npm install quist-ui -D
 ```
 
@@ -57,13 +57,13 @@ $ npm install quist-ui -D
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | value | 按钮的文字 | `String` | 确定 |
-| border-color | 按钮的边框颜色 | `String` | #d9d9d9 |
-| border-radius | 按钮的圆角大小 | `Number` | 6 |
+| border-color | 按钮的边框颜色 | `String` | #dddddd |
+| border-radius | 按钮的圆角大小 | `Number` | 5 |
 | bg-color | 按钮的背景色 | `String` | #ffffff |
-| width | 按钮的宽度 | `Number` | 200 |
-| height | 按钮的高度 | `Number` | 80 |
+| width | 按钮的宽度 | `Number` | 288 |
+| height | 按钮的高度 | `Number` | 92 |
 | f-size | 按钮文字的大小 | `Number ` | 32 |
-| f-color | 按钮文字的颜色 | `String` | #666666 |
+| f-color | 按钮文字的颜色 | `String` | #999999 |
 | type | 设置按钮类型，可选值为 `primary` `default` `danger` | `String` | - |
 | block | 将按钮宽度调整为其父宽度的选项 | `Boolean` | false |
 | disabled | 是否禁用 | `Boolean` | false |
@@ -77,3 +77,6 @@ $ npm install quist-ui -D
 
 #### v1.0.8（2018-11-01）
 * [优化] 可自定义按钮的大小、颜色、边框、圆角及按钮文字大小、颜色
+
+#### v1.1.1（2018-12-03）
+* [优化] 修改默认样式

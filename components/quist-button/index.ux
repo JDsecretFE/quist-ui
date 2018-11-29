@@ -30,11 +30,11 @@
       },
       borderRadius: {
         type: Number,
-        default: 6
+        default: 5
       },
       borderColor: {
         type: String,
-        default: '#d9d9d9'
+        default: '#dddddd'
       },
       bgColor: {
         type: String,
@@ -42,11 +42,11 @@
       },
       width: {
         type: Number,
-        default: 200
+        default: 288
       },
       height: {
         type: Number,
-        default: 80
+        default: 92
       },
       fSize: {
         type: Number,
@@ -54,7 +54,7 @@
       },
       fColor: {
         type: String,
-        default: '#666666'
+        default: '#999999'
       }
     },
     clicked() {
@@ -71,7 +71,7 @@
         if (this.disabled) {
           return Object.assign(baseStyle, {
             backgroundColor: '#f3f5f7',
-            borderColor: '#d9d9d9',
+            borderColor: '#dddddd',
             width: '100%'
           })
         }
@@ -102,7 +102,7 @@
         if (this.disabled) {
           return Object.assign(baseStyle, {
             backgroundColor: '#f3f5f7',
-            borderColor: '#d9d9d9'
+            borderColor: '#dddddd'
           })
         }
         if (this.type === 'primary') {
@@ -130,7 +130,7 @@
     innerStyle() {
       let baseStyle = {
         fontSize: this.fSize + 'px',
-        color: '#666666'
+        color: '#999999'
       }
       if (this.disabled) {
         return Object.assign(baseStyle, {

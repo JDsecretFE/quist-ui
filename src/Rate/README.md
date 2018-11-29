@@ -19,31 +19,38 @@ $ npm install quist-ui -D
 #### 默认样式：
 
 ```js{4}
-<quist-rate @on-click="onClick"></quist-rate>
+<quist-rate @on-change="onClick"></quist-rate>
 ```
 
-#### 自定义颜色、大小、个数、间距：
+#### 自定义背景及选中颜色、大小、个数、间距：
 
 ```js{4}
-<quist-rate @on-click="onClick" count="{{6}}" star-color="#999999" active-color="#87d068" size="{{80}}" margin="{{10}}"></quist-rate>
+<quist-rate @on-change="onClick" count="{{6}}" star-color="#999999" active-color="#87d068" size="{{80}}" margin="{{10}}"></quist-rate>
 ```
 
 #### 设置默认选中的个数：
 
 ```js{4}
-<quist-rate @on-click="onClick" value="{{3}}"></quist-rate>
+<quist-rate @on-change="onClick" value="{{3}}"></quist-rate>
 ```
 
 #### 禁用状态：
 
 ```js{4}
-<quist-rate @on-click="onClick" value="{{2}}" disabled="{{true}}"></quist-rate>
+<quist-rate value="{{2}}" disabled="{{true}}"></quist-rate>
+```
+
+#### 再次点击不清除：
+
+```js{4}
+<quist-rate @on-change="onClick" allow-clear="{{false}}"></quist-rate>
 ```
 
 #### 自定义形状：
 
 ```js{4}
-<quist-rate star-icon="✩" @on-click="onClick"></quist-rate>
+<quist-rate star-icon="✩" @on-change="onClick"></quist-rate>
+<quist-rate star-icon="☻" @on-change="onClick"></quist-rate>
 ```
 
 
@@ -56,10 +63,10 @@ $ npm install quist-ui -D
 | count | star 总数 | `Number` | 5 |
 | value | 评分值 | `Number` | 0 |
 | star-icon | star的形状 | `String` | ★ |
-| size | star的大小 | `Number` | 56 |
-| margin | star的左右间距 | `Number` | 5 |
-| star-color | 未被选中的star颜色 | `String` | #cccccc |
-| active-color | 选中的star颜色 | `String` | #1890ff |
+| size | star的大小 | `Number` | 50 |
+| margin | star的左右间距 | `Number` | 4 |
+| star-color | 未被选中的star颜色 | `String` | #e8e8e8 |
+| active-color | 选中的star颜色 | `String` | #fdba3b |
 | disabled | 是否禁用 | `Boolean` | false |
 | allow-clear | 是否允许再次点击后清除 | `Boolean` | true |
 | on-change | 选择时的回调 | `Function` | - |

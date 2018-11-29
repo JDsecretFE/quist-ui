@@ -25,27 +25,32 @@ $ npm install quist-ui -D
 #### 自定义进度条颜色：
 
 ```js{4}
-<quist-progress percent="{{20}}" stroke-color="#52c41a"></quist-progress>
+<quist-progress percent="{{60}}" stroke-color="#87d068"></quist-progress>
 ```
 
 #### 不显示提示信息：
 
 ```js{4}
-<quist-progress percent="{{40}}" show-info="{{false}}"></quist-progress>
+<quist-progress percent="{{20}}" show-info="{{false}}"></quist-progress>
 ```
 
 #### 自定义进度条高度：
 
 ```js{4}
-<quist-progress percent="{{60}}" stroke-height="{{20}}"></quist-progress>
+<quist-progress percent="{{20}}" stroke-height="{{10}}"></quist-progress>
 ```
 
 #### 自定义进度条圆角大小：
 
 ```js{4}
-<quist-progress percent="{{80}}" border-radius="{{6}}"></quist-progress>
+<quist-progress percent="{{40}}" stroke-height="{{10}}" border-radius="{{8}}"></quist-progress>
 ```
 
+#### 自定义进度条背景颜色：
+
+```js{4}
+<quist-progress percent="{{80}}" stroke-bgcolor="#fac450"></quist-progress>
+```
 
 更详细代码可以参考 [quist-progress demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Progress/index.ux)
 
@@ -67,5 +72,5 @@ $ npm install quist-ui -D
 * 新增 `Progress` 组件
 
 #### v1.1.1（2018-12-03)  
-* 支持修改进度条背景颜色
-* 修改默认样式
+* [优化] 支持修改进度条背景颜色
+* [优化] 修改默认样式
