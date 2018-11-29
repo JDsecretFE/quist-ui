@@ -2,11 +2,21 @@
 
 <template>
   <div class="dialog-demo">
-    <input type="button" value="常规对话框" @click="normal" />
-    <input type="button" value="只有一个按钮的对话框(内容居左显示)" @click="oneBtn" />
-    <input type="button" value="无标题的对话框(点蒙层不关闭)" @click="noTitle" />
-    <input type="button" value="无底部按钮无标题的对话框" @click="noFooter" />
-    <input type="button" value="自定义dialog样式" @click="set" />
+    <div class="btn" @click="normal">
+      <text class="btn-text">常规对话框</text>
+    </div>
+    <div class="btn" @click="oneBtn">
+      <text class="btn-text">只有一个按钮的对话框(内容居左显示)</text>
+    </div>
+    <div class="btn" @click="noTitle">
+      <text class="btn-text">无标题的对话框(点蒙层不关闭)</text>
+    </div>
+    <div class="btn" @click="noFooter">
+      <text class="btn-text">无底部按钮无标题的对话框</text>
+    </div>
+    <div class="btn" @click="set">
+      <text class="btn-text">自定义dialog样式</text>
+    </div>
     <quist-dialog visible="{{visible}}" mask-closable="{{true}}" title="标题" cancel-text="取消" @on-cancel="onCancel"
       @on-ok="onOk" content="这是内容这是内容" type="normal">
     </quist-dialog>
@@ -19,7 +29,7 @@
     <quist-dialog visible="{{visibleNofooter}}" mask-closable="{{true}}" footer="{{false}}" @on-cancel="onCancel"
       content="没有标题没有标题没有标题没有标题没有标题" type="nofooter">
     </quist-dialog>
-    <quist-dialog visible="{{visibleSet}}" mask-closable @on-cancel="onCancel" title="提示" title-size="{{50}}" ok-color="#E64340" content-size="{{42}}" cancel-color="#1890ff" cancel-text="取消" @on-ok="onOk" content="自定义样式"
+    <quist-dialog visible="{{visibleSet}}" mask-closable @on-cancel="onCancel" title="提示" title-size="{{50}}" ok-color="#87d068" content-size="{{38}}" cancel-color="#fac450" cancel-text="取消" @on-ok="onOk" content="自定义样式"
       type="set">
     </quist-dialog>
   </div>
@@ -31,15 +41,22 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    background-color: #f5f5f5;
   }
 
-  input {
+  .btn {
     width: 100%;
-    height: 100px;
-    margin: 50px;
-    padding: 20px;
-    color: #666666;
-    background-color: #f6f8fa;
+    height: 94px;
+    margin: 50px 0;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    justify-content: center;
+  }
+
+  .btn-text {
+    font-size: 32px;
+    color: #333333;
   }
 </style>
 

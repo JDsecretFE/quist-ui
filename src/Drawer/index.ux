@@ -2,10 +2,18 @@
 
 <template>
   <div class="drawer-demo">
-    <input class="input-button" type="button" value="点击弹出底部弹层" onclick="drawer('bottom')" />
-    <input class="input-button" type="button" value="点击弹出顶部弹层" onclick="drawer('top')" />
-    <input class="input-button" type="button" value="点击弹出左侧弹层" onclick="drawer('left')" />
-    <input class="input-button" type="button" value="点击弹出右侧弹层" onclick="drawer('right')" />
+    <div class="btn" @click="drawer('bottom')">
+      <text class="btn-text">点击弹出底部弹层</text>
+    </div>
+    <div class="btn" @click="drawer('top')">
+      <text class="btn-text">点击弹出顶部弹层</text>
+    </div>
+    <div class="btn" @click="drawer('left')">
+      <text class="btn-text">点击弹出左侧弹层</text>
+    </div>
+    <div class="btn" @click="drawer('right')">
+      <text class="btn-text">点击弹出右侧弹层</text>
+    </div>
     <quist-drawer visible="{{placement === 'bottom'}}" @on-close="close" placement="bottom">
       <div class="mask">
         <text class="mask-cnt">hello qucikapp</text>
@@ -34,21 +42,26 @@
 
 <style>
   .drawer-demo {
-    flex: 1;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    justify-content: center;
     padding: 20px;
+    background-color: #f5f5f5;
   }
 
-  .input-button {
+  .btn {
     width: 100%;
-    height: 100px;
-    margin: 50px;
-    padding: 20px;
-    color: #666666;
-    background-color: #f6f8fa;
+    height: 94px;
+    margin: 50px 0;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    justify-content: center;
+  }
+
+  .btn-text {
+    font-size: 32px;
+    color: #333333;
   }
 
   .mask {

@@ -3,13 +3,9 @@
 <template>
   <div class="rate-demo">
     <div class="demo-block">
-      <div class="rate-title"><text class="title-text">默认样式：</text></div>
-      <quist-rate @on-change="onClick"></quist-rate>
-    </div>
-    <div class="demo-block">
       <div class="rate-block">
-        <div class="rate-title"><text class="title-text">自定义背景及选中颜色、大小、个数、间距：</text></div>
-        <quist-rate @on-change="onClick" count="{{6}}" star-color="#999999" active-color="#87d068" size="{{80}}" margin="{{10}}"></quist-rate>
+        <div class="rate-title"><text class="title-text">默认样式：</text></div>
+        <quist-rate @on-change="onClick"></quist-rate>
       </div>
       <div class="rate-block">
         <div class="rate-title"><text class="title-text">设置默认选中的个数：</text></div>
@@ -22,6 +18,12 @@
       <div class="rate-block">
         <div class="rate-title"><text class="title-text">再次点击不清除：</text></div>
         <quist-rate @on-change="onClick" allow-clear="{{false}}"></quist-rate>
+      </div>
+    </div>
+    <div class="demo-block">
+      <div class="rate-block">
+        <div class="rate-title"><text class="title-text">自定义背景及选中颜色、大小、个数、间距：</text></div>
+        <quist-rate @on-change="onClick" count="{{6}}" star-color="#999999" active-color="#87d068" size="{{80}}" margin="{{10}}"></quist-rate>
       </div>
       <div class="rate-block">
         <div class="rate-title"><text class="title-text">自定义形状：</text></div>

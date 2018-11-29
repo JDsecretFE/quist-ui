@@ -7,12 +7,12 @@
         <div class="progress-title"><text class="title-text">默认样式：</text></div>
         <quist-progress percent="{{10}}"></quist-progress>
       </div>
-    </div>
-    <div class="demo-block">
       <div class="progress-cell">
         <div class="progress-title"><text class="title-text">不显示提示信息：</text></div>
         <quist-progress percent="{{20}}" show-info="{{false}}"></quist-progress>
       </div>
+    </div>
+    <div class="demo-block">
       <div class="progress-cell">
         <div class="progress-title"><text class="title-text">自定义进度条高度：</text></div>
         <quist-progress percent="{{20}}" stroke-height="{{10}}"></quist-progress>

@@ -61,7 +61,7 @@
       },
       cancelColor: {
         type: String,
-        default: '#999999'
+        default: '#333333'
       },
       titleSize: {
         type: Number,
@@ -73,11 +73,11 @@
       },
       contentSize: {
         type: Number,
-        default: 32
+        default: 30
       },
       contentColor: {
         type: String,
-        default: '#666666'
+        default: '#999999'
       },
       align: {
         type: String,

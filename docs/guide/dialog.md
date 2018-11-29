@@ -5,7 +5,7 @@
 
 ## 安装
 
-```js{4}
+```
 $ npm install quist-ui -D
 ```
 
@@ -64,16 +64,17 @@ $ npm install quist-ui -D
 | title-color | 标题文字颜色 | `String` | #333333 |
 | content | 内容 | `String` | - |
 | align | 内容的对齐方式，可传的值有`left`、`center`、`right` | `String` | center |
-| content-size | 内容大小 | `Number` | 32 |
-| content-color | 内容文字颜色 | `String` | #666666 |
+| content-size | 内容大小 | `Number` | 30 |
+| content-color | 内容文字颜色 | `String` | #999999 |
 | ok-text | 确定按钮文案 | `String` | 确定 |
 | ok-color | 确定按钮的文字颜色 | `String` | #1890ff |
 | cancel-text | 取消按钮文案（如果只想显示一个按钮，请不要传此参数） | `String` | - |
-| cancel-color | 取消按钮的文字颜色 | `String` | #999999 |
+| cancel-color | 取消按钮的文字颜色 | `String` | #333333 |
 | type | 弹窗类型，可选值为 `normal` `onebtn` `notitle` `nofooter` | `String` | - |
 | footer | 底部两个按钮是否都显示 | `Boolean` | true |
 | on-cancel | 点击遮罩层或取消按钮的回调 | `Function` | - |
 | on-ok | 点击确定按钮的回调 | `Function` | - |
+
 
 
 ## 更新日志
@@ -83,3 +84,6 @@ $ npm install quist-ui -D
 
 #### v1.0.7（2018-10-30）
 * [优化] 可自定义样式，标题和内容的文字大小、颜色，确定和取消按钮的颜色
+
+#### v1.1.1（2018-12-03）
+* [优化] 修改默认样式
