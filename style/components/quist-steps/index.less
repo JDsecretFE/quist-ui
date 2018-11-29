@@ -1,30 +1,58 @@
 @steps-prefix: ~"@{css-prefix}-steps";
+@width: 140px;
+@margin: 60px;
+@itemHeight: 40px;
 
 .@{steps-prefix} {
+  &--v {
+    flex-direction: column;
+  }
   &__container {
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
     &--v {
-      flex-direction: column;
+      flex-direction: row;
+    }
+    &--disappear {
+      width: @width;
+    }
+    &--appear {
+      flex: 1;
     }
   }
   &__item {
-    flex-direction: column;
-    padding: 0 12px;
+    align-items: center;
     &--v {
-      padding: 12px 0;
+      flex-direction: column;
+      width: @itemHeight;
+    }
+    &--h {
+      height: @itemHeight;
     }
   }
   &__icon {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    border-radius: 50px;
-    font-size: 32px;
-    background-color: @steps-icon-bg;
-    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: @steps-default-bg;
+    &--active {
+      color: @steps-icon-bg;
+    }
+    &--h {
+      margin-left: @margin;
+    }
   }
   &__content {
     flex-direction: column;
+    margin-left: 20px;
+    &--h {
+      margin-left: 0;
+      margin-top: 20px;
+      width: @width;
+      >text {
+        text-align: center;
+      }
+    }
   }
   &__title {
     font-size: 32px;
@@ -35,14 +63,42 @@
   }
   &__line {
     height: 2px;
-    width: 90px;
+    width: 100%;
     background-color: @steps-default-bg;
+    // margin-left: @margin;
     &--active {
       background-color: @steps-bg-active;
     }
     &--v {
-      height: 90px;
+      height: 120px;
       width: 2px;
     }
+  }
+  &__line--first {
+    margin-left: @margin + 5px;
+  }
+  &__line--last {
+    margin-right: @margin;
+  }
+  &__wrapper {
+    height: @itemHeight;
+    width: @itemHeight;
+    border-radius: @itemHeight;
+    justify-content: center;
+    align-items: center;
+    background-color: @steps-bg-active;
+    &--h {
+      margin-left: @margin;
+    }
+  }
+  &__img {
+    height: 70%;
+    width: 70%;
+    background-size: 70%;
+  }
+  &__image {
+    width: 60px;
+    height: 60px;
+    background-size: 60px;
   }
 }

@@ -2,14 +2,32 @@
 
 <template>
   <div class="steps-demo">
-    <quist-steps steps="{{steps}}" current="{{1}}"></quist-steps>
-    <quist-steps steps="{{steps}}" current="{{1}}" direction="vertical" placement="bottom"></quist-steps>
+    <div class="item-box">
+        <text class="item-txt">横向步骤条</text>
+        <quist-steps steps="{{steps}}" current="{{2}}" icon="/Common/img/check.png"></quist-steps>
+    </div>
+    <div class="item-box">
+        <text class="item-txt">纵向步骤条</text>
+        <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical" icon="/Common/img/check.png"></quist-steps>
+    </div>
   </div>
 </template>
 
 <style>
   .steps-demo {
     flex-direction: column;
+  }
+  .item-box {
+    margin: 20px;
+    padding-bottom: 50px;
+    flex-direction: column;
+  }
+
+  .item-txt {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #666666;
   }
 </style>
 
@@ -18,18 +36,23 @@
     data: {
       steps: [
         {
-          title: '',
-          desc: '这是一个描述',
+          title: '步骤1',
+          desc: '这是一个描述1这是一个描述',
           value: 'apple'
         },
         {
-          title: '步骤2',
-          desc: '这是一个描述2',
+          title: '步骤2如果标题足够长的话也可以换行的',
+          desc: '这是一个描述2这是一个描述',
           value: 'banana'
         },
         {
           title: '步骤3',
-          desc: '这是一个描述3',
+          desc: '这是一个描述3这是一个描述',
+          value: 'mango'
+        }
+        ,{
+          title: '步骤4',
+          desc: '这是一个描述4这是一个描述',
           value: 'mango'
         }
       ]
