@@ -4,11 +4,31 @@
   <div class="steps-demo">
     <div class="item-box">
         <text class="item-txt">横向步骤条</text>
-        <quist-steps steps="{{steps}}" current="{{2}}" icon="/Common/img/check.png"></quist-steps>
+        <div class="item-content">
+          <quist-steps steps="{{steps}}" current="{{0}}"></quist-steps>
+        </div>
+        <div class="item-content">
+          <quist-steps steps="{{steps}}" current="{{3}}"></quist-steps>
+        </div>
+        <div class="item-content">
+          <quist-steps steps="{{steps}}" current="{{4}}"></quist-steps>
+        </div>
     </div>
     <div class="item-box">
         <text class="item-txt">纵向步骤条</text>
-        <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical" icon="/Common/img/check.png"></quist-steps>
+        <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical"></quist-steps>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">自定义图标、颜色(横向)</text>
+      <quist-steps steps="{{steps}}" current="{{1}}" icon="/Common/img/check.png" default-color="#87d068"></quist-steps>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">自定义图标、颜色(纵向)</text>
+      <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="/Common/img/check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">自定义标题、描述样式</text>
+      <quist-steps steps="{{steps}}" current="{{2}}" default-color="#fac450" active-color='#87d068' title-style="{{titleStyle}}" desc-style="{{descStyle}}"></quist-steps>
     </div>
   </div>
 </template>
@@ -17,12 +37,13 @@
   .steps-demo {
     flex-direction: column;
   }
+  .item-content {
+    padding: 20px 0 20px 0;
+  }
   .item-box {
     margin: 20px;
-    padding-bottom: 50px;
     flex-direction: column;
   }
-
   .item-txt {
     width: 100%;
     margin-bottom: 30px;
@@ -37,25 +58,27 @@
       steps: [
         {
           title: '步骤1',
-          desc: '这是一个描述1这是一个描述',
-          value: 'apple'
+          desc: '这是一个描述1这是一个描述'
         },
         {
-          title: '步骤2如果标题足够长的话也可以换行的',
-          desc: '这是一个描述2这是一个描述',
-          value: 'banana'
+          title: '标题也可以换行的',
+          desc: '这是一个描述2'
         },
         {
           title: '步骤3',
-          desc: '这是一个描述3这是一个描述',
-          value: 'mango'
+          desc: '这是一个描述3'
         }
         ,{
           title: '步骤4',
-          desc: '这是一个描述4这是一个描述',
-          value: 'mango'
+          desc: '这是一个描述4'
         }
-      ]
+      ],
+      titleStyle: {
+        color: '#fac450'
+      },
+      descStyle: {
+        color: '#87d068'
+      }
     },
     onInit() {
       this.$page.setTitleBar({

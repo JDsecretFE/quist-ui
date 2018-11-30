@@ -3,27 +3,27 @@
     <div class="quist-steps__container {{isVertical ? 'quist-steps__container--v' : ''}} {{index === (steps.length -1) && !isVertical ? 'quist-steps__container--disappear' : 'quist-steps__container--appear'}}" for="(index, item) in steps">
       <!--水平-->
       <stack class="quist-steps__item quist-steps__item--h" if="(!isVertical)">
-        <div class="quist-steps__line quist-steps__line--first {{index <= (current - 1) ? 'quist-steps__line--active' : ''}}" if="index === 0"></div>
-        <div class="quist-steps__line quist-steps__line--h {{index <= (current - 1) ? 'quist-steps__line--active' : ''}}" elif="index < (steps.length - 1)"></div>
-        <div class="quist-steps__line quist-steps__line--last {{index <= (current - 1) ? 'quist-steps__line--active' : ''}}" else="index === (steps.length - 1)"></div>
-        <div class="quist-steps__wrapper {{isVertical ? '' : 'quist-steps__wrapper--h'}}" if="{{icon && index <= (current - 1)}}">
+        <div class="quist-steps__line quist-steps__line--first {{index <= (current - 1) ? 'quist-steps__line--active' : ''}}" if="index === 0" style="{{getLine(index <= (current - 1))}}"></div>
+        <div class="quist-steps__line quist-steps__line--h {{index <= (current - 1) ? 'quist-steps__line--active' : ''}}" elif="index < (steps.length - 1)" style="{{getLine(index <= (current - 1))}}"></div>
+        <div class="quist-steps__line quist-steps__line--last {{index <= (current - 1) ? 'quist-steps__line--active' : ''}}" else="index === (steps.length - 1)" style="{{getLine(index <= (current - 1))}}"></div>
+        <div class="quist-steps__wrapper quist-steps__wrapper--h" if="{{icon && index <= (current - 1)}}" style="{{getIcon(index <= (current - 1))}}">
           <image src="{{icon}}" class="quist-steps__img"></image>
         </div>
-        <text class="quist-steps__icon quist-steps__icon--h {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" else>●</text>
+        <text class="quist-steps__icon quist-steps__icon--h {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" style="{{getDot(index <= (current - 1))}}" else>●</text>
       </stack>
 
       <!--垂直-->
       <div class="quist-steps__item quist-steps__item--v" else>
-        <div class="quist-steps__wrapper" if="{{icon && index <= (current - 1)}}">
+        <div class="quist-steps__wrapper" if="{{icon && index <= (current - 1)}}" style="{{getIcon(index <= (current - 1))}}">
           <image src="{{icon}}" class="quist-steps__img"></image>
         </div>
-        <text class="quist-steps__icon quist-steps__icon--v {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" else>●</text>
-        <div class="quist-steps__line quist-steps__line--v {{index <= (current - 2) ? 'quist-steps__line--active' : ''}}" if="index < (steps.length - 1)"></div>
+        <text class="quist-steps__icon quist-steps__icon--v {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" style="{{getDot(index <= (current - 1))}}" else>●</text>
+        <div class="quist-steps__line quist-steps__line--v {{index <= (current - 2) ? 'quist-steps__line--active' : ''}}" if="index < (steps.length - 1)" style="{{getLine(index <= (current - 2))}}"></div>
       </div>
 
       <div class="quist-steps__content {{isVertical ? '' : 'quist-steps__content--h'}}">
-        <text class="quist-steps__title" if="{{item.title}}">{{item.title}}</text>
-        <text class="quist-steps__desc" if="{{item.desc}}">{{item.desc}}</text>
+        <text class="quist-steps__title" if="{{item.title}}" style="{{getTitle()}}">{{item.title}}</text>
+        <text class="quist-steps__desc" if="{{item.desc}}" style="{{getDesc()}}">{{item.desc}}</text>
       </div>
     </div>
   </div>
@@ -35,6 +35,8 @@
 </style>
 
 <script>
+  const DEFAULT_COLOR = '#e8e8e8';
+  const DEFAULT_ACTIVE_COLOR = '#1890ff';
   export default {
     props: {
       steps: {
@@ -52,6 +54,34 @@
       icon: {
         type: String,
         default: ''
+      },
+      activeColor: {
+        type: String,
+        default: ''
+      },
+      defaultColor: {
+        type: String,
+        default: ''
+      },
+      titleStyle: {
+        type: Object,
+        default: {}
+      },
+      descStyle: {
+        type: Object,
+        default: {}
+      },
+      iconStyle: {
+        type: Object,
+        default: {}
+      },
+      lineStyle: {
+        type: Object,
+        default: {}
+      },
+      dotStyle: {
+        type: Object,
+        default: {}
       }
     },
     data: {
@@ -60,12 +90,67 @@
     },
     onInit() {
       this.change()
+      console.error('default', DEFAULT_COLOR)
     },
     onReady() {
       this.$watch('direction', 'change')
     },
     change() {
       this.isVertical = this.direction === 'vertical'
+    },
+    getDot(status) {
+      let baseStyle = {
+        color: DEFAULT_COLOR
+      }
+      let po = Object.assign(baseStyle, this.dotStyle)
+
+      if (this.defaultColor) {
+        Object.assign(po, {color: this.defaultColor})
+      }
+
+      if (status) {
+        let color = this.activeColor ?  this.activeColor : DEFAULT_ACTIVE_COLOR;
+        Object.assign(po, {color})
+      }
+      return po;
+    },
+    getIcon(status) {
+      let baseStyle = {
+      }
+
+      if (status) {
+        let backgroundColor = this.activeColor ?  this.activeColor : DEFAULT_ACTIVE_COLOR;
+        Object.assign(baseStyle, { backgroundColor })
+      }
+      return baseStyle;
+    },
+    getTitle(){
+      let baseStyle = {
+
+      }
+      return Object.assign(baseStyle, this.titleStyle)
+    },
+    getDesc() {
+      let baseStyle = {
+
+      }
+      return Object.assign(baseStyle, this.descStyle)
+    },
+    getLine(status) {
+      let baseStyle = {
+        backgroundColor: DEFAULT_COLOR
+      }
+      let po = Object.assign(baseStyle, this.lineStyle)
+
+      if (this.defaultColor) {
+        Object.assign(po, {backgroundColor: this.defaultColor})
+      }
+
+      if (status) {
+        let backgroundColor = this.activeColor ?  this.activeColor : DEFAULT_ACTIVE_COLOR;
+        Object.assign(po, { backgroundColor })
+      }
+      return po;
     }
   }
 </script>
