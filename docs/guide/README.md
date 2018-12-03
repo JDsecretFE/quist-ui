@@ -9,7 +9,8 @@
 
 
 ### 配置
-> 如果是在已有项目安装，请按如下代码配置webpack
+> 如果是在已有项目安装，创建一个webpack.config.js文件(放在根目录下，与src文件夹平级)，并添加如下配置
+
 ```js{4}
 var path = require('path')
 module.exports = {
