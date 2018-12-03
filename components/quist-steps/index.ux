@@ -90,7 +90,6 @@
     },
     onInit() {
       this.change()
-      console.error('default', DEFAULT_COLOR)
     },
     onReady() {
       this.$watch('direction', 'change')

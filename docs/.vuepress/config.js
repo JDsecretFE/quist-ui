@@ -35,7 +35,8 @@ module.exports = {
 					'/guide/checkbox',
 					'/guide/radio',
 					'/guide/switch',
-					'/guide/input'
+					'/guide/input',
+					'/guide/rate'
         ]
 			},
 			{
