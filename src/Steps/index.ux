@@ -5,7 +5,7 @@
     <div class="item-box">
         <text class="item-txt">横向步骤条</text>
         <div class="item-content">
-          <quist-steps steps="{{steps}}" current="{{0}}"></quist-steps>
+          <quist-steps steps="{{steps}}" current="{{1}}"></quist-steps>
         </div>
         <div class="item-content">
           <quist-steps steps="{{steps}}" current="{{3}}"></quist-steps>
@@ -20,11 +20,11 @@
     </div>
     <div class="item-box">
       <text class="item-txt">自定义图标、颜色(横向)</text>
-      <quist-steps steps="{{steps}}" current="{{1}}" icon="/Common/img/check.png" default-color="#87d068"></quist-steps>
+      <quist-steps steps="{{steps}}" current="{{1}}" icon="check.png" default-color="#87d068"></quist-steps>
     </div>
     <div class="item-box">
       <text class="item-txt">自定义图标、颜色(纵向)</text>
-      <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="/Common/img/check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
+      <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
     </div>
     <div class="item-box">
       <text class="item-txt">自定义标题、描述样式</text>
