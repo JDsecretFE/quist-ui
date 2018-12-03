@@ -2,55 +2,65 @@
 
 <template>
   <div class="counter-demo">
-    <div class="item-box">
-      <text class="item-txt">默认计数器展示</text>
-      <quist-counter value="{{curvala}}" @on-change="valueChangeA"></quist-counter>
-      <text class="item-show">当前的值是：{{curvala}}</text>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt">默认计数器展示:</text>
+        <quist-counter value="{{curvala}}" @on-change="valueChangeA"></quist-counter>
+        <text class="item-show">当前的值是：{{curvala}}</text>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">禁止更改计数器展示:</text>
+        <quist-counter value="{{10}}" disabled></quist-counter>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">设置最大值的计数器展示(最大值为10):</text>
+        <quist-counter value="{{curvalb}}" max="{{10}}" @on-change="valueChangeB"></quist-counter>
+        <text class="item-show">当前的值是：{{curvalb}}</text>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">设置最小值的计数器展示(最小值为2):</text>
+        <quist-counter value="{{1}}" min="{{2}}" @on-change="valueChangeC"></quist-counter>
+        <text class="item-show">当前的值是：{{curvalc}}</text>
+      </div>
     </div>
-    <div class="item-box">
-      <text class="item-txt">禁止更改计数器展示</text>
-      <quist-counter value="{{10}}" disabled></quist-counter>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">设置最大值的计数器展示(最大值为10)</text>
-      <quist-counter value="{{curvalb}}" max="{{10}}" @on-change="valueChangeB"></quist-counter>
-      <text class="item-show">当前的值是：{{curvalb}}</text>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">设置最小值的计数器展示(最小值为2)</text>
-      <quist-counter value="{{1}}" min="{{2}}" @on-change="valueChangeC"></quist-counter>
-      <text class="item-show">当前的值是：{{curvalc}}</text>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">自定义计数器样式</text>
-      <quist-counter value="{{curvald}}" @on-change="valueChangeD" width="{{200}}" height="{{60}}" bg-color="#f8f8f8" border-radius="{{1}}" disabled-color="#E64340" border-color="#1890ff" f-color="#1890ff" f-size="{{48}}"></quist-counter>
-      <text class="item-show">当前的值是：{{curvald}}</text>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt">自定义计数器样式:</text>
+        <quist-counter value="{{curvald}}" @on-change="valueChangeD"></quist-counter>
+        <text class="item-show">当前的值是：{{curvald}}</text>
+      </div>
     </div>
   <div>
 </template>
 
 <style>
   .counter-demo {
-    flex: 1;
+    flex-direction: column;
+    background-color: #f5f5f5;
+  }
+
+  .demo-block {
     flex-direction: column;
     background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .item-box {
-    margin: 20px;
-    padding-bottom: 50px;
     flex-direction: column;
+    margin: 30px 10px;
   }
 
   .item-txt {
-    width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 32px;
-    color: #666666;
+    color: #333333;
   }
 
   .item-show {
-    padding-top: 10px;
+    margin-top: 10px;
+    color: #999999;
   }
 </style>
 

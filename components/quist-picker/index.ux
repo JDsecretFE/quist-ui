@@ -48,11 +48,11 @@
       },
       titleFontSize: {
         type: Number,
-        default: 32
+        default: 34
       },
       cancelColor: {
         type: String,
-        default: '#828282'
+        default: '#888888'
       },
       confirmColor: {
         type: String,
@@ -60,7 +60,7 @@
       },
       itemColor: {
         type: String,
-        default: '#666666'
+        default: '#999999'
       },
       itemSelectColor: {
         type: String,
@@ -68,7 +68,7 @@
       },
       itemFontSize: {
         type: Number,
-        default: 28
+        default: 30
       }
     },
     data() {
@@ -117,7 +117,60 @@
     },
     confirmClick() {
       this.$emit('onClose')
-      this.$emit('onSelect', this.selectValue)
+      if (this.doubleList.length === 1) {
+        if (this.selectValue[0]) {
+          this.$emit('onSelect', this.selectValue)
+        } else {
+          this.$emit('onSelect', {
+            [0]: {
+              arr: '',
+              index: '',
+              content: ''
+            }
+          })
+        }
+      } else if (this.doubleList.length === 2) {
+        if (this.selectValue[1]) {
+          this.$emit('onSelect', this.selectValue)
+        } else {
+          this.$emit('onSelect', {
+            [0]: {
+              arr: '',
+              index: '',
+              content: ''
+            },
+            [1]: {
+              arr: '',
+              index: '',
+              content: ''
+            }
+          })
+        }
+      } else if (this.doubleList.length === 3) {
+        if (this.selectValue[2]) {
+          this.$emit('onSelect', this.selectValue)
+        } else {
+          this.$emit('onSelect', {
+            [0]: {
+              arr: '',
+              index: '',
+              content: ''
+            },
+            [1]: {
+              arr: '',
+              index: '',
+              content: ''
+            },
+            [2]: {
+              arr: '',
+              index: '',
+              content: ''
+            }
+          })
+        }
+      } else {
+        console.error('目前不支持四列，如有需求请提issues。https://github.com/JDsecretFE/quist-ui/issues')
+      }
     },
     selectLi(idx, i, cnt) {
       this.select = Object.assign({}, this.select, {

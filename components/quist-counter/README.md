@@ -53,13 +53,18 @@ $ npm install quist-ui -D
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | value | 当前数值 | `Number` | 0 |
-| width | 整体的宽度 | `Number` | 240 |
-| height | 整体的高度 | `Number` | 80 |
-| border-color | 边框的颜色 | `String` | #d9d9d9 |
-| border-radius | 圆角大小`建议不要设置0或超过6的值` | `Number` | 6 |
-| bg-color | 加减按钮的背景颜色 | `String` | #f3f2f8 |
-| f-color | 加减按钮及中间数字的颜色 | `String` | #666666 |
-| f-size | 加减按钮及中间数字的大小 | `Number` | 32 |
+| operate-width | 加减按钮的宽度 | `Number` | 220 |
+| operate-border-color | 加减按钮的边框颜色 | `String` | #dddddd |
+| border-radius | 加减按钮的圆角大小`建议不要设置0或超过6的值` | `Number` | 6 |
+| operate-bg-color | 加减按钮的背景颜色 | `String` | #f3f2f8 |
+| operate-font-color | 加减按钮的颜色 | `String` | #666666 |
+| operate-font-size | 加减按钮的大小 | `Number` | 32 |
+| number-width | 数字区域的宽度 | `Number` | 220 |
+| number-border-color | 数字区域的边框颜色 | `String` | #dddddd |
+| number-bg-color | 数字区域的背景颜色 | `String` | #f3f2f8 |
+| number-font-color | 数字区域的文字颜色 | `String` | #666666 |
+| number-font-size | 数字区域的文字大小 | `Number` | 32 |
+| height | 加减按钮及数字区域的高度 | `Number` | 60 |
 | disabled-color | 禁用状态时，加减按钮及中间数字的颜色 | `String` | #cccccc |
 | min | 最小值 | `Number` | 0 |
 | max | 最大值 | `Number` | - |
@@ -75,3 +80,6 @@ $ npm install quist-ui -D
 #### v1.0.9（2018-11-12）
 * [优化] 可自定义样式，计数器的宽高、边框颜色、圆角大小、加减号按钮的背景色、字体大小、字体颜色、禁用时的字体颜色。
 * 删除计数器中间可输入的功能。
+
+#### v1.1.1（2018-12-03)  
+* [优化] 修改默认样式

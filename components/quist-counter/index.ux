@@ -1,10 +1,12 @@
 <template>
-  <div class="quist-counter" style="{{wrapperStyle()}}">
-    <div class="quist-counter-reduce" style="{{operationStyle()}}" onclick="reduceClicked" disabled="{{disabled}}">
+  <div class="quist-counter">
+    <div class="quist-counter-operate" style="{{operateStyle()}}" onclick="reduceClicked">
       <text style="{{reduceStyle()}}">-</text>
     </div>
-    <text class="quist-counter-input" style="{{inputStyle()}}">{{counterValue}}</text>
-    <div class="quist-counter-plus" style="{{operationStyle()}}" onclick="plusClicked" disabled="{{disabled}}">
+    <div class="quist-counter-input" style="{{inputStyle()}}">
+      <text style="{{inputTextStyle()}}">{{counterValue}}</text>
+    </div>
+    <div class="quist-counter-operate" style="{{operateStyle()}}" onclick="plusClicked">
       <text style="{{plusStyle()}}">+</text>
     </div>
   </div>
@@ -33,37 +35,57 @@
         type: Boolean,
         default: false
       },
-      borderRadius: {
-        type: Number,
-        default: 6
-      },
-      borderColor: {
-        type: String,
-        default: '#d9d9d9'
-      },
-      width: {
-        type: Number,
-        default: 240
-      },
       height: {
         type: Number,
-        default: 80
+        default: 60
       },
-      bgColor: {
-        type: String,
-        default: '#f3f2f8'
-      },
-      fSize: {
+      borderRadius: {
         type: Number,
-        default: 32
-      },
-      fColor: {
-        type: String,
-        default: '#666666'
+        default: 0
       },
       disabledColor: {
         type: String,
         default: '#cccccc'
+      },
+      operateWidth: {
+        type: Number,
+        default: 60
+      },
+      operateBorderColor: {
+        type: String,
+        default: '#dddddd'
+      },
+      operateBgColor: {
+        type: String,
+        default: '#f7f7f7'
+      },
+      operateFontSize: {
+        type: Number,
+        default: 32
+      },
+      operateFontColor: {
+        type: String,
+        default: '#999999'
+      },
+      numberWidth: {
+        type: Number,
+        default: 70
+      },
+      numberBorderColor: {
+        type: String,
+        default: '#dddddd'
+      },
+      numberBgColor: {
+        type: String,
+        default: '#f7f7f7'
+      },
+      numberFontSize: {
+        type: Number,
+        default: 32
+      },
+      numberFontColor: {
+        type: String,
+        default: '#333333'
       }
     },
     data() {
@@ -83,6 +105,9 @@
       }
     },
     reduceClicked() {
+      if (this.disabled) {
+        return false;
+      }
       if (this.counterValue === this.min) {
         this.counterValue = this.min
       } else {
@@ -97,6 +122,9 @@
       this.$emit('onChange', {value: this.counterValue})
     },
     plusClicked() {
+      if (this.disabled) {
+        return false;
+      }
       if (this.counterValue === this.max) {
         this.counterValue = this.max
       } else {
@@ -110,26 +138,46 @@
       }
       this.$emit('onChange', {value: this.counterValue})
     },
-    wrapperStyle() {
+    inputStyle() {
       let baseStyle = {
-        width: this.width + 'px',
+        width: this.numberWidth + 'px',
         height: this.height + 'px',
-        borderRadius: this.borderRadius + 'px',
-        borderColor: this.borderColor
+        backgroundColor: this.numberBgColor,
       }
       return baseStyle;
     },
-    operationStyle() {
+    inputTextStyle() {
       let baseStyle = {
-        borderColor: this.borderColor,
-        backgroundColor: this.bgColor
+        fontSize: this.numberFontSize + 'px',
+        color: this.numberFontColor
       }
-      return baseStyle;
+      if (this.disabled) {
+        return Object.assign(baseStyle, {
+          color: this.disabledColor
+        })
+      } else {
+        return baseStyle;
+      }
+    },
+    operateStyle() {
+      let baseStyle = {
+        width: this.operateWidth + 'px',
+        height: this.height + 'px',
+        backgroundColor: this.operateBgColor,
+        borderRadius: this.borderRadius + 'px'
+      }
+      if (this.disabled) {
+        return Object.assign(baseStyle, {
+          color: this.disabledColor
+        })
+      } else {
+        return baseStyle;
+      }
     },
     reduceStyle() {
       let baseStyle = {
-        fontSize: this.fSize + 'px',
-        color: this.fColor
+        fontSize: this.operateFontSize + 'px',
+        color: this.operateFontColor
       }
       if (this.disabled || this.reduceDisabled) {
         return Object.assign(baseStyle, {
@@ -141,24 +189,10 @@
     },
     plusStyle() {
       let baseStyle = {
-        fontSize: this.fSize + 'px',
-        color: this.fColor
+        fontSize: this.operateFontSize + 'px',
+        color: this.operateFontColor
       }
       if (this.disabled || this.plusDisabled) {
-        return Object.assign(baseStyle, {
-          color: this.disabledColor
-        })
-      } else {
-        return baseStyle;
-      }
-    },
-    inputStyle() {
-      let baseStyle = {
-        fontSize: this.fSize + 'px',
-        color: this.fColor,
-        lineHeight: this.height + 'px'
-      }
-      if (this.disabled) {
         return Object.assign(baseStyle, {
           color: this.disabledColor
         })

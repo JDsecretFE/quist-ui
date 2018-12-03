@@ -44,24 +44,25 @@
 	width: 100%;
 	height: 700px;
 	animation-fill-mode: forwards;
-	background-color: #ffffff;
+	background-color: @body-background;
 	flex-direction: column;
 
 	&-title {
 		width: 100%;
-    height: 132px;
+    height: 126px;
     justify-content: space-between;
     align-items: center;
-    background-color: #fbf9fe;
-    .set-border(bottom, #C7C7C7);
+    .set-border(bottom);
 	}
 
 	&-cancel {
-    padding: 36px;
+		padding: 0 30px;
+		height: 126px;
   }
 
   &-confirm {
-    padding: 36px;
+		padding: 0 30px;
+		height: 126px;
   }
 
   &-ul {

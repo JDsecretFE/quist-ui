@@ -53,7 +53,7 @@
     <quist-picker visible="{{pickerVisible1}}" @on-close="close(1)" list="{{list1}}" @on-select="select1()" mask-closable="{{false}}" ok-text="ok" cancel-text="cancel"></quist-picker>
     <quist-picker visible="{{pickerVisible2}}" @on-close="close(2)" list="{{list2}}" @on-select="select2()"></quist-picker>
     <quist-picker visible="{{pickerVisible3}}" @on-close="close(3)" list="{{list3}}" @on-select="select3()"></quist-picker>
-    <quist-picker visible="{{pickerVisible4}}" title-font-size="{{24}}" cancel-color="#666666" confirm-color="#87d068" item-color="#999999" item-select-color="#87d068" item-font-size="{{24}}" @on-close="close(4)" list="{{list1}}" @on-select="select4()" mask-closable="{{false}}" ok-text="ok" cancel-text="cancel"></quist-picker>
+    <quist-picker visible="{{pickerVisible4}}" title-font-size="{{28}}" cancel-color="#666666" confirm-color="#87d068" item-color="#333333" item-select-color="#87d068" item-font-size="{{28}}" @on-close="close(4)" list="{{list1}}" @on-select="select4()" mask-closable="{{false}}" ok-text="ok" cancel-text="cancel"></quist-picker>
   </div>
 </template>
 
@@ -146,7 +146,6 @@
     },
     select1(e) {
       console.log('一列所选的值：', e.detail[0])
-      console.log(e.detail[0].content, e.detail[0].arr, e.detail[0].index)
       this.selectTxt1 = e.detail[0].content
     },
     select2(e) {
@@ -159,7 +158,6 @@
     },
     select4(e) {
       console.log('一列所选的值：', e.detail[0])
-      console.log(e.detail[0].content, e.detail[0].arr, e.detail[0].index)
       this.selectTxt4 = e.detail[0].content
     }
   }
