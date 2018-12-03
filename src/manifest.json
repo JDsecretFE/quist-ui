@@ -78,6 +78,9 @@
       },
       "Rate": {
         "component": "index"
+      },
+      "Steps": {
+        "component": "index"
       }
     }
   },

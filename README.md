@@ -14,7 +14,8 @@
 
 
 ### 配置
-> 如果是在已有项目安装，请按如下代码配置webpack
+> 如果是在已有项目安装，创建一个webpack.config.js文件(放在根目录下，与src文件夹平级)，并添加如下配置
+
 ```
 var path = require('path')
 module.exports = {
@@ -46,6 +47,7 @@ module.exports = {
 
 - 基础组件
     - [进度条 progress](https://jdsecretfe.github.io/quist-ui/guide/progress.html)
+    - [步骤条 steps](https://jdsecretfe.github.io/quist-ui/guide/steps.html)
 - 表单组件
     - [按钮 button](https://jdsecretfe.github.io/quist-ui/guide/button.html)
     - [多选框 checkbox](https://jdsecretfe.github.io/quist-ui/guide/checkbox.html)
@@ -66,7 +68,7 @@ module.exports = {
     - [对话框 dialog](https://jdsecretfe.github.io/quist-ui/guide/dialog.html)
 
 
-### 反馈沟通  
+### 反馈沟通
 
 请扫码进入微信群，此群可快速及时地解答问题。
 

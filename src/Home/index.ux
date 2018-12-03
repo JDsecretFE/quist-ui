@@ -12,6 +12,12 @@
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
       </div>
+      <div class="item-content">
+        <div class="item-li" onclick="detail('Steps')">
+          <text class="item-li-detail">steps <span class="item-name">步骤条</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+        </div>
+      </div>
     </div>
     <div class="item-container">
       <text class="item-title">表单组件</text>
