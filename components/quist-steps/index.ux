@@ -9,7 +9,7 @@
         <div class="quist-steps__wrapper quist-steps__wrapper--h" if="{{icon && index <= (current - 1)}}" style="{{getIcon(index <= (current - 1))}}">
           <image src="{{icon}}" class="quist-steps__img"></image>
         </div>
-        <text class="quist-steps__icon quist-steps__icon--h {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" style="{{getDot(index <= (current - 1))}}" else>●</text>
+        <text class="quist-steps__icon quist-steps__icon--h {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" style="{{getDot(index <= (current - 1))}}" else></text>
       </stack>
 
       <!--垂直-->
@@ -17,7 +17,7 @@
         <div class="quist-steps__wrapper" if="{{icon && index <= (current - 1)}}" style="{{getIcon(index <= (current - 1))}}">
           <image src="{{icon}}" class="quist-steps__img"></image>
         </div>
-        <text class="quist-steps__icon quist-steps__icon--v {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" style="{{getDot(index <= (current - 1))}}" else>●</text>
+        <text class="quist-steps__icon quist-steps__icon--v {{index <= (current - 1) ? 'quist-steps__icon--active' : ''}}" style="{{getDot(index <= (current - 1))}}" else></text>
         <div class="quist-steps__line quist-steps__line--v {{index <= (current - 2) ? 'quist-steps__line--active' : ''}}" if="index < (steps.length - 1)" style="{{getLine(index <= (current - 2))}}"></div>
       </div>
 
@@ -100,17 +100,17 @@
     },
     getDot(status) {
       let baseStyle = {
-        color: DEFAULT_COLOR
+        backgroundColor: DEFAULT_COLOR
       }
       let po = Object.assign(baseStyle, this.dotStyle)
 
       if (this.defaultColor) {
-        Object.assign(po, {color: this.defaultColor})
+        Object.assign(po, {backgroundColor: this.defaultColor})
       }
 
       if (status) {
-        let color = this.activeColor ?  this.activeColor : DEFAULT_ACTIVE_COLOR;
-        Object.assign(po, {color})
+        let backgroundColor = this.activeColor ?  this.activeColor : DEFAULT_ACTIVE_COLOR;
+        Object.assign(po, {backgroundColor})
       }
       return po;
     },
