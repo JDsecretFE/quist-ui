@@ -52,6 +52,7 @@ module.exports = {
     - [单选框 radio](https://jdsecretfe.github.io/quist-ui/guide/radio.html)
     - [开关 switch](https://jdsecretfe.github.io/quist-ui/guide/switch.html)
     - [输入框 input](https://jdsecretfe.github.io/quist-ui/guide/input.html)
+    - [评分 rate](https://jdsecretfe.github.io/quist-ui/guide/rate.html)
 - 功能组件
     - [计数器 counter](https://jdsecretfe.github.io/quist-ui/guide/counter.html)
     - [加载 loading](https://jdsecretfe.github.io/quist-ui/guide/loading.html)
@@ -69,7 +70,7 @@ module.exports = {
 
 请扫码进入微信群，此群可快速及时地解答问题。
 
-![微信沟通群二维码](https://camo.githubusercontent.com/85c1f2204391dd89f974ffa13d8e17e3bc14f21e/68747470733a2f2f696d672d626c6f672e6373646e696d672e636e2f323031383131323630393036333131302e6a706567)
+![微信沟通群二维码](https://img-blog.csdnimg.cn/20181203102345916.jpeg)
 
 
 ### 开源协议  

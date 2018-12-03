@@ -22,7 +22,7 @@
     props: {
       value: {
         type: Number,
-        default: 0
+        default: 1
       },
       min: {
         type: Number,
@@ -53,7 +53,7 @@
       },
       operateBorderColor: {
         type: String,
-        default: '#dddddd'
+        default: '#f7f7f7'
       },
       operateBgColor: {
         type: String,
@@ -61,7 +61,7 @@
       },
       operateFontSize: {
         type: Number,
-        default: 32
+        default: 36
       },
       operateFontColor: {
         type: String,
@@ -73,7 +73,7 @@
       },
       numberBorderColor: {
         type: String,
-        default: '#dddddd'
+        default: '#f7f7f7'
       },
       numberBgColor: {
         type: String,
@@ -96,10 +96,10 @@
       }
     },
     onInit() {
-      if (this.min && (this.value < this.min)) {
+      if (this.min && (this.value <= this.min)) {
         this.counterValue = this.min
         this.reduceDisabled = true
-      } else if (this.max && (this.value > this.max)) {
+      } else if (this.max && (this.value >= this.max)) {
         this.counterValue = this.max
         this.plusDisabled = true
       }
@@ -142,6 +142,7 @@
       let baseStyle = {
         width: this.numberWidth + 'px',
         height: this.height + 'px',
+        borderColor: this.numberBorderColor,
         backgroundColor: this.numberBgColor,
       }
       return baseStyle;
@@ -164,6 +165,7 @@
         width: this.operateWidth + 'px',
         height: this.height + 'px',
         backgroundColor: this.operateBgColor,
+        borderColor: this.operateBorderColor,
         borderRadius: this.borderRadius + 'px'
       }
       if (this.disabled) {

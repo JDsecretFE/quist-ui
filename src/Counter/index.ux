@@ -26,7 +26,7 @@
     <div class="demo-block">
       <div class="item-box">
         <text class="item-txt">自定义计数器样式:</text>
-        <quist-counter value="{{curvald}}" @on-change="valueChangeD"></quist-counter>
+        <quist-counter value="{{curvald}}" @on-change="valueChangeD" number-border-color="transparent" number-bg-color="transparent" border-radius="{{60}}" min="{{1}}" max="{{5}}"></quist-counter>
         <text class="item-show">当前的值是：{{curvald}}</text>
       </div>
     </div>
