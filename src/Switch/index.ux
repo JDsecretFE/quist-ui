@@ -16,9 +16,9 @@
     </div>
     <div class="item-box">
         <label class="item-txt" target="isDefault">自定义样式开关</label>
-        <quist-switch checked="{{false}}" id='isDefault' checked-color="red" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
+        <quist-switch checked="{{false}}" id='isDefault' checked-color="#1890ff" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
         <div style="margin-top: 20px"></div>
-        <quist-switch checked="{{false}}" checked-color="#999999" inner-style="{{innerStyle1}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
+        <quist-switch checked="{{false}}" checked-color="#c1c1c1" inner-style="{{innerStyle1}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@
       },
       innerStyle: {
         borderRadius: 0,
-        backgroundColor: '#fac450'
+        backgroundColor: '#87d068'
       },
       innerStyle1: {
         borderRadius: 0

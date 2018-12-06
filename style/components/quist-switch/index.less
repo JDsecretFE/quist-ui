@@ -3,13 +3,13 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(80px);
+    transform: translateX(60px);
   }
 }
 
 @keyframes close {
   from {
-    transform: translateX(80px);
+    transform: translateX(60px);
   }
   to {
     transform: translateX(0);
@@ -20,12 +20,19 @@
 .@{switch-prefix} {
   align-items: center;
   &__checkbox {
+    width: 126px;
+    height: 66px;
+    border-radius: 66px;
+    border: 1px solid #d9d9d9;
   }
   &__checkbox--disabled {
     opacity: .5;
   }
   &__thumb {
-    margin: 4px;
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    background-color: #FFFFFF;
   }
   &__thumb--open {
     animation-name: open;

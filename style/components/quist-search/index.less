@@ -1,13 +1,12 @@
-@input-prefix: ~"@{css-prefix}-input";
+@search-prefix: ~"@{css-prefix}-search";
 
-.@{input-prefix} {
+.@{search-prefix} {
   align-items: center;
-  background-color: @input-default-bg;
+  border: 1px solid @search-default-border;
+  border-radius: 10px;
   height: 75px;
-  font-size: 17px;
   width: 100%;
-  .set-border(bottom, @input-default-border);
-  .set-border(top, @input-default-border);
+  background-color: @search-default-bg;
   &__fix {
     width: 0px;
     height: 0px;
@@ -31,6 +30,7 @@
   &__img {
     width: 35px;
     height: 35px;
+    margin-right: 10px;
     align-items: center;
     justify-content: center;
   }

@@ -49,7 +49,7 @@
       "Switch": {
         "component": "index"
       },
-      "Input": {
+      "Search": {
         "component": "index"
       },
       "Counter": {
@@ -77,6 +77,9 @@
         "component": "index"
       },
       "Steps": {
+        "component": "index"
+      },
+      "Input": {
         "component": "index"
       }
     }
