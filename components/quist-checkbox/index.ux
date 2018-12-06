@@ -29,10 +29,6 @@
         type: Array,
         default: []
       },
-      labelMargin: {
-        type: String,
-        default: '30px'
-      },
       labelColor: {
         type: String,
         default: '#000000'
@@ -139,8 +135,7 @@
     },
     label() {
       let baseStyle = {
-        color: this.labelColor,
-        marginLeft: this.labelMargin
+        color: this.labelColor
       }
       return Object.assign(baseStyle, this.labelStyle)
     },

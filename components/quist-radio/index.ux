@@ -3,7 +3,7 @@
     <block for="(index, row) in options">
       <div class="quist-radio__item {{isRight ? 'quist-radio__item--isRight' : ''}} {{row.disabled ? 'quist-radio__item--disabled' : ''}}" @click="click(row)">
         <text if="isRight" style="{{label()}}">{{row.label || row}}</text>
-        <stack class="quist-radio__check" style="{{wrapper(replaceValue === (row.value || row) ? checkedColor : checkColor)}}" if="!isRight">
+        <stack class="quist-radio__check" style="{{wrapper(replaceValue === (row.value || row) ? checkedColor : checkColor, replaceValue === (row.value || row) ? checkedBorderColor : checkBorderColor)}}" if="!isRight">
           <div class="quist-radio__thumb {{replaceValue === (row.value || row) ? 'quist-radio__thumb--open' : 'quist-radio__thumb--close'}}" style="{{inner(replaceValue === (row.value || row) ? checkedColor : checkColor)}}"></div>
         </stack>
         <image if="isRight && (replaceValue === (row.value || row))" src="{{checkIcon}}" class="quist-radio__img"></image>
@@ -36,9 +36,17 @@
       },
       checkColor: {
         type: String,
-        default: '#CCCCCC'
+        default: '#FFFFFF'
       },
       checkedColor: {
+        type: String,
+        default: '#2998F9'
+      },
+      checkBorderColor: {
+        type: String,
+        default: '#CACBCC'
+      },
+      checkedBorderColor: {
         type: String,
         default: '#2998F9'
       },
@@ -95,15 +103,16 @@
       }
       return Object.assign(baseStyle, this.labelStyle)
     },
-    wrapper(borderColor) {
+    wrapper(backgroundColor, borderColor) {
       let baseStyle = {
+        backgroundColor,
         borderColor
       }
       return Object.assign(baseStyle, this.wrapperStyle)
     },
-    inner(backgroundColor) {
+    inner(borderColor) {
       let baseStyle = {
-        backgroundColor 
+        borderColor
       }
       return Object.assign(baseStyle, this.innerStyle)
     }

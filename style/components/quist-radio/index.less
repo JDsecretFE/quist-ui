@@ -34,29 +34,30 @@
   &__check {
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    border-width: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    border: 1px solid @radio-default-border;
     margin-right: 10px;
   }
   &__thumb {
-    width: 36px;
-    height: 36px;
-    border-radius: 36px;
+    width: 12px;
+    height: 26px;
+    .set-border(right, @radio-default-border, 3px);
+    .set-border(bottom, @radio-default-border, 3px);
+    transform: rotate(45deg);
+    margin-top: -5px;
   }
   &__thumb--open {
     animation-name: open;
     animation-duration: 0ms;
     animation-fill-mode: forwards;
+    border-color: #ffffff;
   }
   &__thumb--close {
     animation-name: close;
     animation-duration: 0ms;
     animation-fill-mode: forwards;
-  }
-  &__img {
-    
   }
 }
 
