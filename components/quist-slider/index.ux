@@ -1,0 +1,139 @@
+<template>
+  <div class="quist-slider {{disabled ? 'readonly' : ''}}">
+    <stack>
+      <div class="quist-slider-inner" style="height: {{height}}px; background-color: {{sliderBgcolor}}; width: {{width}}px; marginTop: {{handleSize/2 - this.height/2}}px">
+        <div style="{{innerStyle()}}"></div>
+      </div>
+      <div @touchStart="touchHandlerStart" @touchMove="touchHandlerMove" style="{{handlerStyle()}}"></div>
+    </stack>
+  </div>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-slider/index.less";
+</style>
+
+<script>
+  export default {
+    props: {
+      min: {
+        type: Number,
+        default: 0
+      },
+      max: {
+        type: Number,
+        default: 100
+      },
+      value: {
+        type: Number,
+        default: 0
+      },
+      trackColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      sliderBgcolor: {
+        type: String,
+        default: '#E9E9E9'
+      },
+      height: {
+        type: Number,
+        default: 4
+      },
+      width: {
+        type: Number,
+        default: 660
+      },
+      handleSize: {
+        type: Number,
+        default: 50
+      },
+      handleBgColor: {
+        type: String,
+        default: 'rgba(255, 255, 255, 1)'
+      },
+      handleBorderColor: {
+        type: String,
+        default: '#1890ff'
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        handlerStart: 0,
+        handlerMove: 0,
+        percent: 0,
+        flagstart: false,
+        scale: 1,
+        step: 1,
+        initPercent: 0
+      }
+    },
+    onInit() {
+      this.step = (this.max - this.min)/100
+      this.scale = Math.floor((this.width - this.handleSize)/100)
+      if (this.value - this.min >= 0) {
+        this.initPercent = (Math.floor(this.value) - this.min) * this.scale/this.step
+        this.percent = this.initPercent
+      }
+    },
+    innerStyle() {
+      let baseStyle = {
+        width: this.percent + 'px',
+        height: this.height + 'px',
+        backgroundColor: this.trackColor
+      }
+      return baseStyle;
+    },
+    handlerStyle() {
+      let baseStyle = {
+        width: this.handleSize + 'px',
+        height: this.handleSize + 'px',
+        borderRadius: this.handleSize + 'px',
+        backgroundColor: this.handleBgColor,
+        borderWidth: '1px',
+		    borderStyle: 'solid',
+        borderColor: this.handleBorderColor,
+        marginLeft: this.percent + 'px'
+      }
+      return baseStyle;
+    },
+    touchHandlerStart(e) {
+      if (this.flagstart) {
+        return false;
+      } else {
+        this.flagstart = true
+        this.handlerStart = Math.floor(e.touches[0].clientX);
+      }
+    },
+    touchHandlerMove(e) {
+      if (this.disabled) {
+        return false;
+      } else {
+        this.handlerMove = this.initPercent + Math.floor(e.touches[0].clientX);
+        if (this.handlerMove <= this.handlerStart) {
+          this.percent = 0
+          this.$emit('onChange', this.min)
+        } else if (this.handlerMove >= this.width + this.handlerStart - this.handleSize) {
+          this.percent = this.width - this.handleSize
+          this.$emit('onChange', this.max)
+        } else {
+          this.percent = this.handlerMove - this.handlerStart
+          if (Math.floor(this.percent/this.scale) <= 0) {
+            this.percent = 0
+            this.$emit('onChange', this.min)
+          } else if (Math.floor(this.percent/this.scale) >= 100) {
+            this.percent = this.width - this.handleSize
+            this.$emit('onChange', this.max)
+          } else {
+            this.$emit('onChange', this.min + Math.floor(this.percent/this.scale*this.step))
+          }
+        }
+      }
+    }
+  }
+</script>

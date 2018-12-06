@@ -6,6 +6,7 @@ docs
 deploy.sh
 sign
 src
+babel.config.js
 .babelrc
 .editorconfig
 .eslintrc.json

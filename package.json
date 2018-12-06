@@ -4,7 +4,7 @@
   "version": "1.1.1",
   "description": "基于快应用的多功能、富交互、轻量级的UI 组件库",
   "subversion": {
-    "toolkit": "0.0.36"
+    "toolkit": "0.0.38"
   },
   "repository": {
     "type": "git",
@@ -37,17 +37,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-runtime": "^6.26.0",
-    "cross-env": "^5.1.4",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
     "css-what": "^2.1.0",
-    "hap-toolkit": "0.0.36",
-    "js-yaml": "^3.12.0",
+    "hap-toolkit": "0.0.38",
     "koa": "^2.3.0",
     "koa-body": "^2.5.0",
     "koa-router": "^7.2.1",
@@ -55,10 +51,11 @@
     "koa-static": "^4.0.1",
     "socket.io": "^2.1.0",
     "vuepress": "^0.14.4",
-    "webpack": "^3.12.0"
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "less": "^3.8.1",
+    "less": "^3.9.0",
     "less-loader": "^4.1.0"
   }
 }

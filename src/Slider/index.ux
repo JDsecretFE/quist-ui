@@ -1,0 +1,125 @@
+<import name="quist-slider" src="@quist-ui/quist-slider/index"></import>
+
+<template>
+  <div class="slider-demo">
+    <div class="demo-block">
+      <div class="slider-cell">
+        <div class="slider-title"><text class="title-text">默认样式：</text></div>
+        <div class="slider">
+          <quist-slider @on-change="slideA()"></quist-slider>
+        </div>
+        <div class="slider"><text class="value-text">value：{{valueA}}</text></div>
+      </div>
+      <div class="slider-cell">
+        <div class="slider-title"><text class="title-text">传入默认值：</text></div>
+        <div class="slider">
+          <quist-slider @on-change="slideC()" value="{{20}}"></quist-slider>
+        </div>
+        <div class="slider"><text class="value-text">value：{{valueC}}</text></div>
+      </div>
+      <div class="slider-cell">
+        <div class="slider-title"><text class="title-text">最小值50-最大值230：</text></div>
+        <div class="slider">
+          <quist-slider @on-change="slideD()" min="{{50}}" max="{{230}}" value="{{140}}"></quist-slider>
+        </div>
+        <div class="slider"><text class="value-text">value：{{valueD}}</text></div>
+      </div>
+      <div class="slider-cell">
+        <div class="slider-title"><text class="title-text">禁用状态：</text></div>
+        <div class="slider">
+          <quist-slider disabled value="{{30}}"></quist-slider>
+        </div>
+      </div>
+    </div>
+    <div class="demo-block">
+      <div class="slider-cell">
+        <div class="progress-title"><text class="title-text">自定义样式：</text></div>
+        <div class="slider">
+          <quist-slider @on-change="slideB()" slider-bgcolor="#cccccc" track-color="#fac450" height="{{8}}" handle-size="{{60}}" handle-bg-color="#87d068" handle-border-color="#E64340"></quist-slider>
+        </div>
+        <div class="slider"><text class="value-text">value：{{valueB}}</text></div>
+      </div>
+      <div class="slider-cell">
+        <div class="progress-title"><text class="title-text">显示数值：</text></div>
+        <div class="slider">
+          <text>0</text>
+          <div class="slider-info">
+            <quist-slider @on-change="slideE()" width="{{560}}"></quist-slider>
+          </div>
+          <text>100</text>
+        </div>
+        <div class="slider"><text class="value-text">value：{{valueE}}</text></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+  .slider-demo {
+    flex-direction: column;
+    background-color: #f5f5f5;
+  }
+  .demo-block {
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .slider-cell {
+    flex-direction: column;
+    margin: 30px 0;
+  }
+  .slider-title {
+    margin-bottom: 10px;
+  }
+  .title-text {
+    font-size: 32px;
+    color: #333333;
+  }
+  .slider {
+    margin-top: 20px;
+  }
+  .value-text {
+    font-size: 32px;
+    color: #999999;
+  }
+  .slider-info {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+</style>
+
+<script>
+  export default {
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Slider'
+      })
+    },
+    data() {
+      return {
+        valueA: 0,
+        valueB: 0,
+        valueC: 20,
+        valueD: 140,
+        valueE: 0
+      }
+    },
+    slideA(e) {
+      this.valueA = e.detail
+    },
+    slideB(e) {
+      this.valueB = e.detail
+    },
+    slideC(e) {
+      this.valueC = e.detail
+    },
+    slideD(e) {
+      this.valueD = e.detail
+    },
+    slideE(e) {
+      this.valueE = e.detail
+    }
+  }
+</script>
