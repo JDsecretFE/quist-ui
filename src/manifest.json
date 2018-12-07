@@ -3,7 +3,7 @@
   "name": "quist-ui",
   "versionName": "0.0.2",
   "versionCode": "2",
-  "minPlatformVersion": "1000",
+  "minPlatformVersion": "1010",
   "icon": "/Common/quist-logo.png",
   "features": [{
       "name": "system.prompt"
@@ -83,6 +83,9 @@
         "component": "index"
       },
       "Input": {
+        "component": "index"
+      },
+      "Slider": {
         "component": "index"
       }
     }

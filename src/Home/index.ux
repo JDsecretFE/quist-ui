@@ -52,6 +52,10 @@
           <text class="item-li-detail">rate <span class="item-name">评分</span></text>
           <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
         </div>
+        <div class="item-li" onclick="detail('Slider')">
+          <text class="item-li-detail">slider <span class="item-name">滑动条</span></text>
+          <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
+        </div>
       </div>
     </div>
 
