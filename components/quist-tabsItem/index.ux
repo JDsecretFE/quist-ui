@@ -1,5 +1,5 @@
 <template>
-  <div class="quist-tabs-item" style="{{wrapperStyle()}}" @click="select">
+  <div style="{{wrapperStyle()}}" @click="select">
     <text style="{{innerStyle()}}">{{tab}}</text>
   </div>
 </template>
@@ -26,7 +26,7 @@
       },
       lineWidth: {
         type: Number,
-        default: 0
+        default: 2
       },
       fSize: {
         type: Number,
@@ -39,6 +39,14 @@
       layout: {
         type: String,
         default: 'left'
+      },
+      height: {
+        type: Number,
+        default: 88
+      },
+      marginX: {
+        type: Number,
+        default: 20
       }
     },
     select() {
@@ -58,14 +66,24 @@
       }
     },
     wrapperStyle() {
+      let marX
+      if (this.layout === 'center') {
+        marX = 0
+      } else {
+        marX = this.marginX
+      }
       let baseStyle = {
         borderColor: this.activeColor,
         borderStyle: 'solid',
-        borderBottomWidth: this.lineWidth + 'px'
+        borderBottomWidth: this.lineWidth + 'px',
+        height: this.height + 'px',
+        marginLeft: marX + 'px',
+        marginRight: marX + 'px'
       }
       if (this.layout === 'center' && this.selected) {
         return Object.assign(baseStyle, {
           flex: 1,
+          marginTop: this.lineWidth + 'px',
           justifyContent: 'center'
         });
       } else if (this.layout === 'center' && !this.selected) {
@@ -73,6 +91,14 @@
           flex: 1,
           justifyContent: 'center'
         };
+      } else if (this.layout === 'left' && this.selected) {
+        return Object.assign(baseStyle, {
+          marginTop: this.lineWidth + 'px'
+        });
+      } else if (this.layout === 'left' && !this.selected) {
+        return Object.assign(baseStyle, {
+          borderBottomWidth: 0
+        });
       }
     }
   }

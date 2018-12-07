@@ -3,19 +3,26 @@
 
 <template>
   <div class="tabs-demo">
-    <div class="base-demo">
-      <div class="demo-title"><text>默认样式:</text></div>
+    <div class="demo-title"><text class="title-text">默认样式（左对齐）:</text></div>
+    <div class="demo-block">
       <quist-tabs>
         <quist-tabs-item selected="{{curIdx === tabIdx}}" @on-click="select(tabIdx)" for="(tabIdx, tabItem) in tabs" tab="{{tabItem}}"></quist-tabs-item>
       </quist-tabs>
-      <div class="{{curIdx === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabs"><text>{{tabItem}} Container</text></div>
+      <div class="content {{curIdx === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabs"><text>{{tabItem}} Container</text></div>
     </div>
-    <div class="base-demo">
-      <div class="demo-title"><text>自定义样式（水平分布）:</text></div>
-      <quist-tabs border-color="#1890ff">
-        <quist-tabs-item layout="center" line-width="{{3}}" f-size="{{36}}" active-color="#fac450" default-color="#333333" selected="{{curIdxb === tabIdx}}" @on-click="selectb(tabIdx)" for="(tabIdx, tabItem) in tabsb" tab="{{tabItem}}"></quist-tabs-item>
+    <div class="demo-title"><text class="title-text">默认样式（水平分布）:</text></div>
+    <div class="demo-block">
+      <quist-tabs>
+        <quist-tabs-item layout="center" selected="{{curIdxc === tabIdx}}" @on-click="selectc(tabIdx)" for="(tabIdx, tabItem) in tabsc" tab="{{tabItem}}"></quist-tabs-item>
       </quist-tabs>
-      <div class="{{curIdxb === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabsb"><text>{{tabItem}} Container</text></div>
+      <div class="content {{curIdxc === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabsc"><text>{{tabItem}} Container</text></div>
+    </div>
+    <div class="demo-title"><text class="title-text">自定义样式（水平分布）:</text></div>
+    <div class="demo-block">
+      <quist-tabs border-color="#87d068">
+        <quist-tabs-item layout="center" line-width="{{4}}" f-size="{{36}}" active-color="#fac450" default-color="#333333" selected="{{curIdxb === tabIdx}}" @on-click="selectb(tabIdx)" for="(tabIdx, tabItem) in tabsb" tab="{{tabItem}}"></quist-tabs-item>
+      </quist-tabs>
+      <div class="content {{curIdxb === tabIdx ? 'tab-content-active' : 'tab-content'}}" for="(tabIdx, tabItem) in tabsb"><text>{{tabItem}} Container</text></div>
     </div>
   </div>
 </template>
@@ -23,19 +30,35 @@
 <style>
   .tabs-demo {
     flex-direction: column;
+    background-color: #f5f5f5;
   }
-  .base-demo {
+  .demo-block {
     flex-direction: column;
-    margin-bottom: 60px;
+    background-color: #ffffff;
+    margin: 0 20px 20px;
+    border-radius: 10px;
   }
   .demo-title {
-    margin-bottom: 20px;
+    margin: 20px;
+  }
+  .content {
+    height: 200px;
+    align-items: center;
+    justify-content: center;
   }
   .tab-content-active {
     display: flex;
   }
   .tab-content {
     display: none;
+  }
+  .title-text {
+    font-size: 32px;
+    color: #333333;
+  }
+  .tab-cell {
+    flex-direction: column;
+    margin: 10px 0;
   }
 </style>
 
@@ -48,8 +71,12 @@
       tabsb: [
         'tab1', 'tab2'
       ],
+      tabsc: [
+        '选项一', '选项二'
+      ],
       curIdx: 0, //默认第一个是选中状态
-      curIdxb: 1 //默认第二个是选中状态
+      curIdxb: 1, //默认第二个是选中状态
+      curIdxc: 0
     },
     onInit() {
       this.$page.setTitleBar({
@@ -61,6 +88,9 @@
     },
     selectb(e) {
       this.curIdxb = e
+    },
+    selectc(e) {
+      this.curIdxc = e
     }
   }
 </script>

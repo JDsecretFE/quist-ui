@@ -1,5 +1,5 @@
 <template>
-  <div class="quist-tabs" style="border-color: {{borderColor}}">
+  <div class="quist-tabs" style="border-color: {{borderColor}};">
     <slot></slot>
   </div>
 </template>
@@ -14,7 +14,7 @@
     props: {
       borderColor: {
         type: String,
-        default: '#d9d9d9'
+        default: '#dddddd'
       }
     }
   }

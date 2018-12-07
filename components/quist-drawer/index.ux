@@ -2,7 +2,7 @@
 
 <template>
   <quist-overlay visible="{{visible}}" @qui-overlay-click="overlayClick" mask-closable="{{maskClosable}}">
-    <div class="quist-drawer quist-drawer-{{placement}}" show="{{show}}">
+    <div class="quist-drawer {{directionClass()}}" show="{{show}}">
       <div class="quist-drawer-content {{animationClass}}" style="{{contentStyle}}">
         <slot></slot>
       </div>
@@ -35,7 +35,8 @@
       return {
         show: this.visible,
         contentStyle: {},
-        animationClass: ''
+        animationClass: '',
+        directionClass: ''
       }
     },
     onInit() {
@@ -73,6 +74,9 @@
     },
     overlayClick() {
       this.$emit('onClose')
+    },
+    directionClass() {
+      return `quist-drawer-${this.placement}`
     }
   }
 </script>
