@@ -8,7 +8,7 @@
     </div>
     <div class="item-box">
       <text class="item-txt" @click="evtEmit">自定义样式</text>
-      <quist-checkbox values="{{data2.values}}" checked="{{data2.checked}}" options="{{data2.options}}" checked-color='red' checked-border-color='red' id="childVm" is-right label-style="{{labelStyle}}" wrapper-style="{{wrapperStyle}}"></quist-checkbox>
+      <quist-checkbox values="{{data2.values}}" checked="{{data2.checked}}" options="{{data2.options}}" checked-color='#87d068' checked-border-color='#87d068' id="childVm" is-right label-style="{{labelStyle}}" wrapper-style="{{wrapperStyle}}"></quist-checkbox>
       <quist-checkbox values="{{data3.values}}" options="{{data3.options}}" checked-color='#1890ff' checked-border-color='#1890ff' is-right label-style="{{labelStyle1}}" wrapper-style="{{wrapperStyle1}}"></quist-checkbox>
     </div>
     <div>

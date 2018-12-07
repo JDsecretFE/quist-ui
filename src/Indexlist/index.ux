@@ -35,6 +35,11 @@
       hotCity,
       current
     },
+    onInit() {
+      this.$page.setTitleBar({
+        text: 'Indexlist'
+      })
+    },
     onClick(data) {
       console.log('data', data.detail);
     }

@@ -2,11 +2,11 @@
   <stack>
       <div class="quist-input" style="{{wrapper()}}">
           <input class="quist-input__fix" />
-          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
+          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}" style="{{input()}}">
             <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
               <image src="{{prefixIcon}}" class="quist-input__icon" />
             </div>
-            <input id="search-input" class="quist-input__box" style="{{input()}}" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onchange" />
+            <input id="search-input" class="quist-input__box" type="{{type}}" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onChange" @blur="{{onBlur}}" />
             <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showSuffix}}">
               <image src="{{suffixIcon}}" class="quist-input__icon" />
             </div>
@@ -22,9 +22,12 @@
 </style>
 
 <script>
-
   export default {
     props: {
+      type: {
+        type: String, // text | number | password | phone(电话号码) | bankCard(银行卡号) | amount(金额) |
+        default: 'text'
+      },
       placeholder: {
         type: String,
         default: ''
@@ -81,6 +84,7 @@
       this.prefixIcon = this.prefix;
       this.suffixIcon = this.suffix;
       this.searchValue = this.value;
+      this.formatMethod(this.searchValue, this.type);
     },
     change() {
       this.searchValue = this.value
@@ -91,10 +95,55 @@
         focus: !!this.autofocus
       });
     },
-    onchange(e) {
+    onChange(e) {
       let value = e.value
+      this.searchValue = value
       this.showSuffix = !!value
-      this.$emit('onChange', { value: e.value })
+      if (this.type !== 'amount') {
+        value = this.formatMethod(value, this.type)
+      }
+      this.$emit('onChange', { value })
+    },
+    onBlur(e) {
+      let value = this.formatMethod(this.searchValue, this.type)
+      this.$emit('onChange', { value })
+    },
+    formatMethod(value, type) {
+      if (value) {
+        let obj = {
+          'amount': this.amountFormat(value),
+          'bankCard': this.bankCardFormat(value)
+        }
+        return obj[type];
+      }
+    },
+    // 格式化银行卡号
+    bankCardFormat(value) {
+      if(/\S{5}/.test(value)){
+        value = value.replace(/\s/g, '').replace(/(.{4})/g, "$1 ");
+      }
+      return value;
+    },
+    // 格式化金额
+    amountFormat(value) {
+      if(value == "" || isNaN(value)){
+          return "";
+        }
+
+        let s = value;
+
+        if(/.+(\..*\.|\-).*/.test(s)){
+          return;
+        }
+        s = parseFloat((s + "").replace(/[^\d\.\-]/g, "")).toFixed(2) + "";
+        let l = s.split(".")[0].split("").reverse();
+        let r = s.split(".")[1];
+        let t = "";
+        for(let i = 0; i < l.length; i ++ ) {
+          t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length && (l[i+1]!='-')? "," : "");
+        }
+        console.error('value', value);
+        return t.split("").reverse().join("") + "." + r;
     },
     clearClick() {
       this.showSuffix = false
