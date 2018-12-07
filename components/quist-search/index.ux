@@ -1,0 +1,120 @@
+<template>
+  <stack>
+      <div class="quist-search" style="{{wrapper()}}">
+          <input class="quist-search__fix" />
+          <div class="quist-search__content {{disabled ? 'quist-search__content--disabled' : 'quist-search__content--enable'}}" style="{{input()}}">
+            <div class="quist-search__img" style="{{icon()}}" if="prefixIcon">
+              <image src="{{prefixIcon}}" class="quist-search__icon" />
+            </div>
+            <input id="search" class="quist-search__box" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onchange" />
+            <div class="quist-search__img" @click="clearClick" style="{{icon()}}" if="{{showSuffix}}">
+              <image src="{{suffixIcon}}" class="quist-search__icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+  </stack>
+</template>
+
+<style lang="less">
+  @import "../../style/index.less";
+  @import "../../style/components/quist-search/index.less";
+</style>
+
+<script>
+
+  export default {
+    props: {
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      prefix: {
+        type: String,
+        default: ''
+      },
+      suffix: {
+        type: String,
+        default: ''
+      },
+      value: {
+        type: String,
+        default: null
+      },
+      wrapperStyle: {
+        type: Object,
+        default: {}
+      },
+      iconStyle: {
+        type: Object,
+        default: {}
+      },
+      inputStyle: {
+        type: Object,
+        default: {}
+      },
+      autofocus: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        searchValue: '',
+        showSuffix: false,
+        replaceShow: true
+      }
+    },
+    onInit() {
+      this.init()
+      this.$watch('value', 'change')
+    },
+    onReady() {
+      this.statusChange()
+      this.$watch('autofocus', 'statusChange')
+    },
+    init() {
+      this.prefixIcon = this.prefix;
+      this.suffixIcon = this.suffix;
+      this.searchValue = this.value;
+    },
+    change() {
+      this.searchValue = this.value
+    },
+    statusChange() {
+      let search = this.$element("search");
+      search.focus({
+        focus: !!this.autofocus
+      });
+    },
+    onchange(e) {
+      let value = e.value
+      this.showSuffix = !!value
+      this.$emit('onChange', { value: e.value })
+    },
+    clearClick() {
+      this.showSuffix = false
+      this.$emit('onChange', { value: '' })
+    },
+    wrapper() {
+      let baseStyle = {
+        width: '750px'
+      }
+      return Object.assign(baseStyle, this.wrapperStyle)
+    },
+    icon() {
+      let baseStyle = {
+      }
+      return Object.assign(baseStyle, this.iconStyle)
+    },
+    input() {
+      let baseStyle = {
+      }
+      return Object.assign(baseStyle, this.inputStyle)
+    }
+  }
+</script>

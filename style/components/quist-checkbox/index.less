@@ -29,18 +29,19 @@
   &__checkbox {
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    border-width: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    border: 1px solid @checkbox-default-border;
+    margin-right: 10px;
   }
   &__thumb {
-    border-right-width: 4px;
-    border-bottom-width: 4px;
-    width: 15px;
-    height: 30px;
+    .set-border(right, @checkbox-default-border, 3px);
+    .set-border(bottom, @checkbox-default-border, 3px);
+    width: 12px;
+    height: 26px;
     transform: rotate(45deg);
-    margin-top: -8px;
+    margin-top: -5px;
   }
   &__thumb--open {
     animation-name: open;

@@ -3,24 +3,32 @@
 <template>
   <div class="input-demo">
     <div class="item-box">
-      <text class="item-txt">默认输入框</text>
+      <text class="item-txt">单行文本</text>
       <quist-input placeholder='请输入关键字' autofocus vlaue="{{value1}}" @on-change="onChange1"></quist-input>
     </div>
     <div class="item-box">
-      <text class="item-txt">禁用状态的输入框</text>
-      <quist-input placeholder='请输入关键字' disabled></quist-input>
+      <text class="item-txt">密码框</text>
+      <quist-input placeholder='请输入关键字' type="password"></quist-input>
     </div>
     <div class="item-box">
-      <text class="item-txt">带前缀的输入框</text>
-      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value2}}" @on-change="onChange2" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}"></quist-input>
+      <text class="item-txt">数字框</text>
+      <quist-input placeholder='请输入关键字' type="number" value="{{value2}}" @on-change="onChange2" wrapper-style="{{wrapperStyle}}"></quist-input>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">银行卡号输入框</text>
+      <quist-input placeholder='请输入关键字' type="bankCard" value="{{value3}}" @on-change="onChange3" wrapper-style="{{wrapperStyle}}"></quist-input>
+    </div>
+    <div class="item-box">
+      <text class="item-txt">金额输入框</text>
+      <quist-input placeholder='请输入关键字' type="amount" value="{{value4}}" @on-change="onChange4" wrapper-style="{{wrapperStyle}}"></quist-input>
     </div>
     <div class="item-box">
       <text class="item-txt">带前缀与后缀的输入框</text>
-      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value3}}" @on-change="onChange3" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}"></quist-input>
+      <quist-input placeholder='请输入关键字' value="{{value5}}" @on-change="onChange5" wrapper-style="{{wrapperStyle}}"></quist-input>
     </div>
     <div class="item-box">
       <text class="item-txt">自定义样式的输入框</text>
-      <quist-input placeholder='请输入关键字' prefix="{{prefix}}" value="{{value4}}" @on-change="onChange4" suffix="{{suffix}}" wrapper-style="{{wrapperStyle1}}" input-style="{{inputStyle}}"></quist-input>
+      <quist-input placeholder='请输入关键字' value="{{value6}}" @on-change="onChange6" wrapper-style="{{wrapperStyle1}}" input-style="{{inputStyle}}"></quist-input>
     </div>
     <div>
 </template>
@@ -33,7 +41,7 @@
   }
 
   .item-box {
-    margin: 20px;
+    /* margin: 20px; */
     padding-bottom: 50px;
     flex-direction: column;
   }
@@ -48,21 +56,23 @@
 
 <script>
   import prompt from '@system.prompt'
-  import { CLEAR_ICON, SEARCH_ICON } from './image'
 
   export default {
     data: {
-      prefix: SEARCH_ICON,
-      suffix: CLEAR_ICON,
       value1: '',
       value2: '',
-      value3: 'hello world',
-      value4: '你好, 世界',
+      value3: '',
+      value4: '',
+      value5: 'hello world',
+      value6: '你好, 世界',
       wrapperStyle: {
         height: '68px',
         width: '560px',
         borderRadius: '50px',
-        border: '10px solid #E3E5E9'
+        // border: '10px solid #E3E5E9',
+        borderWidth: '1px',
+        borderColor: '#E3E5E9',
+        borderStyle: 'solid'
       },
       iconStyle: {
 
@@ -71,8 +81,10 @@
         height: '68px',
         width: '560px',
         borderRadius: '50px',
-        border: '10px solid #E3E5E9',
-        backgroundColor: '#ffffff'
+        borderWidth: '1px',
+        borderColor: '#E3E5E9',
+        borderStyle: 'solid',
+        backgroundColor: '#f5f5f5'
       },
       inputStyle: {
         color: '#1890ff'

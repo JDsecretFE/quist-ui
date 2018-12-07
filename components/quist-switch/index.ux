@@ -27,11 +27,11 @@
       id: String,
       checkColor: {
         type: String,
-        default: '#C1C1C1'
+        default: '#d9d9d9'
       },
       checkedColor: {
         type: String,
-        default: '#2998F9'
+        default: '#1890ff'
       },
       className: {
         type: String,
@@ -59,19 +59,12 @@
     },
     wrapper() {
       let baseStyle = {
-        width: '156px',
-        height: '76px',
-        borderRadius: '38px',
         backgroundColor: this.checked ? this.checkedColor : this.checkColor
       }
       return Object.assign(baseStyle, this.wrapperStyle)
     },
     inner() {
       let baseStyle = {
-        width: '68px',
-        height: '68px',
-        borderRadius: '34px',
-        backgroundColor: '#ffffff'
       }
       return Object.assign(baseStyle, this.innerStyle)
     }
