@@ -2,33 +2,37 @@
 
 <template>
   <div class="steps-demo">
-    <div class="item-box">
-        <text class="item-txt">横向步骤条</text>
-        <div class="item-content">
-          <quist-steps steps="{{steps}}" current="{{1}}"></quist-steps>
-        </div>
-        <div class="item-content">
-          <quist-steps steps="{{steps}}" current="{{3}}"></quist-steps>
-        </div>
-        <div class="item-content">
-          <quist-steps steps="{{steps}}" current="{{4}}"></quist-steps>
-        </div>
+    <div class="demo-block">
+      <div class="item-box">
+          <text class="item-txt">横向步骤条</text>
+          <div class="item-content">
+            <quist-steps steps="{{steps}}" current="{{1}}"></quist-steps>
+          </div>
+          <div class="item-content">
+            <quist-steps steps="{{steps}}" current="{{3}}"></quist-steps>
+          </div>
+          <div class="item-content">
+            <quist-steps steps="{{steps}}" current="{{4}}"></quist-steps>
+          </div>
+      </div>
+      <div class="item-box">
+          <text class="item-txt">纵向步骤条</text>
+          <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical"></quist-steps>
+      </div>
     </div>
-    <div class="item-box">
-        <text class="item-txt">纵向步骤条</text>
-        <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical"></quist-steps>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">自定义图标、颜色(横向)</text>
-      <quist-steps steps="{{steps}}" current="{{1}}" icon="check.png" default-color="#87d068"></quist-steps>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">自定义图标、颜色(纵向)</text>
-      <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">自定义标题、描述样式</text>
-      <quist-steps steps="{{steps}}" current="{{2}}" default-color="#fac450" active-color='#87d068' title-style="{{titleStyle}}" desc-style="{{descStyle}}"></quist-steps>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt">自定义图标、颜色(横向)</text>
+        <quist-steps steps="{{steps}}" current="{{1}}" icon="check.png" default-color="#87d068"></quist-steps>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">自定义图标、颜色(纵向)</text>
+        <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">自定义标题、描述样式</text>
+        <quist-steps steps="{{steps}}" current="{{2}}" default-color="#fac450" active-color='#87d068' title-style="{{titleStyle}}" desc-style="{{descStyle}}"></quist-steps>
+      </div>
     </div>
   </div>
 </template>
@@ -36,6 +40,14 @@
 <style>
   .steps-demo {
     flex-direction: column;
+    background-color: #f5f5f5;
+  }
+  .demo-block {
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
   .item-content {
     padding: 20px 0 20px 0;

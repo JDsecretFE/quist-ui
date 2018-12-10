@@ -2,53 +2,72 @@
 
 <template>
   <div class="input-demo">
-    <div class="item-box">
-      <text class="item-txt">单行文本</text>
-      <quist-input placeholder='请输入关键字' autofocus vlaue="{{value1}}" @on-change="onChange1"></quist-input>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt">单行文本</text>
+        <quist-input placeholder='请输入关键字' autofocus vlaue="{{value1}}" @on-change="onChange1"></quist-input>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">密码框</text>
+        <quist-input placeholder='请输入关键字' type="password"></quist-input>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">数字框</text>
+        <quist-input placeholder='请输入关键字' type="number" value="{{value2}}" @on-change="onChange2"></quist-input>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">银行卡号</text>
+        <quist-input placeholder='请输入关键字' type="bankCard" value="{{value3}}" @on-change="onChange3"></quist-input>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">金额</text>
+        <quist-input placeholder='请输入关键字' type="amount" value="{{value4}}" @on-change="onChange4"></quist-input>
+      </div>
+      <div class="item-box">
+        <text class="item-txt">手机号</text>
+        <quist-input placeholder='请输入关键字' type="phone" value="{{value5}}" @on-change="onChange5"></quist-input>
+      </div>
     </div>
-    <div class="item-box">
-      <text class="item-txt">密码框</text>
-      <quist-input placeholder='请输入关键字' type="password"></quist-input>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">数字框</text>
-      <quist-input placeholder='请输入关键字' type="number" value="{{value2}}" @on-change="onChange2" wrapper-style="{{wrapperStyle}}"></quist-input>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">银行卡号输入框</text>
-      <quist-input placeholder='请输入关键字' type="bankCard" value="{{value3}}" @on-change="onChange3" wrapper-style="{{wrapperStyle}}"></quist-input>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">金额输入框</text>
-      <quist-input placeholder='请输入关键字' type="amount" value="{{value4}}" @on-change="onChange4" wrapper-style="{{wrapperStyle}}"></quist-input>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">带前缀与后缀的输入框</text>
-      <quist-input placeholder='请输入关键字' value="{{value5}}" @on-change="onChange5" wrapper-style="{{wrapperStyle}}"></quist-input>
-    </div>
-    <div class="item-box">
-      <text class="item-txt">自定义样式的输入框</text>
-      <quist-input placeholder='请输入关键字' value="{{value6}}" @on-change="onChange6" wrapper-style="{{wrapperStyle1}}" input-style="{{inputStyle}}"></quist-input>
+    <div class="demo-block">
+      <text class="item-txt item-padding">自定义样式</text>
+      <quist-input placeholder='请输入关键字' value="{{value6}}" @on-change="onChange6" wrapper-style="{{wrapperStyle}}" input-style="{{inputStyle}}"></quist-input>
     </div>
     <div>
 </template>
 
 <style>
   .input-demo {
-    flex: 1;
+    width: 100%;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
   }
 
   .item-box {
-    /* margin: 20px; */
-    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: #E5E5E5;
+  }
+
+  .demo-block {
     flex-direction: column;
+    background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .item-padding {
+    margin-bottom: 20px;
   }
 
   .item-txt {
-    width: 100%;
-    margin-bottom: 30px;
+    width: 180px;
     font-size: 32px;
     color: #666666;
   }
@@ -63,23 +82,14 @@
       value2: '',
       value3: '',
       value4: '',
-      value5: 'hello world',
+      value5: '',
       value6: '你好, 世界',
-      wrapperStyle: {
-        height: '68px',
-        width: '560px',
-        borderRadius: '50px',
-        // border: '10px solid #E3E5E9',
-        borderWidth: '1px',
-        borderColor: '#E3E5E9',
-        borderStyle: 'solid'
-      },
       iconStyle: {
 
       },
-      wrapperStyle1: {
+      wrapperStyle: {
         height: '68px',
-        width: '560px',
+        width: '540px',
         borderRadius: '50px',
         borderWidth: '1px',
         borderColor: '#E3E5E9',
@@ -110,12 +120,12 @@
     onChange4(e) {
       this.setValue(e, 4)
     },
+    onChange5(e) {
+      this.setValue(e, 5)
+    },
     setValue(e, index) {
       let value = e.detail.value;
       this[`value${index}`] = value;
-      prompt.showToast({
-        message: `value${index}: ` + value
-      })
     }
   }
 </script>

@@ -1,19 +1,17 @@
 <template>
-  <stack>
-      <div class="quist-input" style="{{wrapper()}}">
-          <input class="quist-input__fix" />
-          <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}" style="{{input()}}">
-            <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
-              <image src="{{prefixIcon}}" class="quist-input__icon" />
-            </div>
-            <input id="search-input" class="quist-input__box" type="{{type}}" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onChange" @blur="{{onBlur}}" />
-            <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showSuffix}}">
-              <image src="{{suffixIcon}}" class="quist-input__icon" />
-            </div>
-          </div>
+  <div class="quist-input" style="{{wrapper()}}">
+      <input class="quist-input__fix" />
+      <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
+        <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
+          <image src="{{prefixIcon}}" class="quist-input__icon" />
+        </div>
+        <input id="search-input" class="quist-input__box" type="{{type}}" value='{{searchValue}}' placeholder="{{placeholder}}" maxlength="{{maxlength}}" disabled="{{disabled}}" @change="onChange" @blur="{{onBlur}}" style="{{input()}}" />
+        <div class="quist-input__img" @click="clearClick" style="{{icon()}}" if="{{showSuffix}}">
+          <image src="{{suffixIcon}}" class="quist-input__icon" />
         </div>
       </div>
-  </stack>
+    </div>
+  </div>
 </template>
 
 <style lang="less">
@@ -22,6 +20,7 @@
 </style>
 
 <script>
+  const DEFAULT_COUNT = 9999999999999999;
   export default {
     props: {
       type: {
@@ -69,7 +68,8 @@
       return {
         searchValue: '',
         showSuffix: false,
-        replaceShow: true
+        replaceShow: true,
+        maxlength: 9999999
       }
     },
     onInit() {
@@ -81,9 +81,15 @@
       this.$watch('autofocus', 'statusChange')
     },
     init() {
+      let obj = {
+        'amount': DEFAULT_COUNT,
+        'bankCard': DEFAULT_COUNT,
+        'phone': 13
+      }
       this.prefixIcon = this.prefix;
       this.suffixIcon = this.suffix;
       this.searchValue = this.value;
+      this.maxlength = obj[this.type];
       this.formatMethod(this.searchValue, this.type);
     },
     change() {
@@ -102,20 +108,22 @@
       if (this.type !== 'amount') {
         value = this.formatMethod(value, this.type)
       }
-      this.$emit('onChange', { value })
+      this.$emit('onChange', { value });
     },
     onBlur(e) {
       let value = this.formatMethod(this.searchValue, this.type)
       this.$emit('onChange', { value })
     },
-    formatMethod(value, type) {
-      if (value) {
+    formatMethod(value, type) { 
+      if (value && type) {
         let obj = {
           'amount': this.amountFormat(value),
-          'bankCard': this.bankCardFormat(value)
+          'bankCard': this.bankCardFormat(value),
+          'phone': this.phoneFormat(value)
         }
-        return obj[type];
+        value = obj[type];
       }
+      return value;
     },
     // 格式化银行卡号
     bankCardFormat(value) {
@@ -129,9 +137,7 @@
       if(value == "" || isNaN(value)){
           return "";
         }
-
         let s = value;
-
         if(/.+(\..*\.|\-).*/.test(s)){
           return;
         }
@@ -142,8 +148,24 @@
         for(let i = 0; i < l.length; i ++ ) {
           t += l[i] + ((i + 1) % 3 == 0 && (i + 1) != l.length && (l[i+1]!='-')? "," : "");
         }
-        console.error('value', value);
         return t.split("").reverse().join("") + "." + r;
+    },
+    phoneFormat(value) {
+      let str = value.toString().replace(/ /g, '');
+      let len = str.length;
+      switch (true) {
+        case len > 11:
+          str = str.substr(0, 3) + ' ' + str.substr(3, 4) + ' ' + str.substr(7, 4);
+          break;
+        case len > 7:
+          str = str.substr(0, 3) + ' ' + str.substr(3, 4) + ' ' + str.substr(7);
+          break;
+        case len > 3:
+          str = str.substr(0, 3) + ' ' + str.substr(3);
+          break;
+        default:
+      }
+      return str;
     },
     clearClick() {
       this.showSuffix = false
@@ -151,7 +173,6 @@
     },
     wrapper() {
       let baseStyle = {
-        width: '750px'
       }
       return Object.assign(baseStyle, this.wrapperStyle)
     },

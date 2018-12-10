@@ -2,23 +2,33 @@
 
 <template>
   <div class="radio-demo">
-    <div class="item-box">
-      <text class="item-txt">选中的值：{{value}}</text>
-      <quist-radio value='apple' options="{{data}}" @on-change="callback"></quist-radio>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt" @click="evtEmit">选中的值：{{value1}}</text>
+        <quist-radio options="{{data1}}" value="{{value1}}" @on-change="callback1" wrapper-style="{{wrapperStyle}}" inner-style="{{innerStyle}}"></quist-radio>
+      </div>
     </div>
-    <div class="item-box">
-      <text class="item-txt" @click="evtEmit">自定义样式</text>
-      <quist-radio checked-color='red' is-right options="{{data1}}" value="{{value1}}" @on-change="callback1" label-style="{{labelStyle}}" wrapper-style="{{wrapperStyle}}" inner-style="{{innerStyle}}"></quist-radio>
-      <quist-radio checked-color='#1890ff' is-right options="{{data1}}" value="{{value2}}" @on-change="callback2" label-style="{{labelStyle1}}" wrapper-style="{{wrapperStyle1}}" inner-style="{{innerStyle1}}"></quist-radio>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt">自定义样式</text>
+        <quist-radio value='apple' options="{{data}}" @on-change="callback" label-style="{{labelStyle1}}" common></quist-radio>
+      </div>
     </div>
-    <div>
 </template>
 
 <style>
   .radio-demo {
     flex: 1;
     flex-direction: column;
+    background-color: #f5f5f5;
+  }
+
+  .demo-block {
+    flex-direction: column;
     background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .item-box {
@@ -61,11 +71,11 @@
       data1: [
         {
           label: '男',
-          value: '1'
+          value: 'man'
         },
         {
           label: '女',
-          value: '2'
+          value: 'woman'
         }
       ],
       labelStyle: {
