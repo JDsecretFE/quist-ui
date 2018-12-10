@@ -46,7 +46,7 @@
         text: '数据加载'
       },
       custom: {
-        text: '数据加载',
+        text: '加载成功',
         duration: 500,
         img: LOADING  //自定义图标的src
       },

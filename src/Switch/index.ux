@@ -5,21 +5,29 @@
     <div class="demo-block">
       <div class="item-box">
         <text class="item-txt">选项{{data1}}</text>
-        <quist-switch checked="{{false}}" @on-change="callback1" class-name="quist-switch-demo"></quist-switch>
+        <div class="item-content">
+          <quist-switch checked="{{false}}" @on-change="callback1" class-name="quist-switch-demo"></quist-switch>
+        </div>
       </div>
       <div class="item-box">
         <text class="item-txt">选项 {{data3}} - 不可用</text>
-        <quist-switch disabled checked="{{false}}"></quist-switch>
+        <div class="item-content">
+          <quist-switch disabled checked="{{false}}"></quist-switch>
+        </div>
       </div>
       <div class="item-box">
         <text class="item-txt">选项 {{data4}} - 不可用</text>
-        <quist-switch disabled="{{true}}" checked></quist-switch>
+        <div class="item-content">
+          <quist-switch disabled="{{true}}" checked></quist-switch>
+        </div>
       </div>
     </div>
     <div class="demo-block">
       <div class="item-box">
         <label class="item-txt" target="isDefault">自定义样式开关</label>
-        <quist-switch checked="{{false}}" id='isDefault' checked-color="#dddddd" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
+        <div class="item-content">
+          <quist-switch checked="{{false}}" id='isDefault' checked-color="#dddddd" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
+        </div>
       </div>
     </div>
   </div>
@@ -41,15 +49,16 @@
 
   .item-box {
     margin: 20px;
-    padding-bottom: 50px;
     flex-direction: column;
   }
 
+  .item-content {
+    padding: 20px 0 20px 0;
+  }
+
   .item-txt {
-    width: 100%;
-    margin-bottom: 30px;
+    color: #333333;
     font-size: 32px;
-    color: #666666;
   }
 </style>
 

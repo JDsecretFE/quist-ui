@@ -5,21 +5,29 @@
     <div class="demo-block">
       <div class="item-box">
         <text class="item-txt">默认输入框</text>
+        <div class="item-content">
         <quist-search placeholder='请输入关键字' autofocus vlaue="{{value1}}" @on-change="onChange1"></quist-search>
+        </div>
       </div>
       <div class="item-box">
         <text class="item-txt">禁用状态的输入框</text>
+        <div class="item-content">
         <quist-search placeholder='请输入关键字' disabled></quist-search>
-      </div>
-      <div class="item-box">
-        <text class="item-txt">带前缀与后缀的输入框</text>
-        <quist-search placeholder='请输入关键字' prefix="{{prefix}}" value="{{value3}}" @on-change="onChange3" suffix="{{suffix}}" wrapper-style="{{wrapperStyle}}"></quist-search>
+        </div>
       </div>
     </div>
     <div class="demo-block">
       <div class="item-box">
+        <text class="item-txt">带前缀与后缀的输入框</text>
+        <div class="item-content">
+        <quist-search placeholder='请输入关键字' prefix="{{prefix}}" value="{{value3}}" @on-change="onChange3" suffix="{{suffix}}"></quist-search>
+        </div>
+      </div>
+      <div class="item-box">
         <text class="item-txt">自定义样式的输入框</text>
+        <div class="item-content">
         <quist-search placeholder='请输入关键字' prefix="{{prefix}}" value="{{value4}}" @on-change="onChange4" suffix="{{suffix}}" wrapper-style="{{wrapperStyle1}}" input-style="{{inputStyle}}"></quist-search>
+        </div>
       </div>
     </div>
     <div>
@@ -42,15 +50,15 @@
 
   .item-box {
     margin: 20px;
-    padding-bottom: 50px;
     flex-direction: column;
+  }
+  .item-content {
+    padding: 20px 0 20px 0;
   }
 
   .item-txt {
-    width: 100%;
-    margin-bottom: 30px;
+    color: #333333;
     font-size: 32px;
-    color: #666666;
   }
 </style>
 
