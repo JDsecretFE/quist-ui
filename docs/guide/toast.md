@@ -5,7 +5,7 @@
 
 ## 安装
 
-```js{4}
+```
 $ npm install quist-ui -D
 ```
 
@@ -18,10 +18,10 @@ $ npm install quist-ui -D
 
 #### 提示
 
-``` js{4}
-// 视图
+```js{4}
+视图
 <input type="button" value="demo" @click="showToast({{type}})" />
-// 方法
+方法
 showToast(type) {
   this.toast.show(this[type])
 }
