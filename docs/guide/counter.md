@@ -2,6 +2,8 @@
 
 > 计数器组件
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412607978-V2VjaGF0SU1HMTAucG5n.png)
 
 ## 安装
 

@@ -2,6 +2,8 @@
 
 > 展示操作的当前进度。
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412511778-V2VjaGF0SU1HNS5wbmc=.png)
 
 ## 安装
 

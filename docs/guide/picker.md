@@ -2,6 +2,8 @@
 
 > 单列选择，多列选择。
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412655598-V2VjaGF0SU1HMTMucG5n.png)
 
 ## 安装
 

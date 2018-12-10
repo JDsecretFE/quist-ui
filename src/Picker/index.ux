@@ -2,54 +2,39 @@
 
 <template>
   <div class="picker-demo">
-    <div class="item-container">
-      <text class="item-title">选择一列</text>
-      <div class="item-content">
-        <div class="item-li" onclick="showpicker(1)">
-          <text class="item-li-detail">手机类型 <span class="item-name"></span></text>
-          <div class="select-area">
-            <text>{{selectTxt1}}</text>
-            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-          </div>
-        </div>
+    <div class="picker-title">
+      <text class="title-text">基本</text>
+    </div>
+    <div class="item-li" onclick="showpicker(1)">
+      <text class="item-li-detail">一列</text>
+      <div class="select-area">
+        <text class="item-name">{{selectTxt1}}</text>
+        <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
       </div>
     </div>
-    <div class="item-container">
-      <text class="item-title">选择两列</text>
-      <div class="item-content">
-        <div class="item-li" onclick="showpicker(2)">
-          <text class="item-li-detail">详细机型 <span class="item-name"></span></text>
-          <div class="select-area">
-            <text>{{selectTxt2}}</text>
-            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-          </div>
-        </div>
+    <div class="item-li" onclick="showpicker(2)">
+      <text class="item-li-detail">两列</text>
+      <div class="select-area">
+        <text class="item-name">{{selectTxt2}}</text>
+        <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
       </div>
     </div>
-    <div class="item-container">
-      <text class="item-title">选择三列</text>
-      <div class="item-content">
-        <div class="item-li" onclick="showpicker(3)">
-          <text class="item-li-detail">年月日 <span class="item-name"></span></text>
-          <div class="select-area">
-            <text>{{selectTxt3}}</text>
-            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-          </div>
-        </div>
+    <div class="item-li" onclick="showpicker(3)">
+      <text class="item-li-detail">三列</text>
+      <div class="select-area">
+        <text class="item-name">{{selectTxt3}}</text>
+        <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
       </div>
     </div>
-    <div class="item-container">
-      <text class="item-title">自定义picker样式</text>
-      <div class="item-content">
-        <div class="item-li" onclick="showpicker(4)">
-          <text class="item-li-detail">手机类型 <span class="item-name"></span></text>
-          <div class="select-area">
-            <text>{{selectTxt4}}</text>
-            <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
-          </div>
-        </div>
+    
+    <div class="item-li" onclick="showpicker(4)">
+      <text class="item-li-detail">自定义样式</text>
+      <div class="select-area">
+        <text class="item-name">{{selectTxt4}}</text>
+        <image class="item_arrow_img" src="/Common/img/arrow_right.webp" />
       </div>
     </div>
+    
     <quist-picker visible="{{pickerVisible1}}" @on-close="close(1)" list="{{list1}}" @on-select="select1()" mask-closable="{{false}}" ok-text="ok" cancel-text="cancel"></quist-picker>
     <quist-picker visible="{{pickerVisible2}}" @on-close="close(2)" list="{{list2}}" @on-select="select2()"></quist-picker>
     <quist-picker visible="{{pickerVisible3}}" @on-close="close(3)" list="{{list3}}" @on-select="select3()"></quist-picker>
@@ -60,35 +45,31 @@
 <style>
   .picker-demo {
     flex-direction: column;
+    background-color: #f5f5f5;
   }
 
-  .item-container {
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-
-  .item-title {
+  .picker-title {
     margin: 30px;
-    color: #888888;
-    font-size: 32px;
   }
 
-  .item-content {
-    flex-direction: column;
-    background-color: #ffffff;
+  .title-text {
+    font-size: 32px;
+    color: #333333;
   }
 
   .item-li {
+    background-color: #ffffff;
     flex-direction: row;
-    border-color: #d9d9d9;
+    border-color: #dddddd;
     border-bottom-width: 1px;
     align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
   }
 
   .item-li-detail {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    color: #000000;
+    color: #333333;
     flex: 1;
     font-size: 28px;
     margin-left: 30px;
@@ -107,7 +88,7 @@
   }
 
   .item-name {
-    color: #314659;
+    color: #999999;
   }
 </style>
 

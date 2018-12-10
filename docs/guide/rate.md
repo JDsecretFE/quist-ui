@@ -2,6 +2,8 @@
 
 > 评分组件。
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412483912-V2VjaGF0SU1HNC5wbmc=.png)
 
 ## 安装
 
