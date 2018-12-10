@@ -9,7 +9,7 @@
 
 
 ### 配置
-> 如果是在已有项目安装，创建一个webpack.config.js文件(放在根目录下，与src文件夹平级)，并添加如下配置
+> 如果是在已有项目安装，创建一个webpack.config.js文件(在根目录下，创建一个config文件夹，然后把此文件放入config文件夹下)，并添加如下配置
 
 ```js{4}
 var path = require('path')
