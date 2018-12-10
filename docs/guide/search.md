@@ -1,6 +1,6 @@
-# Input
+# Search
 
-> 输入框，可附带前缀、后缀图标, 可设置禁用状态，可自定义样式
+> 搜索，可附带前缀、后缀图标, 可设置禁用状态，可自定义样式
 
 
 ## 安装
@@ -11,7 +11,7 @@ $ npm install quist-ui -D
 
 ## 引入
 ```js{4}
-<import name='quist-input' src='@quist-ui/quist-input/index'></import>
+<import name='quist-search' src='@quist-ui/quist-search/index'></import>
 ```
 
 ## 例子
@@ -19,35 +19,34 @@ $ npm install quist-ui -D
 #### 默认输入框
 
 ```js{4}
-<quist-input placeholder='请输入关键字'></quist-input>
+<quist-search placeholder='请输入关键字'></quist-search>
 ```
 
 #### 带后缀的输入框
 
 ```js{4}
-<quist-input placeholder='请输入关键字' suffix="{{suffix}}"></quist-input>
+<quist-search placeholder='请输入关键字' suffix="{{suffix}}"></quist-search>
 ```
 
 #### 带前缀的输入框
 
 ```js{4}
-<quist-input placeholder='请输入关键字' prefix="{{prefix}}" suffix="{{suffix}}"></quist-input>
+<quist-search placeholder='请输入关键字' prefix="{{prefix}}" suffix="{{suffix}}"></quist-search>
 ```
 
 #### 禁用状态的输入框
 
 ```js{4}
-<quist-input placeholder='请输入关键字' disabled></quist-input>
+<quist-search placeholder='请输入关键字' disabled></quist-search>
 ```
 
-更详细代码可以参考 [quist-input demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Input/index.ux)
+更详细代码可以参考 [quist-search demo](https://github.com/JDsecretFE/quist-ui/tree/master/src/Search/index.ux)
 
 ## API 
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | value | 输入框内容 | `String` | - |
-| type | 输入框类型(目前支持 `text` `number` `password` `phone(电话号码)` `bankCard(银行卡号)` `amount(金额)` | `String` | text |
 | placeholder | 占位 | `String` | - |
 | disabled | 是否禁用 | `Boolean` | false |
 | autofocus | 是否自动获取焦点 | `Boolean` | false |
@@ -68,6 +67,3 @@ $ npm install quist-ui -D
  * [优化] 添加on-change事件
  * [优化] 删除on-focus、on-blur、on-clear事件
  * [优化] 添加value属性,与on-change事件结合动态改变数据
-
-#### v1.1.1 (2018-12-10)
- * [优化] 添加type、disabled属性

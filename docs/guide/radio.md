@@ -39,7 +39,9 @@ $ npm install quist-ui -D
 | label-color | 标签颜色 | `String` | #000000 |
 | check-color| 未选中状态颜色 | `String` | #CCCCCC |
 | checked-color| 选中状态颜色 | `String` | #2998F9 |
-| is-right| 选择框是否在右侧 | `Boolean` | false |
+| check-border-color| 未选中状态选择框颜色 | `String` | #CACBCC |
+| checked-border-color| 选中状态选择框颜色 | `String` | #2998F9 |
+| common| 选择框是否在左侧 | `Boolean` | false |
 | label-style | 标签样式覆盖入口 | `Object` | {} |
 | wrapper-style | 外层样式覆盖入口 | `Object` | {} |
 | inner-style | 内层样式覆盖入口 | `Object` | {} |

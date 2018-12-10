@@ -48,11 +48,11 @@ $ npm install quist-ui -D
 | steps | 步骤 | `Array` | [] |
 | current | 指定当前步骤 | `Number` | 0 |
 | direction | 步骤条方向。目前支持水平(horizontal)和竖直(vertical)两种方向 | `String` | horizontal |
-| icon | 当前已执行步骤图标(传递图片路径) | `String` | '' |
+| icon | 当前已执行步骤图标(传递图片路径) | `String` |  |
 | active-color | 当前已执行步骤颜色(自定义图片代表背景色, 默认实心点代表字体颜色) | `Object` | {} |
 | default-color | 默认步骤条颜色(自定义图片代表背景色, 默认实心点代表字体颜色) | `Object` | {} |
 | title-style | 标题样式(可以自定义大小、颜色) | `Object` | {} |
-| desc-style | 描述样式(可以自定义大小、颜色) | `String` | '' |
+| desc-style | 描述样式(可以自定义大小、颜色) | `String` |  |
 | icon-style | 自定义图片底板样式 | `Object` | {} |
 | line-style | 步骤线条样式 | `Object` | {} |
 | dot-style | 默认实心点样式(可自定义大小、颜色) | `Object` | {} |
