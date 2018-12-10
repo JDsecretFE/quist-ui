@@ -2,6 +2,8 @@
 
 > 按钮组件，提供了通栏和非通栏两种大小，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412534306-V2VjaGF0SU1HNi5wbmc=.png)
 
 ## 安装
 

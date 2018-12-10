@@ -2,6 +2,8 @@
 
 > 选项卡切换组件。
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412640612-V2VjaGF0SU1HMTIucG5n.png)
 
 ## 安装
 

@@ -2,6 +2,8 @@
 
 > 加载中
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412573186-V2VjaGF0SU1HOC5wbmc=.png)
 
 ## 安装
 

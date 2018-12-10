@@ -2,6 +2,8 @@
 
 > 弹出式提示框，有多种交互形式。
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412554241-V2VjaGF0SU1HNy5wbmc=.png)
 
 ## 安装
 

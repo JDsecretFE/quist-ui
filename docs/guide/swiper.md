@@ -2,6 +2,8 @@
 
 > 滑块视图容器
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412444172-V2VjaGF0SU1HMy5wbmc=.png)
 
 ## 安装
 

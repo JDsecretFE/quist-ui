@@ -2,6 +2,8 @@
 
 > 滑动型输入器，可展示当前值和可选范围。
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544412591613-V2VjaGF0SU1HOS5wbmc=.png)
 
 ## 安装
 
