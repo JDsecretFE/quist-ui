@@ -17,21 +17,29 @@
       </div>
       <div class="item-box">
           <text class="item-txt">纵向步骤条</text>
-          <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical"></quist-steps>
+          <div class="item-content">
+            <quist-steps steps="{{steps}}" current="{{2}}" direction="vertical"></quist-steps>
+          </div>
       </div>
     </div>
     <div class="demo-block">
       <div class="item-box">
         <text class="item-txt">自定义图标、颜色(横向)</text>
-        <quist-steps steps="{{steps}}" current="{{1}}" icon="check.png" default-color="#87d068"></quist-steps>
+        <div class="item-content">
+          <quist-steps steps="{{steps}}" current="{{1}}" icon="check.png" default-color="#87d068"></quist-steps>
+        </div>
       </div>
       <div class="item-box">
         <text class="item-txt">自定义图标、颜色(纵向)</text>
-        <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
+        <div class="item-content">
+          <quist-steps steps="{{steps}}" current="{{3}}" direction="vertical" icon="check.png" default-color="#fac450" active-color='#87d068'></quist-steps>
+        </div>
       </div>
       <div class="item-box">
         <text class="item-txt">自定义标题、描述样式</text>
-        <quist-steps steps="{{steps}}" current="{{2}}" default-color="#fac450" active-color='#87d068' title-style="{{titleStyle}}" desc-style="{{descStyle}}"></quist-steps>
+        <div class="item-content">
+          <quist-steps steps="{{steps}}" current="{{2}}" default-color="#fac450" active-color='#87d068' title-style="{{titleStyle}}" desc-style="{{descStyle}}"></quist-steps>
+        </div>
       </div>
     </div>
   </div>
@@ -57,10 +65,8 @@
     flex-direction: column;
   }
   .item-txt {
-    width: 100%;
-    margin-bottom: 30px;
+    color: #333333;
     font-size: 32px;
-    color: #666666;
   }
 </style>
 

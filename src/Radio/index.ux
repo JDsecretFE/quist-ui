@@ -33,15 +33,12 @@
 
   .item-box {
     margin: 20px;
-    padding-bottom: 50px;
     flex-direction: column;
   }
 
   .item-txt {
-    width: 100%;
-    margin-bottom: 30px;
+    color: #333333;
     font-size: 32px;
-    color: #666666;
   }
 </style>
 

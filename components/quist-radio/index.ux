@@ -1,13 +1,13 @@
 <template>
   <div class="quist-radio">
     <block for="(index, row) in options">
-      <div class="quist-radio__item {{common ? '' : 'quist-radio__item--isRight'}} {{row.disabled ? 'quist-radio__item--disabled' : ''}}" @click="click(row)">
+      <div class="quist-radio__item {{common ? '' : 'quist-radio__item--isRight'}}" @click="click(row)">
         <text if="!common" style="{{label()}}">{{row.label || row}}</text>
-        <stack class="quist-radio__check" style="{{wrapper(replaceValue === (row.value || row) ? checkedColor : checkColor, replaceValue === (row.value || row) ? checkedBorderColor : checkBorderColor)}}" if="common">
+        <stack class="quist-radio__check {{row.disabled ? 'quist-radio__item--disabled' : ''}}" style="{{wrapper(replaceValue === (row.value || row) ? checkedColor : checkColor, replaceValue === (row.value || row) ? checkedBorderColor : checkBorderColor)}}" if="common">
           <div class="quist-radio__thumb {{replaceValue === (row.value || row) ? 'quist-radio__thumb--open' : 'quist-radio__thumb--close'}}" style="{{inner(replaceValue === (row.value || row) ? checkedColor : checkColor)}}"></div>
         </stack>
         <image if="!common && (replaceValue === (row.value || row))" src="{{checkIcon}}" class="quist-radio__img"></image>
-        <text if="common" style="{{label()}}">{{row.label || row}}</text>
+        <text if="common" class="{{row.disabled ? 'quist-radio__item--disabled' : ''}}" style="{{label()}}">{{row.label || row}}</text>
       </div>
     </block>
   </div>
