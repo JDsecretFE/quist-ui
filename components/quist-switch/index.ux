@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="quist-switch {{className}}">
+    <div class="quist-switch">
       <stack class="quist-switch__checkbox {{disabled ? 'quist-switch__checkbox--disabled' : ''}}" style="{{wrapper()}}" id="{{id}}" @click="onClick">
         <div class="quist-switch__thumb {{checked ? 'quist-switch__thumb--open' : 'quist-switch__thumb--close'}}" style="{{inner()}}"></div>
       </stack>
@@ -32,10 +32,6 @@
       checkedColor: {
         type: String,
         default: '#1890ff'
-      },
-      className: {
-        type: String,
-        default: ''
       },
       wrapperStyle: {
         type: Object,

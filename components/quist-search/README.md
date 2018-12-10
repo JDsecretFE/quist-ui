@@ -48,6 +48,8 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | value | 输入框内容 | `String` | - |
 | placeholder | 占位 | `String` | - |
+| disabled | 是否禁用 | `Boolean` | false |
+| autofocus | 是否自动获取焦点 | `Boolean` | false |
 | prefix | 带有前缀图标的input | `String` | - |
 | suffix | 带有后缀图标的input | `String` | - |
 | icon-style | 图标样式覆盖入口 | `Object` | {} |

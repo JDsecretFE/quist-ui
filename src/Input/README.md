@@ -47,7 +47,9 @@ $ npm install quist-ui -D
 | 属性 | 说明 | 类型 | 默认值 |
 |-------------|------------|:--------:|:-----:|
 | value | 输入框内容 | `String` | - |
+| type | 输入框类型(目前支持 `text` `number` `password` `phone(电话号码)` `bankCard(银行卡号)` `amount(金额)` | `String` | text |
 | placeholder | 占位 | `String` | - |
+| disabled | 是否禁用 | `Boolean` | false |
 | autofocus | 是否自动获取焦点 | `Boolean` | false |
 | prefix | 带有前缀图标的input | `String` | - |
 | suffix | 带有后缀图标的input | `String` | - |
@@ -66,3 +68,6 @@ $ npm install quist-ui -D
  * [优化] 添加on-change事件
  * [优化] 删除on-focus、on-blur、on-clear事件
  * [优化] 添加value属性,与on-change事件结合动态改变数据
+
+#### v1.1.1 (2018-12-10)
+ * [优化] 添加type、disabled属性
