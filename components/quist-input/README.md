@@ -64,10 +64,11 @@ $ npm install quist-ui -D
 * 初始版本
 
 #### v1.1.0 (2018-11-19)
- * [优化] 优化样式传递方式
- * [优化] 添加on-change事件
- * [优化] 删除on-focus、on-blur、on-clear事件
- * [优化] 添加value属性,与on-change事件结合动态改变数据
+* [优化] 优化样式传递方式
+* [优化] 添加on-change事件
+* [优化] 删除on-focus、on-blur、on-clear事件
+* [优化] 添加value属性,与on-change事件结合动态改变数据
 
 #### v1.1.2 (2018-12-10)
- * [优化] 添加type、disabled属性
+* [优化] 修改默认样式
+* [优化] 添加type、disabled属性
