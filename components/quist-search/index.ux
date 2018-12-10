@@ -2,11 +2,11 @@
   <stack>
       <div class="quist-search" style="{{wrapper()}}">
           <input class="quist-search__fix" />
-          <div class="quist-search__content {{disabled ? 'quist-search__content--disabled' : 'quist-search__content--enable'}}" style="{{input()}}">
+          <div class="quist-search__content {{disabled ? 'quist-search__content--disabled' : 'quist-search__content--enable'}}">
             <div class="quist-search__img" style="{{icon()}}" if="prefixIcon">
               <image src="{{prefixIcon}}" class="quist-search__icon" />
             </div>
-            <input id="search" class="quist-search__box" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onchange" />
+            <input id="search" class="quist-search__box" type="text" value='{{searchValue}}' placeholder="{{placeholder}}" disabled="{{disabled}}" @change="onchange" style="{{input()}}" />
             <div class="quist-search__img" @click="clearClick" style="{{icon()}}" if="{{showSuffix}}">
               <image src="{{suffixIcon}}" class="quist-search__icon" />
             </div>

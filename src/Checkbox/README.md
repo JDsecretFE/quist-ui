@@ -36,7 +36,6 @@ $ npm install quist-ui -D
 |-------------|------------|:--------:|:-----:|
 | values | 初始选中项 | `Array` | [] |
 | options | 选项 | `Array` | [] |
-| label-margin | 标签与选项框的距离 | `String` | 30px |
 | label-color | 标签颜色 | `String` | #000000 |
 | check-color | 未选中状态选择框背景颜色 | `String` | #FFFFFF |
 | checked-color | 选中状态选择框背景颜色 | `String` | #2998F9 |

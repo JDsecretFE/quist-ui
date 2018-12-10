@@ -1,15 +1,14 @@
 <template>
   <stack>
     <stack class="quist-toast" if="value.text">
-        <div class="quist-toast__wrapper">
-            <div class="quist-toast__content" tid="toast">
-                <image if="value.src" src="{{value.src}}" class="quist-toast__image"></image>
-                <text class="quist-toast__text">{{value.text}}</text>
-              </div>
+      <div class="quist-toast__wrapper">
+        <div class="quist-toast__content" tid="toast">
+          <image if="value.src" src="{{value.src}}" class="quist-toast__image"></image>
+          <text class="quist-toast__text">{{value.text}}</text>
         </div>
-      </stack>
+      </div>
+    </stack>
   </stack>
-    
 </template>
 
 <style lang="less">
@@ -18,13 +17,15 @@
 </style>
 
 <script>
-
   export default {
     data() {
       return {
         default: 500,
         value: {}    //toast实例
       }
+    },
+    onInit() {
+      console.error(this.value)
     },
     show(option) {
       this.value = {
@@ -38,6 +39,9 @@
           this.value = {};
         }, 500)
       }, (option.duration || this.default) + 500)
+    },
+    onHide() {
+      this.value = {};
     }
   }
 </script>

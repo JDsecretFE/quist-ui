@@ -2,14 +2,18 @@
 
 <template>
   <div class="checkbox-demo">
-    <div class="item-box">
-      <text class="item-txt">CheckboxList - 选中的值：{{value1}}</text>
-      <quist-checkbox values="{{data1.values}}" options="{{data1.options}}" @on-change="callback"></quist-checkbox>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt">CheckboxList - 选中的值：{{value1}}</text>
+        <quist-checkbox values="{{data1.values}}" options="{{data1.options}}" @on-change="callback"></quist-checkbox>
+      </div>
     </div>
-    <div class="item-box">
-      <text class="item-txt" @click="evtEmit">自定义样式</text>
-      <quist-checkbox values="{{data2.values}}" checked="{{data2.checked}}" options="{{data2.options}}" checked-color='#87d068' checked-border-color='#87d068' id="childVm" is-right label-style="{{labelStyle}}" wrapper-style="{{wrapperStyle}}"></quist-checkbox>
-      <quist-checkbox values="{{data3.values}}" options="{{data3.options}}" checked-color='#1890ff' checked-border-color='#1890ff' is-right label-style="{{labelStyle1}}" wrapper-style="{{wrapperStyle1}}"></quist-checkbox>
+    <div class="demo-block">
+      <div class="item-box">
+        <text class="item-txt" @click="evtEmit">自定义样式</text>
+        <quist-checkbox values="{{data2.values}}" checked="{{data2.checked}}" options="{{data2.options}}" checked-color='#87d068' checked-border-color='#87d068' id="childVm" is-right wrapper-style="{{wrapperStyle}}"></quist-checkbox>
+        <quist-checkbox values="{{data3.values}}" options="{{data3.options}}" checked-color='#1890ff' checked-border-color='#1890ff' is-right wrapper-style="{{wrapperStyle}}"></quist-checkbox>
+      </div>
     </div>
     <div>
 </template>
@@ -18,7 +22,15 @@
   .checkbox-demo {
     flex: 1;
     flex-direction: column;
+    background-color: #f5f5f5;
+  }
+
+  .demo-block {
+    flex-direction: column;
     background-color: #ffffff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .item-box {
@@ -77,18 +89,7 @@
           value: 1
         }],
       },
-      labelStyle: {
-        color: 'red',
-        marginLeft: 0
-      },
       wrapperStyle: {
-        borderRadius: 0
-      },
-      labelStyle1: {
-        color: '#1890ff',
-        marginLeft: 0
-      },
-      wrapperStyle1: {
         width: '40px',
         height: '40px',
         borderRadius: 0,
