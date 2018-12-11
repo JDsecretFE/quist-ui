@@ -55,13 +55,14 @@ module.exports = {
     - [开关 switch](https://jdsecretfe.github.io/quist-ui/guide/switch.html)
     - [输入框 input](https://jdsecretfe.github.io/quist-ui/guide/input.html)
     - [评分 rate](https://jdsecretfe.github.io/quist-ui/guide/rate.html)
+    - [评分 rate](https://jdsecretfe.github.io/quist-ui/guide/rate.html)
 - 功能组件
     - [计数器 counter](https://jdsecretfe.github.io/quist-ui/guide/counter.html)
     - [加载 loading](https://jdsecretfe.github.io/quist-ui/guide/loading.html)
     - [轮播图 swiper](https://jdsecretfe.github.io/quist-ui/guide/swiper.html)
     - [列表索引 indexlist](https://jdsecretfe.github.io/quist-ui/guide/indexlist.html)
     - [选择器 picker](https://jdsecretfe.github.io/quist-ui/guide/picker.html)
-    - [选项卡 tabs](https://jdsecretfe.github.io/quist-ui/guide/tabs.html)
+    - [滑动输入条 slider](https://jdsecretfe.github.io/quist-ui/guide/slider.html)
 - 提示反馈
     - [抽屉 drawer](https://jdsecretfe.github.io/quist-ui/guide/drawer.html)
     - [提示 toast](https://jdsecretfe.github.io/quist-ui/guide/toast.html)
