@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div class="quist-switch">
-      <stack class="quist-switch__checkbox {{disabled ? 'quist-switch__checkbox--disabled' : ''}}" style="{{wrapper()}}" id="{{id}}" @click="onClick">
-        <div class="quist-switch__thumb {{checked ? 'quist-switch__thumb--open' : 'quist-switch__thumb--close'}}" style="{{inner()}}"></div>
-      </stack>
-    </div>
+  <div class="quist-switch">
+    <stack class="quist-switch__checkbox {{disabled ? 'quist-switch__checkbox--disabled' : ''}}" style="{{wrapper()}}" id="{{id}}" @click="onClick">
+      <div class="quist-switch__thumb {{chk ? 'quist-switch__thumb--open' : 'quist-switch__thumb--close'}}" style="{{inner()}}"></div>
+    </stack>
   </div>
 </template>
 
@@ -42,20 +40,28 @@
         default: {}
       }
     },
+    data() {
+      return {
+        chk: false
+      }
+    },
     onReady() {
-      this.$watch('checked', 'change')
+      this.$watch('chk', 'change')
+    },
+    onInit() {
+      this.chk = this.checked
     },
     onClick() {
       if (!this.disabled) {
-        this.checked = !this.checked;
+        this.chk = !this.chk;
       }
     },
     change() {
-      this.$emit('onChange', { id: this.id, checked: this.checked })
+      this.$emit('onChange', { id: this.id, checked: this.chk })
     },
     wrapper() {
       let baseStyle = {
-        backgroundColor: this.checked ? this.checkedColor : this.checkColor
+        backgroundColor: this.chk ? this.checkedColor : this.checkColor
       }
       return Object.assign(baseStyle, this.wrapperStyle)
     },

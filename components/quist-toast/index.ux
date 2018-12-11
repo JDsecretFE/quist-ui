@@ -1,5 +1,5 @@
 <template>
-  <stack>
+  <div>
     <stack class="quist-toast" if="value.text">
       <div class="quist-toast__wrapper">
         <div class="quist-toast__content" tid="toast">
@@ -8,7 +8,7 @@
         </div>
       </div>
     </stack>
-  </stack>
+  </div>
 </template>
 
 <style lang="less">
@@ -23,9 +23,6 @@
         default: 500,
         value: {}    //toast实例
       }
-    },
-    onInit() {
-      console.error(this.value)
     },
     show(option) {
       this.value = {

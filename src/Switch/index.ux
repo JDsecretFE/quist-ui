@@ -6,7 +6,7 @@
       <div class="item-box">
         <text class="item-txt">选项{{data1}}</text>
         <div class="item-content">
-          <quist-switch checked="{{false}}" @on-change="callback1" class-name="quist-switch-demo"></quist-switch>
+          <quist-switch checked="{{false}}" @on-change="callback1"></quist-switch>
         </div>
       </div>
       <div class="item-box">
@@ -26,7 +26,7 @@
       <div class="item-box">
         <label class="item-txt" target="isDefault">自定义样式开关</label>
         <div class="item-content">
-          <quist-switch checked="{{false}}" id='isDefault' checked-color="#dddddd" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
+          <quist-switch checked="{{false}}" @on-change="callback2" id='isDefault' checked-color="#87d068" inner-style="{{innerStyle}}" wrapper-style="{{wrapperStyle}}"></quist-switch>
         </div>
       </div>
     </div>
@@ -69,11 +69,16 @@
       data3: false,
       data4: true,
       wrapperStyle: {
-        borderRadius: 0
+        borderRadius: 0,
+        paddingLeft: '4px',
+        paddingRight: '4px'
       },
       innerStyle: {
         borderRadius: 0,
-        backgroundColor: '#1890ff'
+        backgroundColor: '#ffffff',
+        width: '60px',
+        height: '54px',
+        marginTop: '4px'
       }
     },
     onInit() {
@@ -83,7 +88,7 @@
       this.data1 = data.detail.checked
     },
     callback2(data) {
-      this.data2 = data.detail.checked
+      console.log('选择是：', data.detail.checked)
     }
   }
 </script>

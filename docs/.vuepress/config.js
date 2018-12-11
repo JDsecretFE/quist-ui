@@ -25,8 +25,7 @@ module.exports = {
 				title: '基础组件',
         children: [
 					'/guide/progress',
-					'/guide/steps',
-					'/guide/search'
+					'/guide/steps'
         ]
 			},
 			{

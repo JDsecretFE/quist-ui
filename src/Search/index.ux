@@ -71,7 +71,7 @@
       suffix: 'close.png',
       value1: '',
       value2: '',
-      value3: 'hello world',
+      value3: '',
       value4: '你好, 世界',
       wrapperStyle: {
         height: '68px',

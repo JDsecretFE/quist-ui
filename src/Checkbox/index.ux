@@ -11,8 +11,7 @@
     <div class="demo-block">
       <div class="item-box">
         <text class="item-txt" @click="evtEmit">自定义样式</text>
-        <quist-checkbox values="{{data2.values}}" checked="{{data2.checked}}" options="{{data2.options}}" checked-color='#87d068' checked-border-color='#87d068' id="childVm" is-right wrapper-style="{{wrapperStyle}}"></quist-checkbox>
-        <quist-checkbox values="{{data3.values}}" options="{{data3.options}}" checked-color='#1890ff' checked-border-color='#1890ff' is-right wrapper-style="{{wrapperStyle}}"></quist-checkbox>
+        <quist-checkbox values="{{data2.values}}" options="{{data2.options}}" checked-color='#87d068' checked-border-color='#87d068' id="childVm" is-right wrapper-style="{{wrapperStyle}}"></quist-checkbox>
       </div>
     </div>
     <div>
@@ -73,17 +72,18 @@
         ]
       },
       data2: {
-        values: [],
+        values: [2],
         options: [{
-          label: '记住我',
+          label: '蓝色',
           value: 1
-        }],
-      },
-      data3: {
-        values: [],
-        options: [{
-          label: '忘了我',
-          value: 1
+        },
+        {
+          label: '绿色',
+          value: 2
+        },
+        {
+          label: '黄色',
+          value: 3
         }],
       },
       wrapperStyle: {

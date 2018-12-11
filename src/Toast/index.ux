@@ -43,7 +43,7 @@
   export default {
     private: {
       info: {
-        text: '数据加载'
+        text: '提示文字'
       },
       custom: {
         text: '加载成功',

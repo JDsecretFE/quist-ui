@@ -18,22 +18,20 @@
 
 @switch-prefix: ~"@{css-prefix}-switch";
 .@{switch-prefix} {
-  align-items: center;
   &__checkbox {
     width: 126px;
     height: 66px;
     border-radius: 66px;
-    border: 1px solid #d9d9d9;
-    align-items: center;
+    padding: 1px;
   }
   &__checkbox--disabled {
-    opacity: .5;
+    opacity: .3;
   }
   &__thumb {
     width: 64px;
     height: 64px;
     border-radius: 64px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
   &__thumb--open {
     animation-name: open;

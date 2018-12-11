@@ -1,7 +1,7 @@
 <template>
   <div class="quist-input" style="{{wrapper()}}">
       <input class="quist-input__fix" />
-      <div class="quist-input__content {{disabled ? 'quist-input__content--disabled' : 'quist-input__content--enable'}}">
+      <div class="{{disabled ? 'quist-input--disabled' : ''}}">
         <div class="quist-input__img" style="{{icon()}}" if="prefixIcon">
           <image src="{{prefixIcon}}" class="quist-input__icon" />
         </div>
@@ -121,7 +121,7 @@
           'bankCard': this.bankCardFormat(value),
           'phone': this.phoneFormat(value)
         }
-        value = obj[type];
+        value = obj[type] || value;
       }
       return value;
     },
