@@ -2,6 +2,8 @@
 
 > 提示，提供自定义图标与自定义时长，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519628577-V2VjaGF0SU1HMjIucG5n.png)
 
 ## 安装
 

@@ -2,6 +2,8 @@
 
 > 步骤条，提供水平和垂直两种方式，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519688725-V2VjaGF0SU1HMTYuanBlZw==.jpeg)
 
 ## 安装
 

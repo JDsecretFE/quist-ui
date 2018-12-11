@@ -2,6 +2,8 @@
 
 > 多选框，可配置禁用、选中状态，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519713315-V2VjaGF0SU1HMTcucG5n.png)
 
 ## 安装
 

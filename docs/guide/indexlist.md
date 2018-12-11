@@ -2,6 +2,8 @@
 
 > 列表索引
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519604630-V2VjaGF0SU1HMjEucG5n.png)
 
 ## 安装
 

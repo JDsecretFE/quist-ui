@@ -2,6 +2,8 @@
 
 > 输入框，可附带前缀、后缀图标, 可设置禁用状态，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519648735-V2VjaGF0SU1HMTkucG5n.png)
 
 ## 安装
 

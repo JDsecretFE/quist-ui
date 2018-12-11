@@ -2,6 +2,8 @@
 
 > 单选框，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519666026-V2VjaGF0SU1HMTgucG5n.png)
 
 ## 安装
 

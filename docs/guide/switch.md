@@ -2,6 +2,8 @@
 
 > 开关，可自定义样式
 
+## 效果
+![效果展示](http://pji4lsgkc.bkt.clouddn.com/image-1544519580138-V2VjaGF0SU1HMjAucG5n.png)
 
 ## 安装
 
