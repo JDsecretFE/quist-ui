@@ -55,7 +55,7 @@ module.exports = {
     - [开关 switch](https://jdsecretfe.github.io/quist-ui/guide/switch.html)
     - [输入框 input](https://jdsecretfe.github.io/quist-ui/guide/input.html)
     - [评分 rate](https://jdsecretfe.github.io/quist-ui/guide/rate.html)
-    - [评分 rate](https://jdsecretfe.github.io/quist-ui/guide/rate.html)
+    - [滑动输入条 slider](https://jdsecretfe.github.io/quist-ui/guide/slider.html)
 - 功能组件
     - [计数器 counter](https://jdsecretfe.github.io/quist-ui/guide/counter.html)
     - [加载 loading](https://jdsecretfe.github.io/quist-ui/guide/loading.html)
