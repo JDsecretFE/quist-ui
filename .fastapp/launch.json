@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug FastApp on Device",
+      "type": "fastapp",
+      "request": "launch",
+      "device": "${command:fastapp.choose-device}",
+      "cwd": "${workspaceRoot}",
+      "logLevel": "log",
+      "adbPort": 5037,
+      "debugServerPort": 8088,
+      "remoteDebug": true,
+      "elementMode": false
+    }
+  ]
+}
