@@ -4,7 +4,7 @@
   "version": "1.1.2",
   "description": "基于快应用的多功能、富交互、轻量级的UI 组件库",
   "subversion": {
-    "toolkit": "0.0.38"
+    "toolkit": "0.1.0"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,10 @@
     "watch": "hap watch",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+    "hap-update": "hap update",
+    "fa-build": "webpack --config ./node_modules/fa-toolkit/webpack.config.js",
+    "fa-watch": "webpack --watch --config ./node_modules/fa-toolkit/webpack.config.js"
   },
   "license": "MIT",
   "devDependencies": {
@@ -41,18 +44,12 @@
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-jsx": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "babel-loader": "^8.0.0",
-    "css-what": "^2.1.0",
-    "hap-toolkit": "0.0.38",
-    "koa": "^2.3.0",
-    "koa-body": "^2.5.0",
-    "koa-router": "^7.2.1",
-    "koa-send": "^4.1.1",
-    "koa-static": "^4.0.1",
-    "socket.io": "^2.1.0",
+    "babel-loader": "^8.0.4",
+    "hap-toolkit": "0.1.0",
     "vuepress": "^0.14.4",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "fa-toolkit": "file:fa-toolkit-1.1.0-Stable.301.tgz",
+    "esprima": "^4.0.1"
   },
   "dependencies": {
     "less": "^3.9.0",
